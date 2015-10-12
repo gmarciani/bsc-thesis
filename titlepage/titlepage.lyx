@@ -94,6 +94,8 @@ thispagestyle{empty}
 
 \begin_layout Standard
 \align center
+
+\size large
 Università degli Studi di Roma 
 \begin_inset Quotes eld
 \end_inset
@@ -115,7 +117,7 @@ Tor Vergata
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Desktop/BScThesis/figures/TorVergata Logo BW.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/torvergata-logo-bw.svg
 	lyxscale 25
 	scale 30
 
@@ -133,11 +135,15 @@ Tor Vergata
 
 \begin_layout Standard
 \align center
+
+\size large
 Facoltà di Ingegneria
 \end_layout
 
 \begin_layout Standard
 \align center
+
+\size large
 Laurea Triennale in Ingegneria Informatica
 \end_layout
 
@@ -152,8 +158,8 @@ Laurea Triennale in Ingegneria Informatica
 \align center
 
 \series bold
-\size larger
-Lorem Ipsum Dolor Sit Amet
+\size large
+Posizionamento Ottimo nel Data Stream Processing
 \end_layout
 
 \begin_layout Standard

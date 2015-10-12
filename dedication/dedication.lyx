@@ -104,15 +104,11 @@ thispagestyle{empty}
 \align center
 
 \shape italic
-Dedicato a Mario Rossi,
-\end_layout
+Dedicato a Laura,
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-\noindent
-\align center
-
-\shape italic
-il quale ha fatto questo quello e quell'altro.
+che mi ha dato il coraggio di credere in me stesso.
 \end_layout
 
 \begin_layout Standard

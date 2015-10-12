@@ -1,0 +1,839 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\numberwithin{equation}{chapter}
+
+\DeclareMathOperator{\domain}{domain}
+\DeclareMathOperator{\subjectto}{subject to}
+\end_preamble
+\use_default_options true
+\master ../thesis.lyx
+\begin_modules
+customHeadersFooters
+theorems-ams
+theorems-ams-extended
+theorems-chap
+\end_modules
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter lmtt
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 2.5cm
+\rightmargin 3cm
+\bottommargin 2.5cm
+\headsep 1cm
+\footskip 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Big-Data"
+
+\end_inset
+
+Big Data
+\end_layout
+
+\begin_layout Standard
+L'essere umano ha sempre avuto l'attitudine ad acquisire e processare dati
+ per trasformarli in informazioni che portino ad un ampliamento della conoscenza.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Anuradha2015"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Big data is a collection of massive and complex data sets and data volume
+ that include the huge quantities of data, data management capabilities,
+ social media analytics and real-time data.
+ Big data analytics is the process of examining large amounts of data.
+ There exist large amounts of heterogeneous digital data.
+ Big data is about data volume and large data set's measured in terms of
+ terabytes or petabytes.
+ This phenomenon is called Bigdata.
+\end_layout
+
+\begin_layout Standard
+Big data are worthless in a vacuum.
+ Its potential value is unlocked only when leveraged to drive decision making.
+ To enable such evidence-based decision making, organizations need efficient
+ processes to turn high volumes of fast-moving and diverse data into meaningful
+ insights.
+\end_layout
+
+\begin_layout Standard
+the term Big Data Analytics is defined as the process of analyzing and understan
+ding the characteristics of massive size datasets by extracting useful geometric
+ and statistical patterns.
+\end_layout
+
+\begin_layout Standard
+As the interest in big data increases, such difficulties will decrease or
+ will be solved in shorter time.
+\end_layout
+
+\begin_layout Standard
+Big data and data mining concepts are usually confused.
+ Frawley et.al.
+ define data mining as the discovery of the data which wasn’t known before
+ and which has the makings of being useful (Frawley et.al., 1992).
+ According to Dunham, it is detection of hidden data in the database (Dunham,
+ 2006).
+ Fayyad et.al.
+ describe it as the application of specific algorithms to extract patterns
+ from the dataset (Fayyad et.al., 1996).
+ As it is understood from the definitions; even though big data and data
+ mining have several steps in common, data mining doesn’t cover all properties
+ of big data
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ozkose2015"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Origine dei Big Data
+\end_layout
+
+\begin_layout Standard
+The term coined by Roger Magoulas from O’Reilly media in 2005 (1), refers
+ to a wide range of large data sets almost impossible to manage and process
+ using traditional data management tools—due to their size, but also their
+ complexity.
+\end_layout
+
+\begin_layout Standard
+The extremities of big data go long way back, however it has lately been
+ understood that most of those former studies were big data studies.
+ For example in 1839 Matthew Fontaine Maury; the head of the Depot of Charts
+ and Instruments of the U.S.
+ Navy; collected data about the tides, winds and sea flows of the places
+ he visited.
+ There were numerous navigation books, maps and charts at the depot where
+ he was working.
+ The log books of the former voyages were also present there.
+ There were lots of records about wind, water and air conditions in the
+ log books.
+ Maury realized that he could achieve a new voyage chart as he combines
+ all of the data in hand.
+ He generated new routes by utilizing them.
+ He developed a standard form for U.S.
+ Army battleships to expand his study and he enhanced the accuracy of the
+ route information he had.
+ Then he included merchant ships into his study and utilized the log book
+ data of them.
+ As a result he passed on huge savings by cutting the durations across by
+ a third.
+ Since then he has been commemorated as “Pathfinder of the Seas”
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ozkose2015"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Big data was first conceptualized as a data set during 2012 US presidential
+ elections when the debate between President Barak Obama and Governor Mitt
+ Romney generated millions of tweets every hours.
+ The analysis or generation of this size was not thought of and the need
+ was felt to analyze the trends at a given point of time to study the likings
+ of the voter base.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Google Trends - Big Data vs Big Data Industry.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Google Trends: Big Data vs Big Data Industry
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Scopus: Big Data papers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Big Trends
+\end_layout
+
+\begin_layout Standard
+The number of images and videos captured by humans and uploading to social
+ media is stagger-ing.
+ Surveys show that images and videos make up about 80 percent of all corporate
+ and public unstructured big data [19].
+ It has been estimated that about 100 hours of video are uploaded to Youtube
+ every minute and average of 350 million photos are uploaded to Facebook
+ daily which as a result it is estimated that Facebook currently has more
+ than 250 billion photographs in its collection [13].
+ Nevertheless, dealing with such gigantic image collections are not restricted
+ to social networks.
+ Users in other domains such as healthcare, defence and astronomy are exploit-in
+g the opportunities offered by the ability to access and manipulate gigantic
+ image and video datasets efficiently.
+ Image management at this scale requires highly computationally efficient
+ approaches which provide accurate and visually meaningful results to be
+ able to search and browse of the files.
+ On the other hand, manual tagging for such large datasets is not feasible.
+ and is prone to errors due to user’s subjective opinions; therefore, having
+ an efficient, fast and accurate retrieval system is essential more than
+ ever.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angelov2015"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Indirizzi IP Unici
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Indirizzi IP unici.
+ Fonte: Akamai 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Akamai"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Velocità media delle connessioni
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Velocità media di connessione.
+ Fonte: Akamai 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Akamai"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diffusione Broadband
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diffusione Broadband 10Mbps.
+ Fonte: Akamai 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Akamai"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Produzione dati
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Produzione Worldwide dati in ExaBytes (EB).
+ Fonte: Cisco Systems 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bisogna resistere alla legittima diffidenza per i dati predittivi: le stime
+ elaborate finora sono infatti risultate più basse.
+ Lo stesso studio pubblicato dalla IDC nel 2007 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2007"
+
+\end_inset
+
+, prevedeva una produzione nel 2010 di 988 EB.
+ I dati attuali mostrano una produzione di 1227 EB, pari al 29.19% in più.
+\end_layout
+
+\begin_layout Itemize
+IDC estimates that by 2020, as much as 33% of the digital universe will
+ contain information that might be valuable if analyzed, compared with 25%
+ today 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2012"
+
+\end_inset
+
+.
+ companies that deliver the most creative and meaningful ways to display
+ the results of Big Data analytics will be coveted and sought after.
+\end_layout
+
+\begin_layout Paragraph
+Sicurezza
+\end_layout
+
+\begin_layout Standard
+In un mondo sempre più glocal, il potenziale informativo di un dato locale
+ assume sempre più un valore globale.
+ L'evoluzione delle tecniche crittografiche e la promulgazione di adeguate
+ normative governative riguardanti la information security faranno sempre
+ più la differenza nel potenziale diffusivo dei Big Data.
+ La quantità di dati che necessità di protezione cresce più velocemente
+ della produzione di dati stessa.
+ Se nel 2010 tale segmento ammontava al 30% del totale dei dati prodotti,
+ esso è destinato a raggiungere il 40% nel 2020.
+ Tali stime sono da riferirsi a mercati maturi: i mercati emergenti necessiteran
+no di una maggiore protezione 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Cloud Computing
+\end_layout
+
+\begin_layout Itemize
+the number of servers (virtual and physical) worldwide will grow by a factor
+ of 10 and the amount of information managed directly by enterprise datacenters
+ will grow by a factor of 14.
+ Meanwhile, the number of IT professionals in the world will grow by less
+ than a factor of 1.5.
+ IDC estimates that by 2020, nearly 40% of the information in the digital
+ universe will be "touched" by cloud computing — meaning that a byte will
+ be stored or processed in a cloud somewhere in its journey from originator
+ to disposal.
+ Perhaps as much as 15% will be maintained in a cloud 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2012"
+
+\end_inset
+
+.
+ 46.7% intrattenimento; 37.1% sorveglianza.
+\end_layout
+
+\begin_layout Section
+Metriche
+\end_layout
+
+\begin_layout Standard
+Il termine 
+\begin_inset Quotes fld
+\end_inset
+
+Big Data
+\begin_inset Quotes frd
+\end_inset
+
+ è spesso utilizzato in riferimento ad un fenomeno di proliferazione diffusa,
+ massiccia ed eterogenea di dati, che sfugge al controllo dei tradizionali
+ sistemi di elaborazione.
+ L'individuazione intuitiva di un fenomeno non deve però prescindere da
+ una sua rappresentazione quantitativa.
+ In letteratura sono state proposti degli spazi metrici che permettano di
+ distinguere un dato qualunque da un Big Data.
+ In questa sezione descriviamo gli spazi metrici attualmente accettati nel
+ mondo accademico ed industriale.
+\end_layout
+
+\begin_layout Standard
+NECESSITA' DI UNA METRICA BIG DATA
+\end_layout
+
+\begin_layout Standard
+how to prove (or show) that the network traffic data satisfy the Big Data
+ characteristics for Big Data classification.
+ This is the first important task to address in order to make the Big Data
+ analytics efficient and cost effective.
+ The early detection of the Big Data characteristics can provide a cost
+ effective strategy to many organizations to avoid unnecessary deployment
+ of Big Data technologies.
+ The data analytics on some data may not require Big Data techniques and
+ technologies; the current and well established techniques and technologies
+ maybe sufficient to handle the data storage and data processing.
+ Hence we need an early analysis and understanding of the data characteristics
+ for classification.
+\end_layout
+
+\begin_layout Standard
+The form of information determines strategies and connection weights required
+ for recognition, memory, and further processing.
+\end_layout
+
+\begin_layout Standard
+some point in time, when the volume, variety and velocity of the data are
+ increased, the current techniques and technologies may not be able to handle
+ storage and processing of the data.
+ At that point the data is defined as Big Data.
+\end_layout
+
+\begin_layout Subsection
+Spazio metrico 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gandomi2015"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Volume refers to the magnitude of data.
+ Big data sizes are reported in multiple terabytes and petabytes.
+ A survey conducted by IBM in mid-2012 revealed that just over half of the
+ 1144 respondents considered datasets over one terabyte to be big data (Schroeck
+, Shockley, Smart, Romero-Morales, & Tufano, 2012).
+ One terabyte stores as much data as would fit on 1500 CDs or 220 DVDs,
+ enough to store around 16 million Facebook photographs.
+ Beaver, Kumar, Li, Sobel, and Vajgel (2010) report that Facebook processes
+ up to one million photographs per second.
+ One petabyte equals 1024 terabytes.
+ Earlier estimates suggest that Facebook stored 260 billion photos using
+ storage space of over 20 petabytes.
+ Definitions of big data volumes are relative and vary by fac- tors, such
+ as time and the type of data.
+ What may be deemed big data today may not meet the threshold in the future
+ because storage capacities will increase, allowing even bigger data sets
+ to be captured.
+ In addition, the type of data, discussed under variety , defines what is
+ meant by ‘big’.
+ Two datasets of the same size may require different data management technologie
+s based on their type, e.g., tabular versus video data.
+ Thus, definitions of big data also depend upon the industry.
+ These considerations there- fore make it impractical to define a specific
+ threshold for big data volumes.
+ Le compagnie dispongono già di una grande quantità di dati, ma non hanno
+ la capacità di processarli.
+ La maggior attrattività della big data analytics è proprio la capacità
+ di inferire informazioni da una grande quantità di dati.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Velocità Dal 1999 al 2012 Wall Mart è passato da 1000 terabytes a 2.5 petabytes.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Variabilità SAS introduced Variability and Com- plexity as two additional
+ dimensions of big data.
+ Variability refers to the variation in the data flow rates.
+ Often, big data velocity is not consistent and has periodic peaks and troughs.
+ Complexity refers to the fact that big data are generated through a myriad
+ of sources.
+ This imposes a critical challenge: the need to con- nect, match, cleanse
+ and transform data received from different sources.
+ il 90% dei dati oggi è non strutturato.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Veracità IBM coined Veracity as the fourth V, which represents the unreliability
+ inherent in some sources of data.
+ For example, cus- tomer sentiments in social media are uncertain in nature,
+ since they entail human judgment.
+ Yet they contain valuable informa- tion.
+ Thus the need to deal with imprecise and uncertain data is another facet
+ of big data, which is addressed using tools and analytics developed for
+ management and mining of uncertain data.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Valore Oracle introduced Value as a defining attribute of big data.
+ Based on Oracle’s definition, big data are often characterized by relatively
+ “low value density”.
+ That is, the data received in the original form usually has a low value
+ relative to its volume.
+ How- ever, a high value can be obtained by analyzing large volumes of such
+ data.
+ Le infrastrutture di processamento dei big data possono essere molto costose
+ e le compagnie vogliono un grande ROI
+\end_layout
+
+\begin_layout Subsection
+Spazio metrico 
+\begin_inset Formula $C^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sebbene lo spazio metrico 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+ sia stato, ed è tuttora, avallato dal mondo della ricerca, questo non è
+ esente da criticità.
+ Se consideriamo infatti un dataset composto da 
+\begin_inset Formula $N$
+\end_inset
+
+ record, dove l'
+\begin_inset Formula $i$
+\end_inset
+
+-esimo record è una sequenza di 
+\begin_inset Formula $n$
+\end_inset
+
+ ripetizioni del numero 
+\begin_inset Formula $i\in[0,N]$
+\end_inset
+
+, crescente velocemente all'infinito, lo spazio metrico 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+ classificherebbe tale dataset come Big Data, nonostante tale considerazione
+ sia intuitivamente falsa.
+ Per ovviare a tale paradosso è stato introdotto lo spazio metrico 
+\begin_inset Formula $C^{3}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Suthaharan2013"
+
+\end_inset
+
+, le cui dimensioni sono la cardinalità, la continuità e la complessità.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Cardinalità Dimensione del dataset, espressa in numero di record.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Continuità Dimensione di un record e/o dimensione della sua rappresentazione
+ utile.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Complessità Domanda computazionale per il processamento del dato.
+ Variabilità della sua tipologia e della sua dimensione.
+\end_layout
+
+\begin_layout Section
+Case Studies
+\end_layout
+
+\begin_layout Standard
+Some companies really leverage big data to drive business performance.
+ They range from industry giants like Google, Amazon, Facebook, General
+ Electric, and Microsoft, to smaller businesses which have put big data
+ at the centre of their business model, like Kaggle and Cornerstone 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Marr2015"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

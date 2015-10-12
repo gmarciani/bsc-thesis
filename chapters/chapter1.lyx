@@ -3,18 +3,29 @@
 \begin_document
 \begin_header
 \textclass report
+\begin_preamble
+\numberwithin{equation}{chapter}
+
+\DeclareMathOperator{\domain}{domain}
+\DeclareMathOperator{\subjectto}{subject to}
+\end_preamble
 \use_default_options true
 \master ../thesis.lyx
+\begin_modules
+customHeadersFooters
+theorems-bytype
+theorems-chap-bytype
+\end_modules
 \maintain_unincluded_children false
 \language italian
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter lmtt
 \font_math auto
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -25,11 +36,20 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize default
+\paperfontsize 11
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -53,19 +73,19 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 4cm
+\leftmargin 3cm
 \topmargin 2.5cm
-\rightmargin 2.5cm
-\bottommargin 2.5cm
-\headsep 0.5cm
-\footskip 1cm
+\rightmargin 3cm
+\bottommargin 4cm
+\headsep 1cm
+\footskip 1.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
 \defskip medskip
 \quotes_language french
 \papercolumns 1
-\papersides 1
+\papersides 2
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
@@ -83,117 +103,45 @@ name "chap:Big-Data"
 
 \end_inset
 
-Big Data
+Big Data e Data Stream Processing
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum dolor sit amet
+L'essere umano ha sempre avuto l'attitudine ad acquisire e processare dati
+ per trasformarli in informazioni che portino ad un ampliamento della conoscenza.
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Heinze01"
+key "Anuradha2015"
 
 \end_inset
 
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum
-\begin_inset Foot
-status collapsed
 
-\begin_layout Plain Layout
-Questa è una footnote.
 \end_layout
 
-\end_inset
-
-.
+\begin_layout Itemize
+Big data is a collection of massive and complex data sets and data volume
+ that include the huge quantities of data, data management capabilities,
+ social media analytics and real-time data.
+ Big data analytics is the process of examining large amounts of data.
+ There exist large amounts of heterogeneous digital data.
+ Big data is about data volume and large data set's measured in terms of
+ terabytes or petabytes.
+ This phenomenon is called Bigdata.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-E=mc^{2}
-\end{equation}
-
-\end_inset
-
-
+Big data are worthless in a vacuum.
+ Its potential value is unlocked only when leveraged to drive decision making.
+ To enable such evidence-based decision making, organizations need efficient
+ processes to turn high volumes of fast-moving and diverse data into meaningful
+ insights.
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum dolor sit amet
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Hummer01"
-
-\end_inset
-
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Questa è un'altra footnote.
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\intop_{-\infty}^{\infty}\delta(x)\phi(x)\partial x=\phi(0)
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Lorem ipsum dolor sit amet
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lakshmanan01"
-
-\end_inset
-
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Questa è un'ultima footnote.
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
 wide false
 sideways false
 status open
@@ -201,253 +149,6 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="5">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Header
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Header
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Header
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Header
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Header
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-a
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-b
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-c
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-d
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-e
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-f
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-g
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-h
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-i
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-l
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-m
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-n
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-o
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-p
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-q
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-r
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-s
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-t
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-u
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-v
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
 
 \end_layout
 
@@ -455,15 +156,11 @@ v
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Questa è una tabella
+Google Trends: Big Data vs Big Data Industry
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -473,178 +170,40 @@ Questa è una tabella
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum dolor sit amet
+the term Big Data Analytics is defined as the process of analyzing and understan
+ding the characteristics of massive size datasets by extracting useful geometric
+ and statistical patterns.
+\end_layout
+
+\begin_layout Standard
+As the interest in big data increases, such difficulties will decrease or
+ will be solved in shorter time.
+\end_layout
+
+\begin_layout Standard
+Big data and data mining concepts are usually confused.
+ Frawley et.al.
+ define data mining as the discovery of the data which wasn’t known before
+ and which has the makings of being useful (Frawley et.al., 1992).
+ According to Dunham, it is detection of hidden data in the database (Dunham,
+ 2006).
+ Fayyad et.al.
+ describe it as the application of specific algorithms to extract patterns
+ from the dataset (Fayyad et.al., 1996).
+ As it is understood from the definitions; even though big data and data
+ mining have several steps in common, data mining doesn’t cover all properties
+ of big data
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Schneider01"
+key "Ozkose2015"
 
 \end_inset
 
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum.
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename /home/giacomo/Desktop/BScThesis/figures/TorVergata Logo.svg
-	lyxscale 25
-	scale 25
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Questa è una immagine vettoriale (.svg) prodotta con Inkscape
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Lorem ipsum dolor sit amet
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Nardelli01"
-
-\end_inset
-
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-while (sad) {
-\end_layout
-
-\begin_layout Plain Layout
-
- change();
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-happiness();
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Questo è un algoritmo
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Lorem ipsum dolor sit amet
-\begin_inset CommandInset citation
-LatexCommand cite
-key "IBM01"
-
-\end_inset
-
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum.
-\end_layout
-
-\begin_layout Standard
-Lorem ipsum dolor sit amet
-\begin_inset CommandInset citation
-LatexCommand cite
-key "IBM02"
-
-\end_inset
-
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
 wide false
 sideways false
 status collapsed
@@ -653,7 +212,101 @@ status collapsed
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Desktop/BScThesis/figures/graph.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/path-of-persuasion.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Copertina 
+\begin_inset Quotes fld
+\end_inset
+
+Path of Persuasion
+\begin_inset Quotes frd
+\end_inset
+
+, MIT Technology Review, Business Report 2015 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Origine dei Big Data
+\end_layout
+
+\begin_layout Standard
+The term coined by Roger Magoulas from O’Reilly media in 2005 (1), refers
+ to a wide range of large data sets almost impossible to manage and process
+ using traditional data management tools—due to their size, but also their
+ complexity.
+\end_layout
+
+\begin_layout Standard
+The extremities of big data go long way back, however it has lately been
+ understood that most of those former studies were big data studies.
+ For example in 1839 Matthew Fontaine Maury; the head of the Depot of Charts
+ and Instruments of the U.S.
+ Navy; collected data about the tides, winds and sea flows of the places
+ he visited.
+ There were numerous navigation books, maps and charts at the depot where
+ he was working.
+ The log books of the former voyages were also present there.
+ There were lots of records about wind, water and air conditions in the
+ log books.
+ Maury realized that he could achieve a new voyage chart as he combines
+ all of the data in hand.
+ He generated new routes by utilizing them.
+ He developed a standard form for U.S.
+ Army battleships to expand his study and he enhanced the accuracy of the
+ route information he had.
+ Then he included merchant ships into his study and utilized the log book
+ data of them.
+ As a result he passed on huge savings by cutting the durations across by
+ a third.
+ Since then he has been commemorated as “Pathfinder of the Seas”
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ozkose2015"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Big data was first conceptualized as a data set during 2012 US presidential
+ elections when the debate between President Barak Obama and Governor Mitt
+ Romney generated millions of tweets every hours.
+ The analysis or generation of this size was not thought of and the need
+ was felt to analyze the trends at a given point of time to study the likings
+ of the voter base.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/Google Trends - Big Data vs Big Data Industry.svg
 	lyxscale 50
 	scale 50
 
@@ -666,7 +319,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Questo è un grafo prodotto con Graphviz (svg)
+Google Trends: Big Data vs Big Data Industry
 \end_layout
 
 \end_inset
@@ -680,21 +333,2341 @@ Questo è un grafo prodotto con Graphviz (svg)
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum dolor sit amet
-\begin_inset CommandInset citation
-LatexCommand cite
-key "IBM03"
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
 
 \end_inset
 
-, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
- et dolore magna aliqua.
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
- ut aliquip ex ea commodo consequat.
- Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
- eu fugiat nulla pariatur.
- Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
- deserunt mollit anim id est laborum.
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Scopus: Big Data papers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Big Trends
+\end_layout
+
+\begin_layout Standard
+The number of images and videos captured by humans and uploading to social
+ media is stagger-ing.
+ Surveys show that images and videos make up about 80 percent of all corporate
+ and public unstructured big data [19].
+ It has been estimated that about 100 hours of video are uploaded to Youtube
+ every minute and average of 350 million photos are uploaded to Facebook
+ daily which as a result it is estimated that Facebook currently has more
+ than 250 billion photographs in its collection [13].
+ Nevertheless, dealing with such gigantic image collections are not restricted
+ to social networks.
+ Users in other domains such as healthcare, defence and astronomy are exploit-in
+g the opportunities offered by the ability to access and manipulate gigantic
+ image and video datasets efficiently.
+ Image management at this scale requires highly computationally efficient
+ approaches which provide accurate and visually meaningful results to be
+ able to search and browse of the files.
+ On the other hand, manual tagging for such large datasets is not feasible.
+ and is prone to errors due to user’s subjective opinions; therefore, having
+ an efficient, fast and accurate retrieval system is essential more than
+ ever.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Angelov2015"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some companies really leverage big data to drive business performance.
+ They range from industry giants like Google, Amazon, Facebook, General
+ Electric, and Microsoft, to smaller businesses which have put big data
+ at the centre of their business model, like Kaggle and Cornerstone 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Marr2015"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Indirizzi IP Unici
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Indirizzi IP unici.
+ Fonte: Akamai 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Akamai"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Velocità media delle connessioni
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Velocità media di connessione.
+ Fonte: Akamai 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Akamai"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diffusione Broadband
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diffusione Broadband 10Mbps.
+ Fonte: Akamai 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Akamai"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Produzione dati
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Produzione Worldwide dati in ExaBytes (EB).
+ Fonte: Cisco Systems 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bisogna resistere alla legittima diffidenza per i dati predittivi: le stime
+ elaborate finora sono infatti risultate più basse.
+ Lo stesso studio pubblicato dalla IDC nel 2007 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2007"
+
+\end_inset
+
+, prevedeva una produzione nel 2010 di 988 EB.
+ I dati attuali mostrano una produzione di 1227 EB, pari al 29.19% in più.
+\end_layout
+
+\begin_layout Itemize
+IDC estimates that by 2020, as much as 33% of the digital universe will
+ contain information that might be valuable if analyzed, compared with 25%
+ today 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2012"
+
+\end_inset
+
+.
+ companies that deliver the most creative and meaningful ways to display
+ the results of Big Data analytics will be coveted and sought after.
+\end_layout
+
+\begin_layout Paragraph
+Sicurezza
+\end_layout
+
+\begin_layout Standard
+In un mondo sempre più glocal, il potenziale informativo di un dato locale
+ assume sempre più un valore globale.
+ L'evoluzione delle tecniche crittografiche e la promulgazione di adeguate
+ normative governative riguardanti la information security faranno sempre
+ più la differenza nel potenziale diffusivo dei Big Data.
+ La quantità di dati che necessità di protezione cresce più velocemente
+ della produzione di dati stessa.
+ Se nel 2010 tale segmento ammontava al 30% del totale dei dati prodotti,
+ esso è destinato a raggiungere il 40% nel 2020.
+ Tali stime sono da riferirsi a mercati maturi: i mercati emergenti necessiteran
+no di una maggiore protezione 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Cloud Computing
+\end_layout
+
+\begin_layout Itemize
+the number of servers (virtual and physical) worldwide will grow by a factor
+ of 10 and the amount of information managed directly by enterprise datacenters
+ will grow by a factor of 14.
+ Meanwhile, the number of IT professionals in the world will grow by less
+ than a factor of 1.5.
+ IDC estimates that by 2020, nearly 40% of the information in the digital
+ universe will be "touched" by cloud computing — meaning that a byte will
+ be stored or processed in a cloud somewhere in its journey from originator
+ to disposal.
+ Perhaps as much as 15% will be maintained in a cloud 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2012"
+
+\end_inset
+
+.
+ 46.7% intrattenimento; 37.1% sorveglianza.
+\end_layout
+
+\begin_layout Section
+Metriche
+\end_layout
+
+\begin_layout Standard
+Il termine 
+\begin_inset Quotes fld
+\end_inset
+
+Big Data
+\begin_inset Quotes frd
+\end_inset
+
+ è spesso utilizzato in riferimento ad un fenomeno di proliferazione diffusa,
+ massiccia ed eterogenea di dati, che sfugge al controllo dei tradizionali
+ sistemi di elaborazione.
+ L'individuazione intuitiva di un fenomeno non deve però prescindere da
+ una sua rappresentazione quantitativa.
+ In letteratura sono state proposti degli spazi metrici che permettano di
+ distinguere un dato qualunque da un Big Data.
+ In questa sezione descriviamo gli spazi metrici attualmente accettati nel
+ mondo accademico ed industriale.
+\end_layout
+
+\begin_layout Standard
+NECESSITA' DI UNA METRICA BIG DATA
+\end_layout
+
+\begin_layout Standard
+how to prove (or show) that the network traffic data satisfy the Big Data
+ characteristics for Big Data classification.
+ This is the first important task to address in order to make the Big Data
+ analytics efficient and cost effective.
+ The early detection of the Big Data characteristics can provide a cost
+ effective strategy to many organizations to avoid unnecessary deployment
+ of Big Data technologies.
+ The data analytics on some data may not require Big Data techniques and
+ technologies; the current and well established techniques and technologies
+ maybe sufficient to handle the data storage and data processing.
+ Hence we need an early analysis and understanding of the data characteristics
+ for classification.
+\end_layout
+
+\begin_layout Standard
+The form of information determines strategies and connection weights required
+ for recognition, memory, and further processing.
+\end_layout
+
+\begin_layout Standard
+some point in time, when the volume, variety and velocity of the data are
+ increased, the current techniques and technologies may not be able to handle
+ storage and processing of the data.
+ At that point the data is defined as Big Data.
+\end_layout
+
+\begin_layout Subsection
+Spazio metrico 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gandomi2015"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Volume refers to the magnitude of data.
+ Big data sizes are reported in multiple terabytes and petabytes.
+ A survey conducted by IBM in mid-2012 revealed that just over half of the
+ 1144 respondents considered datasets over one terabyte to be big data (Schroeck
+, Shockley, Smart, Romero-Morales, & Tufano, 2012).
+ One terabyte stores as much data as would fit on 1500 CDs or 220 DVDs,
+ enough to store around 16 million Facebook photographs.
+ Beaver, Kumar, Li, Sobel, and Vajgel (2010) report that Facebook processes
+ up to one million photographs per second.
+ One petabyte equals 1024 terabytes.
+ Earlier estimates suggest that Facebook stored 260 billion photos using
+ storage space of over 20 petabytes.
+ Definitions of big data volumes are relative and vary by fac- tors, such
+ as time and the type of data.
+ What may be deemed big data today may not meet the threshold in the future
+ because storage capacities will increase, allowing even bigger data sets
+ to be captured.
+ In addition, the type of data, discussed under variety , defines what is
+ meant by ‘big’.
+ Two datasets of the same size may require different data management technologie
+s based on their type, e.g., tabular versus video data.
+ Thus, definitions of big data also depend upon the industry.
+ These considerations there- fore make it impractical to define a specific
+ threshold for big data volumes.
+ Le compagnie dispongono già di una grande quantità di dati, ma non hanno
+ la capacità di processarli.
+ La maggior attrattività della big data analytics è proprio la capacità
+ di inferire informazioni da una grande quantità di dati.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Velocità Dal 1999 al 2012 Wall Mart è passato da 1000 terabytes a 2.5 petabytes.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Variabilità SAS introduced Variability and Com- plexity as two additional
+ dimensions of big data.
+ Variability refers to the variation in the data flow rates.
+ Often, big data velocity is not consistent and has periodic peaks and troughs.
+ Complexity refers to the fact that big data are generated through a myriad
+ of sources.
+ This imposes a critical challenge: the need to con- nect, match, cleanse
+ and transform data received from different sources.
+ il 90% dei dati oggi è non strutturato.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Veracità IBM coined Veracity as the fourth V, which represents the unreliability
+ inherent in some sources of data.
+ For example, cus- tomer sentiments in social media are uncertain in nature,
+ since they entail human judgment.
+ Yet they contain valuable informa- tion.
+ Thus the need to deal with imprecise and uncertain data is another facet
+ of big data, which is addressed using tools and analytics developed for
+ management and mining of uncertain data.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Valore Oracle introduced Value as a defining attribute of big data.
+ Based on Oracle’s definition, big data are often characterized by relatively
+ “low value density”.
+ That is, the data received in the original form usually has a low value
+ relative to its volume.
+ How- ever, a high value can be obtained by analyzing large volumes of such
+ data.
+ Le infrastrutture di processamento dei big data possono essere molto costose
+ e le compagnie vogliono un grande ROI
+\end_layout
+
+\begin_layout Subsection
+Spazio metrico 
+\begin_inset Formula $C^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sebbene lo spazio metrico 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+ sia stato, ed è tuttora, avallato dal mondo della ricerca, questo non è
+ esente da criticità.
+ Se consideriamo infatti un dataset composto da 
+\begin_inset Formula $N$
+\end_inset
+
+ record, dove l'
+\begin_inset Formula $i$
+\end_inset
+
+-esimo record è una sequenza di 
+\begin_inset Formula $n$
+\end_inset
+
+ ripetizioni del numero 
+\begin_inset Formula $i\in[0,N]$
+\end_inset
+
+, crescente velocemente all'infinito, lo spazio metrico 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+ classificherebbe tale dataset come Big Data, nonostante tale considerazione
+ sia intuitivamente falsa.
+ Per ovviare a tale paradosso è stato introdotto lo spazio metrico 
+\begin_inset Formula $C^{3}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Suthaharan2013"
+
+\end_inset
+
+, le cui dimensioni sono la cardinalità, la continuità e la complessità.
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Cardinalità Dimensione del dataset, espressa in numero di record.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Continuità Dimensione di un record e/o dimensione della sua rappresentazione
+ utile.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Complessità Domanda computazionale per il processamento del dato.
+ Variabilità della sua tipologia e della sua dimensione.
+\end_layout
+
+\begin_layout Section
+Information Flow Processing
+\end_layout
+
+\begin_layout Standard
+A large number of distributed applications requires continuous and timely
+ processing of informa- tion as it flows from the periphery to the center
+ of the system.
+ Examples are intrusion detection systems, which analyze network traffic
+ in real-time to identify possible attacks; environmental monitoring application
+s, which process raw data coming from sensor networks to identify criti-
+ cal situations; or applications performing on-line analysis of stock prices
+ to identify trends and forecast future values.
+ Traditional DBMSs, which need to store and index data before processing
+ it, can hardly fulfill the requirements of timeliness coming from such
+ domains.
+ Accordingly, during the last decade different research communities developed
+ a number of tools, which we collectively call Informa- tion Flow Processing
+ (IFP) Systems, to support these scenarios.
+ They differ in their system architecture, data model, rule model, and rule
+ language.
+ In this paper we survey these systems to help researchers, often coming
+ from different backgrounds, in understanding how the various approaches
+ they adopt may complement each other.
+ In particular, we propose a general, unifying model to capture the different
+ aspects of an IFP system and use it to provide a complete and precise classific
+ation of the systems and mechanisms proposed so far.
+ Categories and Subject Descriptors: H.4 [Information Systems Applications]:
+ Miscellaneous; I.5 [Pattern Recognition]: Miscellaneous; H.2.4 [Database Managemen
+t]: Systems—Query Processing; A.1 [General]: Introductory and Survey General
+ Terms: Design, Documentation Additional Key Words and Phrases: Complex
+ Event Processing, Publish-Subscribe, Stream Pro- cessing 1.
+ INTRODUCTION An increasing number of distributed applications requires
+ processing continuously flowing data from geographically distributed sources
+ at unpredictable rate to obtain timely responses to complex queries.
+ Examples of such applications come from the most disparate fields: from
+ wireless sensor networks to financial tickers, from traffic management
+ to click-stream inspection.
+ In the following we collectively refer to these applications as the Information
+ Flow Processing (IFP) domain.
+ Likewise we call Information Flow Processing (IFP) engine a tool capable
+ of timely processing large amount of information as it flows from the periphera
+l to the center of the system.
+ The concepts of “timeliness” and “flow processing” are crucial to justify
+ the need of a new class of systems.
+ Indeed, traditional DBMSs: (i) require data to be (persistently) stored
+ and indexed before it could be processed, and (ii) process data only when
+ explicitly asked by the users, i.e., asynchronously with respect to its arrival.
+ Both aspects contrast with the requirements of IFP applications.
+ As an example, consider the need of detecting fire in a building by using
+ temperature ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY, Pages 1–70.2 · G.
+ Cugola and A.
+ Margara and smoke sensors.
+ On the one hand, a fire alert has to be notified as soon as the relevant
+ data becomes available.
+ On the other, there is no need to store sensor readings if they are not
+ relevant for fire detection, while the relevant data can be discarded as
+ soon as the fire is detected, since all the information they carry, like
+ the area where the fire occurred, if relevant for the application, should
+ be part of the fire alert.
+ These requirements led to the development of a number of systems specifically
+ designed to process information as a flow (or a set of flows) according
+ to a set of pre-deployed processing rules.
+ Despite having a common goal, these systems differ in a wide range of aspects,
+ including architecture, data models, rule languages, and processing mechanisms.
+ In part, this is due to the fact that they were the result of the research
+ efforts of different communities, each one bringing its own view of the
+ problem and its background for the definition of a solution, not to mention
+ its own vocabulary [Bass 2007].
+ After several years of research and development we can say that two models
+ emerged and are today competing: the data stream processing model [Babcock
+ et al.
+ 2002] and the complex event processing model [Luckham 2001].
+ As suggested by its own name, the data stream processing model describes
+ the IFP problem as processing streams of data coming from different sources
+ to pro- duce new data streams as an output, and views this problem as an
+ evolution of traditional data processing, as supported by DBMSs.
+ Accordingly, Data Stream Management Systems (DSMSs) have their roots in
+ DBMSs but present substan- tial differences.
+ While traditional DBMSs are designed to work on persistent data, where
+ updates are relatively infrequent, DSMSs are specialized in dealing with
+ transient data that is continuously updated.
+ Similarly, while DBMSs run queries just once to return a complete answer,
+ DSMSs execute standing queries, which run continuously and provide updated
+ answers as new data arrives.
+ Despite these differences, DSMSs resemble DBMSs, especially in the way
+ they process incoming data through a sequence of transformations based
+ on common SQL operators like selections, aggregates, joins, and in general
+ all the operators defined by relational algebra.
+ Conversely, the complex event processing model views flowing information
+ items as notifications of events happening in the external world, which
+ have to be filtered and combined to understand what is happening in terms
+ of higher-level events.
+ Accordingly, the focus of this model is on detecting occurrences of particular
+ pat- terns of (low-level) events that represent the higher-level events
+ whose occurrence has to be notified to the interested parties.
+ While the contributions to this model come from different communities,
+ including distributed information systems, busi- ness process automation,
+ control systems, network monitoring, sensor networks, and middleware in
+ general.
+ The origins of this approach may be traced back to the publish-subscribe
+ domain [Eugster et al.
+ 2003].
+ Indeed, while traditional publish- subscribe systems consider each event
+ separately from the others, and filter them (based on their topic or content)
+ to decide if they are relevant for subscribers, Com- plex Event Processing
+ (CEP) systems extend this functionality by increasing the expressive power
+ of the subscription language to consider complex event patterns that involve
+ the occurrence of multiple, related events.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 3 In this paper we claim that neither of the two aforementio
+ned models may entirely satisfy the needs of a full fledged IFP engine,
+ which requires features coming from both worlds.
+ Accordingly, we draw a general framework to compare the results coming
+ from the different communities, and use it to provide an extensive review
+ of the state of the art in the area, with the overall goal of reducing
+ the effort to merge the results produced so far.
+ In particular, Section 2 describes the IFP domain in more detail, provides
+ an initial description of the different technologies that have been developed
+ to support it, and explains the need for combining the best of different
+ worlds to fully support IFP applications.
+ Section 3 describes a framework to model and analyze the differ- ent aspects
+ that are relevant for an IFP engine from its functional architecture, to
+ its data and processing models, to the language it provides to express
+ how infor- mation has to be processed, to its run-time architecture.
+ We use this framework in Section 4 to describe and compare the state of
+ the art in the field, discussing the results of such classification in
+ Section 5.
+ Finally, Section 6 reviews related work, while Section 7 provides some
+ conclusive remarks and a list of open issues.
+ 2.
+ BACKGROUND AND MOTIVATION In this section we characterize the application
+ domain that we call Information Flow Processing and motivate why we introduce
+ a new term.
+ We describe the different technologies that have been proposed to support
+ such a domain and conclude by motivating our work.
+ 2.1 The IFP Domain With the term Information Flow Processing (IFP) we refer
+ to an application domain in which users need to collect information produced
+ by multiple, distributed sources, to process it in a timely way, in order
+ to extract new knowledge as soon as the relevant information is collected.
+ Examples of IFP applications come from the most disparate fields.
+ In environ- mental monitoring, users need to process data coming from sensors
+ deployed in the field to acquire information about the observed world,
+ detect anomalies, or predict disasters as soon as possible [Broda et al.
+ 2009; EventZero 2010a].
+ Simi- larly, several financial applications require a continuous analysis
+ of stocks to identify trends [Demers et al.
+ 2006].
+ Fraud detection requires continuous streams of credit card transactions
+ to be observed and inspected to prevent frauds [Schultz-Moeller et al.
+ 2009].
+ To promptly detect and possibly anticipate attacks to a corporate network,
+ intrusion detection systems have to analyze network traffic in real-time,
+ generating alerts when something unexpected happens [Debar and Wespi 2001].
+ RFID-based inventory management performs continuous analysis of RFID read-
+ ings to track valid paths of shipments and to capture irregularities [Wang
+ and Liu 2005].
+ Manufacturing control systems often require anomalies to be detected and
+ signalled by looking at the information that describe how the system behaves
+ [Lin and Zhou 1999; Park et al.
+ 2002].
+ Common to all these examples is the need of processing information as it
+ flows from the periphery to the center of the system without requiring
+ at least in prin- ciple the information to be persistently stored.
+ Once the flowing data has been ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.4 · G.
+ Cugola and A.
+ Margara processed, producing new information, it can be discarded, while
+ the newly pro- duced information leaves the system as its output 1 .
+ The broad spectrum of applications domains that require “information flow
+ pro- cessing” in the sense above, explains why several research communities
+ focused their attention to the IFP domain, each bringing its own expertise
+ and point of view, but also its own vocabulary.
+ The result is a typical “Tower of Babel syndrome”, which generates misunderstan
+dings among researchers that negatively impacts the spirit of collaboration
+ required to advance the state of the art [Etzion 2007].
+ This explains why in this paper we decided to adopt our own vocabulary,
+ moving away from terms like “event”, “data”, “stream”, or “cloud”, to use
+ more general (and unbiased) terms like “information” and “flow”.
+ In so doing, we neither have the ambition to propose a new standard terminology
+ nor we want to contribute to “raising the tower”.
+ Our only desire is to help the reader look at the field with her’s mind
+ clear from any bias toward the meaning of the various terms used.
+ This goal lead us to model an IFP system as in Figure 1.
+ The IFP engine is a tool that operates according to a set of processing
+ rules, which describe how incoming flows of information have to be processed
+ to timely produce new flows as outputs.
+ The entities that create the information flows entering the IFP engine
+ are called information sources.
+ Examples of such information are notifications about events happening in
+ the observed world or, more generally, any kind of data that reflects some
+ knowledge generated by the source.
+ Information items that are part of the same flow are neither necessarily
+ ordered nor of the same kind.
+ They are information chunks, with their semantics and relationships (including
+ total or partial ordering, in some cases).
+ The IFP engine takes such information items as input and processes them,
+ as soon as they are available, according to a set of processing rules,
+ which specify how to filter, combine, and aggregate different flows of
+ information, item by item, to generate new flows, which represent the output
+ of the engine.
+ We call information sinks the recipients of such output, while rule managers
+ are the entities in charge of adding or removing processing rules.
+ In some situations the same entity may play different roles.
+ For example, it is not uncommon for an information sink to submit the rules
+ that produce the information it needs.
+ While the definition above is general enough to capture every IFP system
+ we are interested in classifying, it encompasses some key points that character
+ize the domain and come directly from the requirements of the applications
+ we mentioned above.
+ First of all the need to perform real-time or quasi real-time processing
+ of incoming information to produce new knowledge (i.e., outgoing information).
+ Second, the need for an expressive language to describe how incoming informatio
+n has to be processed, with the ability of specifying complex relationships
+ among the information items that flow into the engine and are relevant
+ to sinks.
+ Third, the need for scalability to effectively cope with situations in
+ which a very large number of geographically distributed information sources
+ and sinks have to cooperate.
+ 1 Complex applications may also need to store data, e.g., for historical
+ analysis, but in general this is not the goal of the IFP subsystem.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 5 Information flows Information flows Information Flow
+ Processing Engine Sources Processing Rules Sinks Rule managers Fig.
+ 1.
+ 2.2 The high-level view of an IFP system IFP: One Name Different Technologies
+ As we mentioned, IFP has attracted the attention of researchers coming
+ from differ- ent fields.
+ The first contributions came from the database community in the form of
+ active database systems [McCarthy and Dayal 1989], which were introduced
+ to allow actions to automatically execute when given conditions arise.
+ Data Stream Management Systems (DSMSs) [Babcock et al.
+ 2002] pushed this idea further, to perform query processing in the presence
+ of continuous data streams.
+ In the same years that saw the development of DSMSs, researchers with different
+ backgrounds identified the need for developing systems that are capable
+ of pro- cessing not generic data, but event notifications, coming from
+ different sources, to identify interesting situations [Luckham 2001].
+ These systems are usually known as Complex Event Processing (CEP) Systems.
+ 2.2.1 Active Database Systems.
+ Traditional DBMSs are completely passive, as they present data only when
+ explicitly asked by users or applications: this form of interaction is
+ usually called Human-Active Database-Passive (HADP).
+ Using this interaction model it is not possible to ask the system to send
+ notifications when predefined situations are detected.
+ Active database systems have been developed to overcome this limitation:
+ they can be seen as an extension of classical DBMSs where the reactive
+ behavior can be moved, totally or in part, from the application layer into
+ the DBMS.
+ There are several tools classified as active database systems, with different
+ soft- ware architectures, functionality, and oriented toward different
+ application domains; still, it is possible to classify them on the basis
+ of their knowledge model and exe- cution model [Paton and D ́ıaz 1999].
+ The former describes the kind of active rules that can be expressed, while
+ the latter defines the system’s runtime behavior.
+ The knowledge model usually considers active rules as composed of three
+ parts: Event defines which sources can be considered as event generators:
+ some sys- tems only consider internal operators, like a tuple insertion
+ or update, ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.6 · Condition Action G.
+ Cugola and A.
+ Margara while others also allow external events, like those raised by clocks
+ or external sensors; specifies when an event must be taken into account;
+ for example we can be interested in some data only if it exceeds a predefined
+ limit; identifies the set of tasks that should be executed as a response
+ to an event detection: some systems only allow the modification of the
+ internal database, while others allow the application to be notified about
+ the identified situation.
+ To make this structure explicit, active rules are usually called Event-Conditio
+n- Action (ECA) rules.
+ The execution model defines how rules are processed at runtime.
+ Here, five phases have been identified: signaling triggering evaluation
+ scheduling execution i.e., i.e., i.e., i.e., i.e., detection of an event; association
+ of an event with the set of rules defined for it; evaluation of the conditional
+ part for each triggered rule; definition of an execution order between
+ selected rules; execution of all the actions associated to selected rules.
+ Active database systems are used in three contexts: as a database extension,
+ in closed database applications, and in open database applications.
+ As a database extension, active rules refer only to the internal state
+ of the database, e.g., to implement an automatic reaction to constraint violation
+s.
+ In closed database ap- plications, active rules can support the semantics
+ of the application but external sources of events are not allowed.
+ Finally, in open database applications events may come both from inside
+ the database and from external sourcesq.
+ This is the domain that is closer to IFP.
+ 2.2.2 Data Stream Management Systems.
+ Even when taking into account ex- ternal event sources, active database
+ systems, like traditional DBMSs, are built around a persistent storage
+ where all the relevant data is kept, and whose updates are relatively infrequen
+t.
+ This approach negatively impacts on their performance when the number of
+ rules expressed exceeds a certain threshold or when the arrival rate of
+ events (internal or external) is high.
+ For most applications we classified as IFP such limitations are unacceptable.
+ To overcome them, the database community developed a new class of systems
+ oriented toward processing large streams of data in a timely way: Data
+ Stream Management Systems (DSMSs).
+ DSMSs differ from conventional DBMSs in several ways: —differently from
+ tables, streams are usually unbounded; —no assumption can be made on data
+ arrival order; —size and time constraints make it difficult to store and
+ process data stream ele- ments after their arrival; one-time processing
+ is the typical mechanism used to deal with streams.
+ Users of a DSMS install standing (or continuous) queries, i.e., queries that
+ are deployed once and continue to produce results until removed.
+ Standing queries ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 7 can be executed periodically or continuously as new
+ stream items arrive.
+ They introduce a new interaction model w.r.t.
+ traditional DBMSs: users do not have to explicitly ask for updated information,
+ rather the system actively notifies it according to installed queries.
+ This form of interaction is usually called Database- Active Human-Passive
+ (DAHP) [Abadi et al.
+ 2003].
+ Stream 1 Stream 2 ...
+ Q Stream Q Q Store Stream n Throw Fig.
+ 2.
+ Scratch The typical model of a DSMS Several implementations were proposed
+ for DSMSs.
+ They differ in the semantics they associate to standing queries.
+ In particular, the answer to a query can be seen as an append only output
+ stream, or as an entry in a storage that is continuously modified as new
+ elements flow inside the processing stream.
+ Also, an answer can be either exact, if the system is supposed to have
+ enough memory to store all the required elements of input streams’ history,
+ or approximate, if computed on a portion of the required history [Tatbul
+ et al.
+ 2003; Babcock et al.
+ 2004].
+ In Figure 2 we report a general model for DSMSs, directly taken from [Babu
+ and Widom 2001].
+ The purpose of this model is to make several architectural choices and
+ their consequences explicit.
+ A DSMS is modeled as a set of standing queries Q, one or more input streams
+ and four possible outputs: the Stream is formed by all the elements of
+ the answer that are produced once and never changed; the Store is filled
+ with parts of the answer that may be changed or removed at a certain point
+ in the future.
+ The Stream and the Store together define the current answer to queries
+ Q; the Scratch represents the working memory of the system, i.e.
+ a repository where it is possible to store data that is not part of the
+ answer, but that may be useful to compute the answer; the Throw is a sort
+ of recycle bin, used to throw away unneeded tuples.
+ To the best of our knowledge, the model described above is the most complete
+ to define the behavior of DSMSs.
+ It explicitly shows how DSMSs alone cannot entirely cover the needs for
+ IFP: being an extension of database systems, DSMSs focus on producing query
+ answers, which are continuously updated to adapt to the constantly changing
+ contents of their input data.
+ Detection and notification of complex patterns of elements involving sequences
+ and ordering relations are usually out of the scope of these systems.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.8 · G.
+ Cugola and A.
+ Margara 2.2.3 Complex Event Processing Systems.
+ The limitation above originates from the same nature of DSMSs, which are
+ generic systems that leave to their clients the responsibility of associating
+ a semantics to the data being processed.
+ Complex Event Processing (CEP) Systems adopt the opposite approach.
+ As shown in Figure 3, they associate a precise semantics to the information
+ items being processed: they are notifications of events happened in the
+ external world and observed by sources.
+ The CEP engine is responsible for filtering and combining such notifications
+ to understand what is happening in terms of higher-level events (sometimes
+ also called composite events or situations) to be notified to sinks, which
+ act as event consumers.
+ Complex Event Processing Engine Event consumers (sinks) Event observers
+ (sources) Fig.
+ 3.
+ The high-level view of a CEP system Historically, the first event processing
+ engines [Rosenblum and Wolf 1997] focused on filtering incoming notifications
+ to extract only the relevant ones, thus support- ing an interaction style
+ known as publish-subscribe.
+ This is a message oriented interaction paradigm based on an indirect addressing
+ style.
+ Users express their interest in receiving some information by subscribing
+ to specific classes of events, while information sources publish events
+ without directly addressing the receiving parties.
+ These are dynamically chosen by the publish-subscribe engine based on the
+ received subscriptions.
+ Conventional publish-subscribe comes in two flavors: topic and content-based
+ [Eu- gster et al.
+ 2003].
+ Topic-based systems allow sinks to subscribe only to prede- fined topics.
+ Publishers choose the topic each event belongs to before publishing.
+ Content-based systems allow subscribers to use complex event filters to
+ specify the events they want to receive based on their content.
+ Several languages have been used to represent event content and subscription
+ filters: from simple attribute/value pairs [Carzaniga and Wolf 2003] to
+ complex XML schema [Altinel and Franklin 2000; Ashayer et al.
+ 2002].
+ Whatever language is used, subscriptions may refer to single events only
+ [Aguilera et al.
+ 1999] and cannot take into account the history of already received events
+ or relationships between events.
+ To this end, CEP systems can be seen as an extension to traditional publish-sub
+scribe, which allow subscribers to express their interest in composite events.
+ As their name suggests, these are events whose occurrence depends on the
+ occurrence of other events, like the fact that a fire is detected when
+ three different sensors, located in an area smaller than 100 m 2 , report
+ a temperature greater than 60 o C, within 10 sec.
+ one from the other.
+ CEP systems put great emphasis on the issue that represents the main limitation
+ of most DSMSs: the ability to detect complex patterns of incoming items,
+ involving sequencing and ordering relationships.
+ Indeed, the CEP model relies on the ability ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 9 to specify composite events through event patterns
+ that match incoming event notifications on the basis of their content and
+ on some ordering relationships on them.
+ This feature has also an impact on the architecture of CEP engines.
+ In fact, these tools often have to interact with a large number of distributed
+ and heterogeneous information sources and sinks, which observe the external
+ world and operate on it.
+ This is typical of most CEP scenarios, such as environmental monitoring,
+ busi- ness process automation, and control systems.
+ This also suggested, at least in the most advanced proposals, the adoption
+ of a distributed architecture for the CEP engine itself, organized (see
+ Figure 4) as a set of event brokers (or event processing agents [Etzion
+ and Niblett 2010]) connected in an overlay network (the event pro- cessing
+ network ), which implements specialized routing and forwarding functions,
+ with scalability as their main concern.
+ For the same reason, CEP systems research focused on optimizing parameters,
+ like bandwidth utilization and end-to-end la- tency, which are usually
+ ignored in DSMSs.
+ Event Processing Agents (brokers) Event observers (sources) Fig.
+ 4.
+ Event Processing Network Event consumers (sinks) CEP as a distributed service
+ CEP systems can thus be classified on the basis of the architecture of
+ the CEP engine (centralized, hierarchical, acyclic, peer-to-peer) [Carzaniga
+ et al.
+ 2001; Eu- gster et al.
+ 2003], the forwarding schemes adopted by brokers [Carzaniga and Wolf 2002],
+ and the way processing of event patterns is distributed among brokers [Amini
+ et al.
+ 2006; Pietzuch et al.
+ 2006].
+ 2.3 Our Motivation At the beginning of this section we introduced IFP as
+ a new application domain demanding timely processing information flows
+ according to their content and to the relationships among its constituents.
+ IFP engines have to filter, combine, and aggregate a huge amount of information
+ according to a given set of processing rules.
+ Moreover, they usually need to interact with a large number of heterogeneous
+ information sources and sinks, possibly dispersed over a wide geographical
+ area.
+ Users of such systems can be high-level applications, other processing
+ engines, or end-users, possibly in mobile scenarios.
+ For these reasons expressiveness, scalability, and flexibility are key
+ requirements in the IFP domain.
+ We have seen how IFP has been addressed by different communities, leading
+ to two classes of systems: active databases, lately subsumed by DSMSs on
+ one side, and CEP engines on the other.
+ DSMSs mainly focuses on flowing data and data transformations.
+ Only few approaches allow the easy capture of sequences of data involving
+ complex ordering relationships, not to mention taking into account ACM
+ Journal Name, Vol.
+ V, No.
+ N, Month 20YY.10 · G.
+ Cugola and A.
+ Margara the possibility to perform filtering, correlation, and aggregation
+ of data directly in- network, as streams flow from sources to sinks.
+ Finally, to the best of our knowledge, network dynamics and heterogeneity
+ of processing devices have never been studied in depth.
+ On the other hand, CEP engines, both those developed as extensions of publish-
+ subscribe middleware and those developed as totally new systems, define
+ a quite different model.
+ They focus on processing event notifications, with a special atten- tion
+ to their ordering relationships, to capture complex event patterns.
+ Moreover, they target the communication aspects involved in event processing,
+ such as the ability to adapt to different network topologies, as well as
+ to various processing devices, together with the ability of processing
+ information directly in-network, to distribute the load and reduce communicatio
+n cost.
+ As we claimed in Section 1, IFP should focus both on effective data processing,
+ including the ability to capture complex ordering relationships among data,
+ and on efficient event delivery, including the ability to process data
+ in a strongly distributed fashion.
+ To pursue these goals, researchers must be able to understand what has
+ been accomplished in the two areas, and how they complement each other
+ in order to combine them.
+ As we will see in Section 4, some of the most advanced proposals in both
+ areas go in this direction.
+ This work is a step in the same direction, as it provides an extensive
+ framework to model an IFP system and use it to classify and compare existing
+ systems.
+ 3.
+ A MODELLING FRAMEWORK FOR IFP SYSTEMS In this section we define a framework
+ to compare the different proposals in the area of IFP.
+ It includes several models that focus on the different aspects relevant
+ for an IFP system.
+ 3.1 Functional Model Starting from the high-level description of Figure
+ 1, we define an abstract archi- tecture that describes the main functional
+ components of an IFP engine.
+ This architecture brings two contributions: (i) it allows a precise description
+ of the func- tionalities offered by an IFP engine; (ii) it can be used
+ to describe the differences among the existing IFP engines, providing a
+ versatile tool for their comparison.
+ Knowledge Base Seq History Receiver Decider A A A Producer Forwarder Clock
+ Rules Fig.
+ 5.
+ The functional architecture of an IFP system As we said before, an IFP
+ engine takes flows of information coming from differ- ent sources as its
+ input, processes them, and produces other flows of information ACM Journal
+ Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 11 directed toward a set of sinks.
+ Processing rules describe how to filter, combine, and aggregate incoming
+ information to produce outgoing information.
+ This general be- havior can be decomposed in a set of elementary actions
+ performed by the different components shown in Figure 5.
+ Incoming information flows enter the Receiver, whose task is to manage
+ the chan- nels connecting the sources with the IFP engine.
+ It implements the transport proto- col adopted by the engine to move informatio
+n around the network.
+ It also acts as a demultiplexer, receiving incoming items from multiple
+ sources and sending them, one by one, to the next component in the IFP
+ architecture.
+ As shown in figure, the Receiver is also connected to the Clock : the element
+ of our architecture that is in charge of periodically creating special
+ information items that hold the current time.
+ Its role is to model those engines that allow periodic (as opposed to purely
+ reactive) processing of their inputs, as such, not all engines currently
+ available implement it.
+ After traversing the Receiver, the information items coming from the external
+ sources or generated by the Clock enter the main processing pipe, where
+ they are elaborated according to the processing rules currently stored
+ into the Rules store.
+ From a logical point of view we find important to consider rules as composed
+ by two parts: C → A, where C is the condition part, while A is the action
+ part.
+ The condition part specifies the constraints that have to be satisfied
+ by the information items entering the IFP engine to trigger the rule, while
+ the action part specifies what to do when the rule is triggered.
+ This distinction allows us to split information processing into two phases:
+ a detection phase and a production phase.
+ The former is realized by the Decider, which gets incoming information
+ from the Receiver, item by item, and looks at the condition part of rules
+ to find those enabled.
+ The action part of each triggered rule is then passed to the Producer for
+ execution.
+ Notice that the Decider may need to accumulate information items into a
+ local storage until the constraints of a rule are entirely satisfied.
+ As an example, consider a rule stating that a fire alarm has to be generated
+ (action part) when both smoke and high temperature are detected in the
+ same area (condition part).
+ When infor- mation about smoke reaches the Decider, the rule cannot fire,
+ yet, but the Decider has to record this information to trigger the rule
+ when high temperature is detected.
+ We model the presence of such “memory” through the History component inside
+ the Decider.
+ The detection phase ends by passing to the Producer an action A and a sequence
+ of information items Seq for each triggered rule, i.e., those items (accumulated
+ in the History by the Decider ) that actually triggered the rule.
+ The action A describes how the information items in Seq have to be manipulated
+ to produce the expected results of the rule.
+ The maximum allowed length of the sequence Seq is an important aspect to
+ characterize the expressiveness of the IFP engine.
+ There are engines where Seq is composed by a single item; in others the
+ maximum length of Seq can be determined by looking at the set of currently
+ deployed rules (we say that Seq is bounded ); finally, Seq is unbounded
+ when its maximum length depends on the information actually entering the
+ engine.
+ The Knowledge Base represents, from the perspective of the IFP engine,
+ a read- only memory that contains information used during the detection
+ and production ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.· 12 G.
+ Cugola and A.
+ Margara phases.
+ This component is not present in all IFP engines; usually, it is part of
+ those systems, developed by the database research community, which allow
+ accessing persistent storage (typically in the form of database tables)
+ during information processing 2 .
+ Finally, the Forwarder is the component in charge of delivering the information
+ items generated by the Producer to the expected sinks.
+ Like the Receiver, it im- plements the protocol to transport information
+ along the network up to the sinks.
+ In summary, an IFP engine operates as follows: each time a new item (including
+ those periodically produced by the Clock ) enters the engine through the
+ Receiver, a detection-production cycle is performed.
+ Such a cycle first (detection phase) evaluates all the rules currently
+ present in the Rules store to find those whose condition part is true.
+ Together with the newly arrived information, this first phase may also
+ use the information present in the Knowledge Base.
+ At the end of this phase we have a set of rules that have to be executed,
+ each coupled with a sequence of information items: those that triggered
+ the rule and that were accumulated by the Decider in the History.
+ The Producer takes this information and executes each triggered rule (i.e.,
+ its action part).
+ In executing rules, the Producer may combine the items that triggered the
+ rule (as received by the Decider ) together with the information present
+ in the Knowledge Base to produce new information items.
+ Usually, these new items are sent to sinks (through the Forwarder ), but
+ in some engines they can also be sent internally, to be processed again
+ (recursive processing).
+ This allows information to be processed in steps, by creating new knowledge
+ at each step, e.g., the composite event “fire alert”, generated when smoke
+ and high temperature are detected, can be further processed to notify a
+ “chemical alert” if the area of fire (included in the “fire alert” event)
+ is close to a chemical deposit.
+ Finally, some engines allow actions to change the rule set by adding new
+ rules or removing them.
+ 3.2 Processing Model Together with the last information item entering the
+ Decider, the set of deployed rules, and the information stored in the History
+ and in the Knowledge Base, three additional concepts concur at uniquely
+ determining the output of a single detection- production cycle: the selection,
+ consumption, and load shedding policies adopted by the system.
+ Selection policy.
+ In presence of situations in which a single rule R may fire more than once,
+ picking different items from the History, the selection policy [Zimmer
+ 1999] specifies if R has to fire once or more times, and which items are
+ actually selected and sent to the Producer.
+ As an example, consider the situation in Figure 6, which shows the information
+ items (modeled as capital letters) sent by the Receiver to the Decider
+ at different times, together with the information stored by the Decider
+ into the History.
+ Sup- pose that a single rule is present in the system, whose condition
+ part (the action part is not relevant here) is A ∧ B, meaning that something
+ has to be done each 2 Issues about initialization and management of the
+ Knowledge Base are outside the scope of an IFP engine, which simply uses
+ it as a pre-existing repository of stable information.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing t=0 Receiver t=1 Receiver t=2 Receiver Fig.
+ 6.
+ A · 13 { } Decider A {A} Decider B {AA} Decider ? Selection policy: an
+ example time both A and B are detected, in any order.
+ At t = 0 information A exits the Receiver starting a detection-production
+ cycle.
+ At this time the pattern A ∧ B is not detected, but the Decider has to
+ remember that A has been received since this can be relevant to recognize
+ the pattern in the future.
+ At t = 1 a new A exits the Receiver.
+ Again, the pattern cannot be detected, but the Decider stores the new A
+ into the History.
+ Things change at t = 2, when information B exits the Receiver triggering
+ a new detection-production cycle.
+ This time not only the condition part of the rule is satisfied, but it
+ is satisfied by two possible sets of items: one includes item B with the
+ first A received, the other includes the same B with the second A received.
+ Systems that adopt the multiple selection policy allow each rule to fire
+ more than once at each detection-production cycle.
+ This means that in the situation above the Decider would send two sequences
+ of items to the Producer, one including item B followed by the A received
+ at t = 0, the other including item B followed by the A received at t =
+ 1.
+ Conversely, systems that adopt a single selection policy allow rules to
+ fire at most once at each detection-production cycle.
+ In the same situation above the Decider of such systems would choose one
+ among the two As received, sending a single sequence to the Producer :
+ the sequence composed of item B followed by the chosen A.
+ It is worth noting that the single selection policy actually represents
+ a whole family of policies, depending on the items actually chosen among
+ all possible ones.
+ In our example, the Decider could select the first or the second A.
+ Finally, some systems offer a programmable policy, by including special
+ language constructs that enable users to decide, often rule by rule, if
+ they have to fire once or more than once at each detection-production cycle,
+ and in the former case, which elements have to be actually selected among
+ the different possible combinations.
+ Consumption policy.
+ Related with the selection policy is the consumption pol- icy [Zimmer 1999],
+ which specifies whether or not an information item selected in a given
+ detection-production cycle can be considered again in future processing
+ cycles.
+ As an example, consider the situation in Figure 7, where we assume again
+ that ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.14 · G.
+ Cugola and A.
+ Margara t=0 Receiver t=1 Receiver t=2 Receiver Fig.
+ 7.
+ A B B { } Decider {A} Decider {?} Decider {AB} ? Consumption policy: an
+ example the only rule deployed into the system has a condition part A ∧
+ B.
+ At time t = 0, an instance of information A enters the Decider ; at time
+ t = 1, the arrival of B satisfies the condition part of the rule, so item
+ A and item B are sent to the Producer.
+ At time t = 2, a new instance of B enters the system.
+ In such a situation, the consumption policy determines if pre-existing
+ items A and B have still to be taken into consideration to decide if rule
+ A ∧ B is satisfied.
+ The systems that adopt the zero consumption policy do not invalidate used
+ information items, which can trigger the same rule more than once.
+ Conversely, the systems that adopt the selected consumption policy “consume”
+ all the items once they have been selected by the Decider.
+ This means that an information item can be used at most once for each rule.
+ The zero consumption policy is the most widely adopted in DSMSs.
+ In fact, DSMSs’ usually introduce special language constructs (windows)
+ to limit the por- tion of an input stream from which elements can be selected
+ (i.e.
+ the valid portion of the History); however, if an item remains in a valid
+ window for different detection- production cycles, it can trigger the same
+ rule more than once.
+ Conversely, CEP systems may adopt either the zero or the selected policy
+ depending from the target application domain and from the processing algorithm
+ used.
+ As it happens for the selection policy, some systems offer a programmable
+ selection policy, by allowing users to explicitly state, rule by rule,
+ which selected items should be consumed after selection and which have
+ to remain valid for future use.
+ Load shedding.
+ Load shedding is a technique adopted by some IFP systems to deal with bursty
+ inputs.
+ It can be described as an automatic drop of information items when the
+ input rate becomes too high for the processing capabilities of the engine
+ [Tatbul et al.
+ 2003].
+ In our functional model we let the Decider be respon- sible for load shedding,
+ since some systems allow users to customize its behavior (i.e., deciding
+ when, how, and what to shed) directly within the rules.
+ Clearly, those systems that adopt a fixed and pre-determined load shedding
+ policy could, in principle, implement it into the Receiver.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing 3.3 · 15 Deployment Model Several IFP applications include
+ a large number of sources and sinks, possibly dispersed over a wide geographica
+l area, producing and consuming a large amount of information that the IFP
+ engine has to process in a timely manner.
+ Hence, an important aspect to consider is the deployment architecture of
+ the engine, i.e., how the components that implement the functional architecture
+ in Figure 5 can be distributed over multiple nodes to achieve scalability.
+ We distinguish between centralized vs.
+ distributed IFP engines, further differen- tiating the latter into clustered
+ vs.
+ networked.
+ Processors IFP engine Sources Sinks Rule managers Fig.
+ 8.
+ The deployment architecture of an IFP engine With reference to Figure 8,
+ we define as centralized an IFP engine in which the actual processing of
+ information flows coming from sources is realized by a single node in the
+ network, in a pure client-server architecture.
+ The IFP engine acts as the server, while sources, sinks, and rule managers
+ acts as clients.
+ To provide better scalability, a distributed IFP engine processes information
+ flows through a set of processors, each running on a different node of
+ a computer network, which collaborate to perform the actual processing
+ of information.
+ The nature of this network of processors allows to further classify distributed
+ IFP engines.
+ In a clustered engine scalability is pursued by sharing the effort of processin
+g incoming information flows among a cluster of strongly connected machines,
+ usually part of the same local area network.
+ In a clustered IFP engine, the links connecting processors among themselves
+ perform much better than the links connecting sources and sinks with the
+ cluster itself.
+ Furthermore, the processors are in the same administrative domain.
+ Several advanced DSMSs are clustered.
+ Conversely, a networked IFP engine focuses on minimizing network usage
+ by dis- persing processors over a wide area network, with the goal of processin
+g information as close as possible to the sources.
+ As a result, in a networked IFP engine the links among processors are similar
+ to the links connecting sources and sinks to the en- gine itself (usually,
+ the closer processor in the network is chosen to act as an entry point
+ to the IFP engine), while processors are widely distributed and usually
+ run in different administrative domains.
+ Some CEP systems adopt this architecture.
+ In summary, in their seek for better scalability, clustered and networked
+ engines focus on different aspects: the former on increasing the available
+ processing power by sharing the workload among a set of well connected
+ machines, the latter on minimizing bandwidth usage by processing information
+ as close as possible to the sources.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.16 3.4 · G.
+ Cugola and A.
+ Margara Interaction Model With the term interaction model we refer to the
+ characteristics of the interaction among the main components that form
+ an IFP application.
+ With reference to Figure 1, we distinguish among three different sub-models.
+ The observation model refers to the interaction between information sources
+ and the IFP engine.
+ The notification model refers to the interaction between the engine and
+ the sinks.
+ The forwarding model defines the characteristics of the interaction among
+ processors in the case of a distributed implementation of the engine.
+ We also distinguish between a push and a pull interaction style [Rosenblum
+ and Wolf 1997; Cugola et al.
+ 2001].
+ In a pull observation model, the IFP engine is the initiator of the interaction
+ to bring information from sources to the engine; otherwise we have a push
+ observation model.
+ Likewise, in a pull notification model, the sinks have the responsibility
+ of pulling information relevant for them from the engine; otherwise we
+ have a push notification model.
+ Finally, the forwarding model is pull if each processor is reponsible for
+ pulling information from the processor upstream in the chain from sources
+ to sinks; we have a push model otherwise.
+ While the push style is the most common in the observation model, notification
+ model, and especially in the forwarding model, a few systems exist, which
+ prefer a pull model or supports both.
+ We survey them in Section 4.
+ 3.5 Data Model The various IFP systems available today differ in how they
+ represent single infor- mation items flowing from sources to sinks, and
+ in how they organize them in flows.
+ We collectively refer to both issues with the term data model.
+ As we mentioned in Section 2, one of the aspects that distinguishes DSMSs
+ from CEP systems is that the former manipulate generic data items, while
+ the latter manipulates event notifications.
+ We refer to this aspect as the nature of items.
+ It represent a key issue for an IFP system as it impacts several other
+ aspects, like the rule language.
+ We come back to this issue later.
+ A further distinction among IFP systems, orthogonal with respect to the
+ nature of the information items they process, is the way such information
+ items are actually represented, i.e., their format.
+ The main formats adopted by currently available IFP systems are tuples,
+ either typed or untyped; records, organized as sets of key-value pairs;
+ objects, as in object-oriented languages or databases; or XML documents.
+ A final aspect regarding information items is the ability of an IFP system
+ to deal with uncertainty, modeling and representing it explicitly when
+ required [Liu and Jacobsen 2004; Wasserkrug et al.
+ 2008].
+ In many IFP scenarios, in fact, information received from sources has an
+ associated degree of uncertainty.
+ As an example, if sources were only able to provide rounded data [Wasserkrug
+ et al.
+ 2008], the system could associate such data with a level of uncertainty
+ instead of accepting it as a precise information.
+ Besides single information items, we classify IFP systems based on the
+ nature of information flows, distinguishing between systems whose engine
+ processes homoge- neous information flows and those that may also manage
+ heterogeneous flows.
+ In the first case, all the information items in the same flow have the
+ same format, e.g., if the engine organizes information items as tuples, all
+ the items belonging to ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 17 the same flow must have the same number of fields.
+ Most DSMSs belong to this class.
+ They view information flows as typed data streams, which they manage as
+ transient, unbounded database tables, to be filtered and transformed while
+ they get filled by data flowing into the system.
+ In the other case, engines allow different types of information items in
+ the same flow; e.g., one record with four fields, followed by one with seven,
+ and so on.
+ Most CEP engines belong to this class.
+ Information flows are viewed as heterogeneous channels connecting sources
+ with the CEP engine.
+ Each channel may transport items (i.e., events) of different types.
+ 3.6 Time Model With the term time model we refer to the relationship between
+ the information items flowing into the IFP engine and the passing of time.
+ More precisely, we refer to the ability of the IFP system of associating
+ some kind of happened-before relationship [Lamport 1978] to information
+ items.
+ As we mentioned in Section 2, this issue is very relevant as a whole class
+ of IFP systems, namely CEP engines, is characterized by the of event notificati
+ons, a special kind of information strongly related with time.
+ Moreover, the availability of a native concept of ordering among items
+ has often an impact on the operators offered by the rule language.
+ As an example, without a total ordering among items it is not possible
+ to define sequences and all the operators meant to operate on sequences.
+ Focusing on this aspect we distinguish four cases.
+ First of all there are systems that do not consider this issue as prominent.
+ Several DSMSs, in fact, do not associate any special meaning to time.
+ Data flows into the engine within streams but timestamps (when present)
+ are used mainly to order items at the frontier of the engine (i.e., within
+ the receiver ), and they are lost during processing.
+ The only language construct based on time, when present, is the windowing
+ operator (see Section 3.8), which allows one to select the set of items
+ received in a given time-span.
+ After this step the ordering is lost and timestamps are not available for
+ further processing.
+ In particular, the ordering (and timestamps) of the output stream are conceptua
+lly separate from the ordering (and timestamps) of the input streams.
+ In this case we say that the time model is stream-only.
+ At the opposite of the spectrum are those systems, like most CEP engines,
+ which associate each item with a timestamp that represent an absolute time,
+ usually interpreted as the time of occurrence of the related event.
+ Hence, timestamps define a total ordering among items.
+ In such systems timestamps are fully exposed to the rule language, which
+ usually provide advanced constructs based on them, like sequences (see
+ Section 3.8).
+ Notice how such kind of timestamps can be given by sources when the event
+ is observed, or by the IFP engine as it receives each item.
+ In the former case, a buffering mechanism is required to cope with out-of-order
+ arrivals [Babcock et al.
+ 2002].
+ Another case is that of systems that associate each item with some kind
+ of label, which, while not representing an absolute instant in time, can
+ define a partial ordering among items, usually reflecting some kind of
+ causal relationship, i.e., the fact that the occurrence of an event was caused
+ by the occurrence of another event.
+ Again, what is important for our model is the fact that such labels and
+ the ordering ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.18 · G.
+ Cugola and A.
+ Margara they impose are fully available to the rule language.
+ In this case we say that the time model is causal.
+ Finally, there is the case of systems that associate items with an interval,
+ i.e., two timestamps taken from a global time, usually representing: the
+ time when the related event started, the time when it ended.
+ In this case, depending on the semantics associated with intervals, a total
+ or a partial ordering among items can be defined [Galton and Augusto 2002;
+ Adaikkalavan and Chakravarthy 2006; White et al.
+ 2007].
+ 3.7 Rule Model Rules are much more complex entities than data.
+ Looking at existing systems we can find many different approaches to represent
+ rules, which depend on the adopted rule language.
+ However, we can roughly classify them in two macro classes: transforming
+ rules and detecting rules.
+ Transforming rules define an execution plan composed of primitive operators
+ con- nected to each other in a graph.
+ Each operator takes several flows of information items as inputs and produces
+ new items, which can be forwarded to other opera- tors or directly sent
+ out to sinks.
+ The execution plan can be either user-defined or compiled.
+ In the first case, rule managers are allowed to define the exact flow of
+ operators to be executed; in the second case, they write their rules in
+ a high-level language, which the system compiles into an execution plan.
+ The latter approach is adopted by a wide number of DSMSs, which express
+ rules using SQL-like state- ments.
+ As a final remark we notice that transforming rules are often used with
+ homo- geneous information flows, so that the definition of an execution
+ plan can take advantage of the predefined structure of input and output
+ flows.
+ Detecting rules are those that present an explicit distinction between
+ a condition and an action part.
+ Usually, the former is represented by a logical predicate that captures
+ patterns of interest in the sequence of information items, while the latter
+ uses ad-hoc constructs to define how relevant information has to be processed
+ and aggregated to produce new information.
+ Examples of detecting rules can be found in many CEP systems, where they
+ are adopted to specify how new events originate from the detection of others.
+ Other examples can be found in active databases, which often use detecting
+ rules to capture undesired sequences of operations within a transaction
+ (the condition), in order to output a roll-back command (the action) as
+ soon as the sequence is detected.
+ The final issue we address in our rule model is the ability to deal with
+ uncer- tainty [Liu and Jacobsen 2004; Wasserkrug et al.
+ 2008; O’Keeffe and Bacon 2010].
+ In particular, some systems allow to distinguish between deterministic
+ and proba- bilistic rules.
+ The former define their outputs deterministically from their inputs, while
+ the latter allow a degree of uncertainty (or a confidence) to be associated
+ with the outputs.
+ Notice that the issue is only partially related with the ability of managing
+ uncertain data (see Section 3.5).
+ Indeed, a rule could introduce a certain degree of uncertainty even in
+ presence of definite and precise inputs.
+ As an exam- ple, one could say that there is a good probability of fire
+ if a temperature higher than 70 o C is detected.
+ The input information is precise, but the rule introduce a certain degree
+ of uncertainty of knowledge (other situations could explain the ACM Journal
+ Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 19 raising of temperature).
+ 3.8 Language Model The rule model described in previous section provides
+ a first characterization of the languages used to specify processing rules
+ in currently available IFP systems.
+ Here we give a more precise and detailed description of such languages:
+ in particular, we first define the general classes into which all existing
+ languages can be divided and then we provide an overview of all the operators
+ we encountered during the analysis of existing systems.
+ For each operator we specify if and how it can be defined inside the aforementi
+oned classes.
+ 3.8.1 Language Type.
+ Following the classification introduced into the rule model, the languages
+ used in existing IFP systems can be divided into the following two classes:
+ —Transforming languages define transforming rules, specifying one or more
+ oper- ations that process the input flows by filtering, joining, and aggregatin
+g received information to produce one or more output flows.
+ Transforming languages are the most commonly used in DSMSs.
+ They can be further divided into two classes: —Declarative languages express
+ processing rules in a declarative way, i.e.
+ by specifying the expected results of the computation rather than the desired
+ ex- ecution flow.
+ These languages are usually derived from relational languages, in particular
+ relational algebra and SQL [Eisenberg and Melton 1999], which they extend
+ with additional ad-hoc operators to better support flowing information.
+ —Imperative languages define rules in an imperative way, by letting the
+ user specify a plan of primitive operators, which the information flows
+ have to fol- low.
+ Each primitive operator defines a transformation over its input.
+ Usually, systems that adopt imperative languages offer visual tools to
+ define rules.
+ —Detecting, or pattern-based languages define detecting rules by separately
+ spec- ifying the firing conditions and the actions to be taken when such
+ conditions hold.
+ Conditions are usually defined as patterns that select matching portions
+ of the input flows using logical operators, content and timing constraints;
+ actions define how the selected items have to be combined to produce new
+ information.
+ This type of languages is common in CEP systems, which aim to detect relevant
+ information items before starting their processing.
+ It is worth mentioning that existing systems sometime allow users to express
+ rules using more than one paradigm.
+ For example, many commercial systems offer both a declarative language
+ for rule creation, and a graphical tool for connecting defined rules in
+ an imperative way.
+ Moreover, some existing declarative languages embed simple operators for
+ pattern detection, blurring the distinction between transform- ing and
+ detecting languages.
+ As a representative example for declarative languages, let us consider
+ CQL [Arasu et al.
+ 2006], created within the Stream project [Arasu et al.
+ 2003] and currently adopted by Oracle [Oracle 2010].
+ CQL defines three classes of operators: relation- to-relation operators
+ are similar to the standard SQL operators and define queries over database
+ tables; stream-to-relation operators are used to build database tables
+ selecting portions of a given information flow, while relation-to-stream
+ operators ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.20 · G.
+ Cugola and A.
+ Margara create flows starting from queries on fixed tables.
+ Stream-to-stream operators are not explicitly defined, as they can be expressed
+ using the existing ones.
+ Here is an example of a CQL rule: Select IStream(*) (1) From F1 [Rows 5],
+ F2 [Rows 10] Where F1.A = F2.A This rule isolates the last 5 elements of
+ flow F1 and the last 10 elements of flow F2 (using the stream-to-relation
+ operator [Rows n]), then combines all elements having a common attribute
+ A (using the relation-to-relation operator Where) and produces a new flow
+ with the created items (using the relation-to-stream operator IStream).
+ Imperative languages are well represented by Aurora’s Stream Query Algebra
+ (SQuAl), which adopts a graphical representation called boxes and arrows
+ [Abadi et al.
+ 2003].
+ In Figure 2 we show how it is possible to express a rule similar to the
+ one we introduced in Example 1 using Aurora’s language.
+ The tumble window operator selects portions of the input stream according
+ to given constrains, while join merges elements having the same value for
+ attribute A.
+ S1 Tumble Window (2) Join (S1.A = S2.A) S2 Tumble Window Detecting languages
+ can be exemplified by the composite subscription language of Padres [Li
+ and Jacobsen 2005].
+ Example 3 shows a rule expressed in such language.
+ (3) A(X>0) & (B(Y=10); [timespan:5] C(Z<5)) [within:15] A, B, and C represent
+ item types or topics, while X, Y, and Z are inner fields of items.
+ After the topic of an information item has been determined, filters on
+ its content are applied as in content-based publish-subscribe systems.
+ The rule of Example 3 fires when an item of type A having an attribute
+ X>0 enters the systems and also an item of type B with Y=10 is detected,
+ followed (in a time interval of 5 to 15 sec.) by an item of type C with
+ Z<5.
+ Like other systems conceived as an evolution of traditional publish-subscribe
+ middleware, Padres defines only the detection part of rules, the default
+ and implicit action being that of forwarding a notification of the detected
+ pattern to proper destinations.
+ However, more expres- sive pattern languages exist, which allow complex
+ transformations to be performed on selected data.
+ In the following, whenever possible, we use the three languages presented
+ above to build the examples we need.
+ 3.8.2 Available Operators.
+ We now provide a complete list of all the operators that we found during
+ the analysis of existing IFP systems.
+ Some operators are typical of only one of the classes defined above, while
+ others cross the boundaries of ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 21 classes.
+ In the following we highlight, whenever possible, the relationship between
+ each operator and the language types in which it may appear.
+ In general there is no direct mapping between available operators and language
+ expressiveness: usually it is possible to express the same rule combining
+ different sets of operators.
+ Whenever possible we will show such equivalence, especially if it involves
+ operators provided by different classes of languages.
+ Single-Item Operators.
+ A first kind of operators provided by existing IFP sys- tems are single-item
+ operators, i.e.
+ those processing information items one by one.
+ Two classes of single-item operators exist: —Selection operators filter
+ items according to their content, discarding elements that do not satisfy
+ a given constraint.
+ As an example, they can be used to keep only the information items that
+ contain temperature readings whose value is greater than 20 o C.
+ —Elaboration operators transform information items.
+ As an example, they can be used to change a temperature reading, converting
+ from Celsius to Fahrenheit.
+ Among elaboration operators, it is worth mentioning those coming from relationa
+l algebra, and in particular: —Projection extracts only part of the information
+ contained in the considered item.
+ As an example, it is used to process items containing data about a person
+ in order to extract only the name.
+ —Renaming changes the name of a field in languages based on records.
+ Single-item operators are always present; declarative languages usually
+ inherit selection, projection, and renaming from relational algebra, while
+ imperative lan- guages offer primitive operators both for selection and
+ for some kind of elaboration.
+ In pattern-based languages selection operators are used to select those
+ items that should be part of a complex pattern.
+ Notably, they are the only operators avail- able in publish-subscribe systems
+ to choose items to be forwarded to sinks.
+ When allowed, elaborations can be expressed inside the action part of rules,
+ where it is possible to define how selected items have to be processed.
+ Logic Operators.
+ Logic operators are used to define rules that combine the detection of
+ several information items.
+ They differ from sequences (see below) in that they are order independent,
+ i.e., they define patterns that rely only on the detection (or non detection)
+ of information items and not on some specific ordering relation holding
+ among them.
+ —A conjunction of items I 1 , I 2 , ..
+ I n is satisfied when all the items I 1 , I 2 , ..
+ I n have been detected.
+ —A disjunction of items I 1 , I 2 , ..
+ I n is satisfied when at least one of the information items I 1 , I 2 ,
+ ..
+ I n has been detected.
+ —A repetition of an information item I of degree hm, ni is satisfied when
+ I is detected at least m times and not more than n times (it is a special
+ form of conjunction).
+ —A negation of an information item I is satisfied when I is not detected.
+ Usually it is possible to combine such operators with each others or with
+ other operators to form more complex patterns.
+ For example, it is possible to specify ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.· 22 G.
+ Cugola and A.
+ Margara disjunctions of conjunctions of items, or to combine logic operators
+ and single-item operators to dictate constraints both on the content of
+ each element and on the relationships among them.
+ The use of logic operators allows the definition of expressions whose value
+ cannot be verified in a finite amount of time, unless explicit bounds are
+ defined for them.
+ This is the case of repetition and negation, which require elements to
+ remain un- detected in order to be satisfied.
+ For this reason existing systems combine these operators with other linguistic
+ constructs known as windows (see below).
+ Logic operators are always present in pattern-based languages, where they
+ rep- resent the typical way to combine information items.
+ Example 4 shows how a disjunction of two conjunctions can be expressed
+ using the language of Padres (A, B, C, and D are simple selections).
+ (4) (A & B) || (C & D) On the contrary, declarative and imperative languages
+ do not provide logic opera- tors explicitly; however they usually allow
+ conjunctions, disjunctions, and negations to be expressed using rules that
+ transform input flows.
+ Example 5 shows how a con- junction can be expressed in CQL: the From clause
+ specifies that we are interested in considering data from both flows F1
+ and F2.
+ (5) Select IStream(F1.A, F2.B) From F1 [Rows 50], F2 [Rows 50] Sequences.
+ Similarly to logic operators, sequences are used to capture the arrival
+ of a set of information items, but they take into consideration the order
+ of arrival.
+ More specifically, a sequence defines an ordered set of information items
+ I 1 , I 2 , ..
+ I n , which is satisfied when all the elements I 1 , I 2 , ..
+ I n have been detected in the specified order (see Section 3.6).
+ The sequence operator is present in many pattern-based languages, while
+ trans- forming languages usually do not provide it explicitly.
+ Still, in such languages it is sometimes possible (albeit less natural)
+ to mimic sequences, for example when the ordering relation is based on
+ a timestamp field explicitly added to information items, as in the following
+ example: 3 Select IStream(F1.A, F2.B) (6) From F1 [Rows 50], F2 [Rows 50]
+ Where F1.timestamp < F2.timestamp Iterations.
+ Iterations express possibly unbounded sequences of information items satisfying
+ a given iterating condition.
+ Like sequences, iterations rely on the ordering of items.
+ However, they do not define the set of items to be captured explicitly,
+ but rather implicitly using the iterating condition.
+ 3 CQL adopts a stream-based time model.
+ It associates implicit timestamps to information items and use them in
+ time-based windows, but they cannot be explicitly addressed within the
+ language; consequently they are not suitable to define sequences.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 23 PATTERN SEQ(Alert a, Shipment+ b[ ]) WHERE skip till
+ any match(a, b[ ]) { a.type = ’contaminated’ and (7) b[1].from = a.site and
+ b[i].from = b[i-1].to } WITHIN 3 hours Example 7 shows an iteration written
+ in the Sase+ language [Gyllstrom et al.
+ 2008].
+ The rule detects contamination in a food supply chain: it captures an alert
+ for a contaminated site (item a) and reports all possible series of infected
+ shipments (items b[i]).
+ Iteration is expressed using the + operator (usually called Kleene plus
+ [Agrawal et al.
+ 2008]), defining sequences of one or more Shipment information items.
+ The iterating condition b[i].f rom = b[i − 1].to specifies the collocation
+ condition between each shipment and the preceding one.
+ Shipment information items need not to be contiguous within the input flow;
+ intermediate items are simply discarded (skip till any match).
+ The length of captured sequences is not known a priori but it depends on
+ the actual number of shipments from site to site.
+ To ensure the termination of pattern detection, a time bound is expressed,
+ using the WITHIN operator (see Windows below).
+ While most pattern-based languages include a sequence operator, it is less
+ com- mon to find iterations.
+ In addition, like sequences, iterations are generally not provided in transform
+ing languages.
+ However, some work investigated the possibil- ity to include sequences
+ and iterations in declarative languages (e.g., [Sadri et al.
+ 2004]).
+ These efforts usually result in embedding pattern detection into traditional
+ declarative languages.
+ As a final remark, iterations are strictly related with the possibility
+ for an IFP system to read its own output and to use it for recursive processing.
+ In fact, if a system provides both a sequence operator and recursive processing
+, it can mimic iterations through recursive rules.
+ Windows.
+ As mentioned before, it is often necessary to define which portions of
+ the input flows have to be considered during the execution of operators.
+ For this reason almost all the languages used in existing systems define
+ windows.
+ Windows cannot be properly considered as operators; rather, they are language
+ constructs that can be applied to operators to limit the scope of their
+ action.
+ To be more precise, we can observe that operators can be divided into two
+ classes: blocking operators, which need to read the whole input flows before
+ producing re- sults, and non-blocking operators, which can successfully
+ return their results as items enter the system [Babcock et al.
+ 2002].
+ An example of a blocking operator is negation, which has to process the
+ entire flow before deciding that the searched item is not present.
+ The same happens to repetitions when an upper bound on the number of items
+ to consider is provided.
+ On the contrary, conjunctions and disjunctions are non-blocking operators,
+ as they can stop parsing their inputs as soon as they find the searched
+ items.
+ In IFP systems information flows are, by nature, unbounded; consequently,
+ it is not possible to evaluate blocking operators as they are.
+ In this context, windows become the key construct to enable blocking operators
+ by limiting their scope to (finite) portions of the input flows.
+ On the ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.24 · G.
+ Cugola and A.
+ Margara other hand, windows are also extensively used with non-blocking
+ operators, as a powerful tool to impose a constraint over the set of items
+ that they have to consider.
+ Existing systems define several types of windows.
+ First of all they can be classified ̈ into logical (or time-based ) and
+ physical (or count-based ) [Golab and Ozsu 2003].
+ In the former case, bounds are defined as a function of time: for example
+ to force an operation to be computed only on the elements that arrived
+ during the last five minutes.
+ In the latter case, bounds depend on the number of items included into
+ the window: for example to limit the scope of an operator to the last 10
+ elements arrived.
+ An orthogonal way to classify windows considers the way their bounds move,
+ ̈ resulting in the following classes [Carney et al.
+ 2002; Golab and Ozsu 2003]: —Fixed windows do not move.
+ As an example, they could be used to process the items received between
+ 1/1/2010 and 31/1/2010.
+ —Landmark windows have a fixed lower bound, while the upper bound advances
+ every time a new information item enters the system.
+ As an example, they could be used to process the items received since 1/1/2010.
+ —Sliding windows are the most common type of windows.
+ They have a fixed size, i.e., both lower and upper bounds advance when new
+ items enter the system.
+ As an example, we could use a sliding window to process the last ten elements
+ received.
+ —Pane and tumble windows are variants of sliding windows in which both
+ the lower and the upper bounds move by k elements, as k elements enter
+ the system.
+ The difference between pane and tumble windows is that the former have
+ a size greater than k, while the latter have a size smaller than (or equal
+ to) k.
+ In practice, a tumble window assures that every time the window is moved
+ all contained elements change; so each element of the input flow is processed
+ at most once.
+ The same is not true for pane windows.
+ As an example, consider the problem of calculating the average temperature
+ in the last week.
+ If we want such a measure every day at noon we have to use a pane window,
+ if we want it every Sunday at noon we have to use a tumble window.
+ Example 8 shows a CQL rule that uses a count-based, sliding window over
+ the flow F1 to count how many among the last 50 items received has A >
+ 0; results are streamed using the IStream operator.
+ Example 9 does the same but considering the items received in the last
+ minute.
+ Select IStream(Count(*)) (8) From F1 [Rows 50] Where F1.A > 0 Select IStream(Cou
+nt(*)) (9) From F1 [Range 1 Minute] Where F1.A > 0 Interestingly there exist
+ languages that allow users to define and use their own windows.
+ The most notable case is ESL [Bai et al.
+ 2006], which provides user defined aggregates to allow users to freely
+ process input flows.
+ In so doing, users are allowed ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 25 to explicitly manage the part of the flow they want
+ to consider, i.e., the window.
+ As an example, consider the ESL rule in Example 10: it calculates the smallest
+ positive value received and delivers it as its output every time a new
+ element arrives.
+ The window is accessible to the user as a relational table, called inwindow,
+ whose inner format can be specified during the aggregate definition; it
+ is automatically filled by the system when new elements arrive.
+ The user may specify actions to be taken at different times using three
+ clauses: the INITIATE clause defines special actions to be executed only
+ when the first information item is received; the ITERATE clause is executed
+ every time a new element enters the system, while the EXPIRE clause is
+ executed every time an information item is removed from the window.
+ In our example the INITIATE and EXPIRE clauses are empty, while the ITERATE
+ clause removes every incoming element having a negative value, and immediately
+ returns the smallest value (using the INSERT INTO RETURN statement).
+ It is worth noting that the aggregate defined in Example 10 can be applied
+ to virtually all kinds of windows, which are then modified during execution
+ in order to contain only positive values.
+ WINDOW AGGREGATE positive min(Next Real): Real { TABLE inwindow(wnext real);
+ INITIALIZE : { } ITERATE : { DELETE FROM inwindow WHERE wnext < 0 (10)
+ INSERT INTO RETURN SELECT min(wnext) FROM inwindow } EXPIRE : { } } Generally,
+ windows are available in declarative and imperative languages.
+ Con- versely, only a few pattern-based languages provide windowing constructs.
+ Some of them, in fact, simply do not include blocking operators, while
+ others include explicit bounds as part of blocking operators to make them
+ unblocking (we can say that such operators “embed a window”).
+ For example, Padres does not provide the negation and it does not allow
+ repetitions to include an upper bound.
+ Similarly, CEDR [Barga et al.
+ 2007] can express negation through the UNLESS operator, shown in Example
+ 11.
+ The pattern is satisfied if A is not followed by B within 12 hours.
+ Notice how the operator itself requires explicit timing constraints to
+ become unblocking.
+ EVENT Test-Rule (11) WHEN UNLESS(A, B, 12 hours) WHERE A.a < B.b Flow Management
+ Operators.
+ Declarative and imperative languages require ad-hoc operators to merge,
+ split, organize, and process flows of information.
+ They include: ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.26 · G.
+ Cugola and A.
+ Margara —The Join operator, used to merge two flows of information as in
+ traditional DBMS.
+ Being a blocking operator the join is usually applied to portions of the
+ input flows, which are processed as standard relational tables.
+ As an example, the CQL Rule 12 uses the join operator to combine the last
+ 1000 items of flows F 1 and F 2 by merging those items that have the same
+ value in field A.
+ Select IStream(F1.A, F2.B) (12) From F1 [Rows 1000], F2 [Rows 1000] Where
+ F1.A = F2.A —Bag operators, which combine different flows of information
+ considering them as bags of items.
+ In particular, we have the following bag operators: —The union merges two
+ or more input flows of the same type creating a new flow that includes
+ all the items coming from them.
+ —The except takes two input flows of the same type and outputs all those
+ items that belong to the first one but not to the second one.
+ It is a blocking operator.
+ —The intersect takes two or more input flows and outputs only the items
+ included in all of them.
+ It is a blocking operator.
+ —The remove-duplicate removes all duplicates from an input flow.
+ Rule 13 provides an example of using the union operator in CQL to merge
+ to- gether two flows of information.
+ Similarly, in Example 14 we show the union operator as provided by Aurora.
+ Select IStream(*) From F1 [Rows 1000], F2 [Rows 1000] Where F1.A = F2.A (13)
+ Union Select IStream(*) From F3 [Rows 1000], F4 [Rows 1000] Where F3.B =
+ F4.B F1 Join (14) Filter (A) F2 Union F3 Join Filter (B) F4 —The duplicate
+ operator allows a single flow to be duplicated in order to use it as an
+ input for different processing chains.
+ Example 15 shows an Aurora rule that takes a single flow of items, processes
+ it through the operator A, then duplicates the result to have it processed
+ by three operators B, C, and D, in parallel.
+ ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 27 B (15) A C D —The group-by operator is used to split
+ an information flow into partitions in order to apply the same operator
+ (usually an aggregate) to the different partitions.
+ Example 16 uses the group-by operator to split the last 1000 rows of flow
+ F 1 based on the value of field B, to count how may items exist for each
+ value of B.
+ Select IStream(Count(*)) (16) From F1 [Rows 1000] Group By F1.B —The order-by
+ operator is used to impose an ordering to the items of an input flow.
+ It is a blocking operator so it is usually applied to well defined portions
+ of the input flows.
+ Parameterization.
+ In many IFP applications it is necessary to filter some flows of information
+ based on information that are part of other flows.
+ As an example, the fire protection system of a building could be interested
+ in being notified when the temperature of a room exceeds 40 o C but only
+ if some smoke has been detected in the same room.
+ Declarative and imperative languages address this kind of situations by
+ joining the two information flows, i.e., the one about room temperature and
+ that about smoke, and imposing the room identifier to be the same.
+ On the other hand, pattern-based languages do not provide the join operator.
+ They have to capture the same situation using a rule that combines, through
+ the conjunction operator, detection of high temperature and detection of
+ smoke in the same room.
+ This latter condition can be expressed only if the language allows filtering
+ to be parametric.
+ Given the importance of this feature we introduce it here even if it cannot
+ be properly considered an operator by itself.
+ More specifically, we say that a pattern- based language provides parameterizat
+ion if it allows the parameters of an operator (usually a selection, but
+ sometimes other operators as well) to be constrained using values taken
+ from other operators in the same rule.
+ (17) (Smoke(Room=$X)) & (Temp(Value>40 AND Room=$X)) Example 17 shows how
+ the rule described above can be expressed using the language of Padres;
+ the operator $ allows parameters definition inside the filters that select
+ single information items.
+ Flow creation.
+ Some languages define explicit operators to create new informa- tion flows
+ from a set of items.
+ In particular, flow creation operators are used in declarative languages
+ to address two issues: —some of them have been designed to deal indifferently
+ with information flows and ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.28 · G.
+ Cugola and A.
+ Margara with relational tables a-la DBMS.
+ In this case, flow creation operators can be used to create new flows from
+ existing tables, e.g., when new elements are added to the table.
+ —other languages use windows as a way to transform (part of) an input flow
+ into a table, which can be further processed by using the classical relational
+ operators.
+ Such languages use flow creation operators to transform tables back into
+ flows.
+ As an example, CQL provides three operators called relation-to-stream that
+ allow to create a new flow from a relational table T : at each evaluation
+ cycle, the first one (IStream) streams all new elements added to T ; the
+ second one (DStream) streams all the elements removed from T ; while the
+ last one (Rstream) streams all the elements of T at once.
+ Consider Example 18: at each processing cycle the rule populates a relational
+ table (T ) with the last ten items of flow F1, and then, it streams all
+ elements that are added to T at the current processing cycle (but were
+ not part of T in the previous cycle).
+ In Example 19, instead, the system streams all elements removed from table
+ T during the current processing cycle.
+ Finally, in Example 20, all items in T are put in the output stream, independen
+tly from previous processing cycles.
+ (18) Select IStream(*) From F1 [Rows 10] (19) Select DStream(*) From F1
+ [Rows 10] (20) Select RStream(*) From F1 [Rows 10] Aggregates.
+ Many IFP applications need to aggregate the content of multiple, incoming
+ information items to produce new information, for example by calculat-
+ ing the average of some value or its maximum.
+ We can distinguish two kinds of aggregates: —Detection aggregates are those
+ used during the evaluation of the condition part of a rule.
+ In our functional model, they are computed and used by the Decider.
+ As an example, they can be used in detecting all items whose value exceeds
+ the average one (i.e., the aggregate), computed over the last 10 received
+ items.
+ —Production aggregates are those used to compute the values of information
+ items in the output flow.
+ In our functional model, they are computed by the Producer.
+ As an example, they can be used to output the average value among those
+ part of the input flow.
+ Almost all existing languages have predefined aggregates, which include
+ mini- mum, maximum, and average.
+ Some pattern-based languages offer only production aggregates, while others
+ include also detection aggregates to capture patterns that involve computations
+ over the values stored in the History.
+ In declarative and im- perative languages aggregates are usually combined
+ with the use of windows to ACM Journal Name, Vol.
+ V, No.
+ N, Month 20YY.Processing Flows of Information: From Data Stream to Complex
+ Event Processing · 29 limit their scope (indeed, aggregates are usually
+ blocking operators and windows allow to process them on-line).
+ Finally, some languages also offer facilities to cre- ate user-defined
+ aggregates (UDAs).
+ As an example of the latter, we have already shown the ESL rule 10, which
+ defines an UDA to compute the smallest positive value among the received
+ ones.
+ It has been proved that adding complete support to UDAs makes a language
+ Turing-complete [Law et al.
+ 2004].
+ 4.
+ IFP SYSTEMS: A CLASSIFICATION In the following we use the concepts introduced
+ in Section 3 to present and classify existing IFP systems.
+ We provide a brief description of each system and summarize its characteristics
+ by compiling four tables.
+\end_layout
+
+\begin_layout Section
+Benchmark
+\end_layout
+
+\begin_layout Standard
+Il Distributed Event Based Systems (DEBS) Grand Challenge è una competizione
+ internazionale affermatasi come benchmark per lo stato dell'arte della
+ applicabilità di soluzioni DSP a problemi rilevanti nel mondo della ricerca
+ e della industria.challenges which seek to provide a com- mon ground and
+ evaluation criteria for a competition aimed at both: research and industrial
+ event-based systems.
+ Ogni anno il DEBS Grand Challenge propone un nuovo problema considerato
+ rilevante per il mondo dell'industria.
+ To that end DEBS Grand Challenge problems allow for evaluation of event
+ based systems using realistic data and queries.
+ The DEBS conference provides a forum to showcase in- novative approaches
+ and to benchmark the performance of different solutions with regards to
+ the defined problem.
+ Le metriche adottate per la valutazione delle soluzioni proposte varia
+ in base al dominio del problema, ma sono sempre volte a quantificare la
+ scalabilità verticale ed orizzontale della soluzione
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ad esempio: query throughput e query latency in funzione del workload e
+ del numero di nodi computazionali.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Event processing systems in general and data stream pro-cessing systems
+ in particular focus on processing of queries over unbounded event streams.
+\end_layout
+
+\begin_layout Paragraph
+DEBS 2012
+\end_layout
+
+\begin_layout Standard
+Nella edizione 2012 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jerzak2012"
+
+\end_inset
+
+ problem requires a continuous monitoring of the high-tech manufacturing
+ equipment, based on the data gathered by sensors embedded within the equip-ment.
+ The goal of the monitoring is to detect and record deviations from the
+ predefined (good) system behavior.
+ In a typical, existing setup data is first collected from sen-sors within
+ the equipment using an embedded PC.
+ Subse-quently, it is stored by the PC 1 as raw data in a flat file.
+ This file is periodically integrated into a database by the PC 2.
+ The analysis of data is performed using the PC 3 connected to the database.
+ Only in this last step a possi-ble violation can be detected.
+ It can be observed that such setup results in a delayed response to potential
+ violations of Key Performance Indicators (KPI).
+ The high latency of the response (which currently reaches 30 minutes) is
+ the major factor increasing the severity of the KPI violations and their
+ direct monetary costs.
+ Therefore, the major goal of the DEBS 2012 Grand Chal-lenge was to investigate
+ the applicability of the event processing systems to bridge the gap between
+ the actual occurrence of the event causing a violation of a predefined
+ KPI and the detection of such a violation.
+\end_layout
+
+\begin_layout Standard
+The DEBS 2012 Grand Challenge monitoring data orig-inates from the high-tech
+ manufacturing equipment.In a typical high-tech manufacturing scenario (a
+ single fabrication plant) an aver-age of 1,000 pieces of geographically
+ distributed manufactur-ing equipment are operated.
+ This results in a 50 Terabytes of data being collected every day.
+ This, in turn, requires an event processing system which can sustain a
+ continuous workload of 5 Million events per second.
+ Neither classical database systems, nor existing, batch oriented systems,
+ such as [4, 1], were designed to cope with such scenarios.
+ 1.
+ The analogue sensors produce data in the range 0 − 215.
+ Each sensor produces data with a frequency of either 100Hz or 1000Hz.
+ Data originating from each sensor is collected by a PC embedded withing
+ the manufacturing equipment and aggregated into a single event.
+ The embedded PC outputs events with the rate of 100Hz.
+\end_layout
+
+\begin_layout Standard
+The goal of the first query (see Figure 5) is to monitor the energy consumption
+ of the manufacturing equipment.
+\end_layout
+
+\begin_layout Standard
+The specific goal of the second query is to monitor the dependencies and
+ relations between sensors and their switching times.
+\end_layout
+
+\begin_layout Paragraph
+DEBS 2013 
+\end_layout
+
+\begin_layout Standard
+Nella edizione 2013 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Mutschler2013"
+
+\end_inset
+
+ is to demonstrate the applicability of event based systems for providing
+ real- time, continuous analytics for both managers of sport teams as well
+ as spectators of sports events.
+ On one hand side they provide the competitive edge to team managers allow-
+ ing themto take bettermore insightful decisions in real time.
+ On the other hand side the ability to operate on real time data allows
+ for new and enriched expe- rience for spectators both in stadiums as well
+ as in front of TV screens.
+\end_layout
+
+\begin_layout Standard
+The RedFIR tracking system is a Real-Time Locating Sys-tem (RTLS) based
+ on time-of-flight measurements, where small transmitter Integrated Circuits
+ emit burst signals.
+ The locating system is able to receive an overall of 50, 000 of those signal
+ bursts per second.
+ The 2013 Grand Challenge data set was collected during a football match
+ car- ried out at a Nuremberg Stadium in Germany and is com- plemented with
+ a set of continuous analytical queries which provide detailed insight into
+ the match statistics for both team managers and spectators.
+\end_layout
+
+\begin_layout Standard
+The goal of the running analysis query is to quantify and track how well
+ each of the players moves on the playing field.
+ The major indicators are the speed and distance covered by each player
+ as a function of time.
+ To that end the running analysis query should return two classes of results:
+ (1) current running statistics and (2) ag- gregate running statistics.
+ Aggregate running statistics provides a cumulative view on the running
+ performance of a given player.
+\end_layout
+
+\begin_layout Standard
+The goal of the ball possession query is to calculate the ball possession
+ for each of the players as well as for each team.
+ The ball position query should return two classes of results: (1) per player
+ ball possession stream and (2) per team ball possession.
+ The per team ball possession should be calculated using five different
+ time windows: 1 minute, 5 minutes, 10 minutes, 20 minutes and the whole
+ game duration.
+\end_layout
+
+\begin_layout Standard
+The goal of the heat map query is to calculate statistics about the presence
+ of each player in a given region of the playing field.
+ The system must calculate for each cell and each player the percentage
+ of time that the given player spent in the respective cell.
+ The statistics should be calculated using five different time windows:
+ 1 minute, 5 minutes, 10 minutes, 20 minutes and the whole game duration.
+\end_layout
+
+\begin_layout Standard
+The aim of the shoat on goal query is to detect when a player hits the ball
+ in an attempt to score a goal.
+ The result stream should be updated with the frequency of the sensor data
+ until an exit condition occurs.
+ Exit con-ditions are: (1) the ball leaves the field, or (2) the direction
+ of the ball movement changes so that (the proximity of) the goal area would
+ no longer be hit.
+\end_layout
+
+\begin_layout Paragraph
+DEBS 2014 
+\end_layout
+
+\begin_layout Standard
+Nella edizione 2014 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "JerzakZiekow2014"
+
+\end_inset
+
+ is to demonstrate the applicability of event-based systems to provision
+ of scalable, real-time analytics over high volume sensor data.
+ The un- derlying scenario stems from the smart grid domain and targets
+ the analysis of energy consumption measurements.
+ Specifically, the DEBS 2014 Grand Challenge focuses on the two following
+ problems: (1) short-term load forecasting and (2) outliers detection for
+ real-time demand management.
+ The data for the challenge is synthesized based on real-world profiles
+ collected from a number of smart-home installations.
+\end_layout
+
+\begin_layout Standard
+The Grand Challenge 2014 data set is based on simulations driven by real-world
+ energy consumption profiles originating from smart plugs deployed in households.
+ Smart plugs used in the DEBS 2014 Grand Challenge are equipped with a range
+ of sensors that measure different, values related to power consumption.
+ For the purpose of the DEBS 2014 Grand Challenge a number of smart plugs
+ has been deployed in households with data being collected roughly every
+ second for each sensor in each smart plug.
+ It has to be noted that the data set is collected in an uncontrolled, real-
+ world environment, which implies the possibility of malformed data as well
+ as missing measurements.
+ no pre-computation based on the whole data set must be made.
+\end_layout
+
+\begin_layout Standard
+The goal of the load prediction query is to make load forecasts based on
+ the current load measurements and a model that was learned over historical
+ data.
+ Such forecasts are used in demand side management to proactively influence
+ load and adapt it to the supply situation, e.g., current production of renewable
+ energy sources.
+ The output streams should be updated every 30 seconds.
+\end_layout
+
+\begin_layout Standard
+The goal of the outliers query is to find the outliers as far as the energy
+ consumption levels are concerned.
+ The main motivation of this query is to highlight the capability of data
+ stream processing systems to cope with correlated aggregate class of problems.
+ The query should answer the following question: for each house calculate
+ the percentage of plugs which have a median load during the last hour greater
+ than the median load of all plugs (in all households of all houses) during
+ the last hour.
+ The
+\end_layout
+
+\begin_layout Paragraph
+DEBS 2015 
+\end_layout
+
+\begin_layout Standard
+Nella edizione 2015 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "JerzakZiekow2015"
+
+\end_inset
+
+ is to demonstrate the applicability of event-based systems to processing
+ of geo-spatial data contained within taxi trip reports from the New York
+ City.
+ Two specific problems targeted: (1) identification of recent frequent routes
+ and (2) identification of regions with the highest profit.
+ Participants of the challenge are asked to submit innovative and high performin
+g solutions to the defined problem.
+\end_layout
+
+\begin_layout Standard
+The data for the 2015 Grand Challenge is based on a data set released under
+ the Freedom of Information Law and has been made publicly available by
+ Chris Whong1 in March 2014.
+ Provided data consists of reports of taxi trips including starting point,
+ drop-off point, corresponding timestamps, and information related to the
+ payment.
+ Data are reported at the end of the trip, i.e., upon arrive in the order
+ of the drop-off timestamps.
+\end_layout
+
+\begin_layout Standard
+The goal of the frequent routes query is to find the top ten most frequent
+ routes during the last 30 minutes.
+ A route is represented by a starting grid cell and an ending grid cell.
+ All routes completed within the last 30 minutes are considered for the
+ query.
+ The output query results must be updated whenever any of the 10 most frequent
+ routes changes.
+\end_layout
+
+\begin_layout Standard
+The goal of profitable areas query is to identify areas that are currently
+ most profitable for taxi drivers.
+ The profitability of an area is determined by dividing the area profit
+ by the number of empty taxis in that area within the last 15 minutes.
+ The profit that originates from an area is computed by calculating the
+ median fare including tip for trips that started in the area and ended
+ within the last 15 minutes.
+ The number of empty taxis in an area is the sum of taxis that had a drop-off
+ location in that area less than 30 minutes ago and had no following pickup
+ yet.
 \end_layout
 
 \end_body
