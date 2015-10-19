@@ -110,7 +110,16 @@ one degli operatori di una applicazione DSP ai nodi computazionali di una
  Quando il processamento di una standing query è distribuito su risorse
  computazionali e trasmissive distinte, determinare una soluzione di posizioname
 nto quanto più possibile prossima all'ottimalità è di fondamentale importanza
- per garantire l'efficienza della applicazione.
+ per garantire l'efficienza dell'applicazione.
+ Il posizionamento degli operatori può dunque considerarsi una tecnica di
+ ottimizzazione per un'applicazione di data stream processing 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schneider2013"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -124,7 +133,14 @@ Una applicazione DSP è rappresentata da una topologia che incapsula le relazion
  delle risorse computazionali offerte dalla architettura distribuita.
  Il posizionamento degli operatori è un problema di ottimizzazione combinatoria
  riducibile al Binary Knapsack Problem ed al Bin Packing Problem: pertanto
- esso appartiene alla classe di complessità computazionale NP-hard.
+ esso appartiene alla classe di complessità computazionale NP-hard 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cook1983,Fortnow2002,Krentel1988"
+
+\end_inset
+
+.
  Risulta dunque corretto, oltre che intuitivo, esprimerlo mediante un modello
  di programmazione lineare binaria.
 \end_layout
@@ -133,15 +149,28 @@ Una applicazione DSP è rappresentata da una topologia che incapsula le relazion
 In questo capitolo descriviamo nel dettaglio il modello adottato per risolvere
  il problema di posizionamento degli operatori.
  Talvolta faremo riferimento a problemi di ottimizzazione combinatoria,
- noti in letteratura.
- Rimandiamo il lettore alla Appendice 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:problemi-di-ottimizzazione"
+ noti in letteratura: come il Knapsack Problem 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kellerer2004,Martello1990,Martello1987a"
 
 \end_inset
 
- per avere una conoscenza introduttiva a tali problemi.
+, il Bin Packing Problem 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Serafini2009,Martello1987"
+
+\end_inset
+
+ ed il Metric Labeling Problem 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kleinberg1999,Chuzhoy2004"
+
+\end_inset
+
+.
  Nella Sezione 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -326,29 +355,12 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Box Frameless
-position "c"
-hor_pos "c"
-has_inner_box 1
-inner_pos "c"
-use_parbox 1
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/grafo-dsp.svg
-
-\end_inset
-
-
-\end_layout
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/grafo-dsp.svg
+	width 12cm
+	groupId optimal-placement
 
 \end_inset
 
@@ -1106,29 +1118,12 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Box Frameless
-position "c"
-hor_pos "c"
-has_inner_box 1
-inner_pos "c"
-use_parbox 1
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/grafo-res.svg
-
-\end_inset
-
-
-\end_layout
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/grafo-res.svg
+	width 12cm
+	groupId optimal-placement
 
 \end_inset
 
@@ -2309,7 +2304,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/esempio-grafo-dsp.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/esempio-grafo-dsp.svg
 
 \end_inset
 
@@ -2365,7 +2360,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/esempio-grafo-res.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/esempio-grafo-res.svg
 
 \end_inset
 
@@ -2630,7 +2625,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/spazio-metrico-omotetico.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/spazio-metrico-omotetico.svg
 
 \end_inset
 
@@ -2686,7 +2681,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/spazio-metrico-antitetico.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/spazio-metrico-antitetico.svg
 
 \end_inset
 
@@ -2832,7 +2827,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/metriche-omogenee.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/metriche-omogenee.svg
 
 \end_inset
 
@@ -2888,7 +2883,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/metriche-disomogenee.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/optimal-placement/metriche-disomogenee.svg
 
 \end_inset
 
@@ -3454,8 +3449,14 @@ Approccio di Čebyšëv
 \begin_layout Standard
 Introduciamo la nozione della norma di Čebyšëv, mostrando come questa suggerisca
  un utile approccio alla formulazione di un criterio di ottimizzazione in
- problemi di ottimizzazione multi-obiettivo, che prende pertanto il nome
- di 
+ problemi di ottimizzazione multi-obiettivo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Curry2014"
+
+\end_inset
+
+, che prende pertanto il nome di 
 \shape slanted
 approccio di Čebyšëv ai problemi di ottimizzazione
 \shape default
@@ -3804,13 +3805,17 @@ name "sec:Formulazione"
 
 \end_inset
 
-Formulazione
+Formulazioni
 \end_layout
 
 \begin_layout Standard
-Concludiamo questo capitolo dando la formulazione in programmazione lineare
+Concludiamo questo capitolo dando le formulazioni in programmazione lineare
  binaria del nostro modello per il problema del posizionamento degli operatori.
  
+\end_layout
+
+\begin_layout Subsection
+Modello OPPStandard
 \end_layout
 
 \begin_layout Standard
@@ -3834,8 +3839,57 @@ y_{(i,j)(u,v)} & \in & \{0,1\} & \forall(i,j)\in E_{dsp},(u,v)\in E_{res}
 
 \end_layout
 
-\begin_layout Paragraph
-Formulazione alternativa
+\begin_layout Subsection
+Modello OPPRestricted
+\end_layout
+
+\begin_layout Standard
+Forniamo inoltre una formulazione alternativa alla 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:modello-standard"
+
+\end_inset
+
+, la quale considera il posizionamento ristretto degli operatori 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:posizionamento-x-ristretto"
+
+\end_inset
+
+ e dei data stream 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:posizionamento-y-ristretto"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cccc}
+\mathbf{maximize:} & F(\mathbf{x})\\
+\mathbf{subject\,to:}\\
+{\displaystyle \sum_{i\in V_{dsp}}x_{i,u}\mathbf{C}_{i}} & \leq & \mathbf{C}_{u} & \forall u\in V_{res}\\
+{\displaystyle \sum_{u\in V_{res}^{i}}x_{i,u}} & = & 1 & \forall i\in V_{dsp}\\
+x_{i,u}+x_{j,v}-1 & \leq & y_{(i,j)(u,v)} & \forall(i,j)\in E_{res},(u,v)\in E_{dsp}\\
+x_{i,u}+x_{j,v} & \geq & 2y_{(i,j)(u,v)} & \forall(i,j)\in E_{res},(u,v)\in E_{dsp}\\
+x_{i,u} & \in & \{0,1\} & \forall i\in V_{dsp},u\in V_{res}^{i}\\
+y_{(i,j)(u,v)} & \in & \{0,1\} & \forall(i,j)\in E_{dsp},(u,v)\in V_{res}^{i}\times V_{res}^{j}
+\end{array}\label{eq:modello-restricted}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modello OPPConservative
 \end_layout
 
 \begin_layout Standard
@@ -3875,7 +3929,7 @@ reference "eq:vincolo-connettività-algebrico-alternativo"
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{cccc}
-\mathbf{maximize:} & \tilde{F}(\mathbf{x})\\
+\mathbf{maximize:} & F(\mathbf{x})\\
 \mathbf{subject\,to:}\\
 {\displaystyle \sum_{i\in V_{dsp}}x_{i,u}\mathbf{C}_{i}} & \leq & \mathbf{C}_{u} & \forall u\in V_{res}\\
 {\displaystyle \sum_{u\in V_{res}^{i}}x_{i,u}} & = & 1 & \forall i\in V_{dsp}\\
@@ -3883,7 +3937,7 @@ reference "eq:vincolo-connettività-algebrico-alternativo"
 {\displaystyle \sum_{u\in V_{res}^{i}}y_{(i,j)(u,v)}} & = & x_{j,v} & \forall(i,j)\in E_{dsp},v\in V_{res}^{j}\\
 x_{i,u} & \in & \{0,1\} & \forall i\in V_{dsp},u\in V_{res}^{i}\\
 y_{(i,j)(u,v)} & \in & \{0,1\} & \forall(i,j)\in E_{dsp},(u,v)\in V_{res}^{i}\times V_{res}^{j}
-\end{array}\label{eq:modello-alternativo}
+\end{array}\label{eq:modello-conservative}
 \end{equation}
 
 \end_inset

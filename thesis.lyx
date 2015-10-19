@@ -6,17 +6,20 @@
 \begin_preamble
 % Packages
 \usepackage{prettyref}
-
-% Margins
-%\setlength{\skip\footins}{1.5cm}
-%\setlength{\footnotesep}{0.5cm}
+\usepackage{emptypage}
+\usepackage{epigraph}
+\usepackage[pass]{geometry} 
 
 % Formulas
 \numberwithin{equation}{chapter}
 
 % References
 \newrefformat{app}{Appendix \ref{#1}}
+
+%\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
+%\pdfbookmark{\contentsname}{toc}
 \end_preamble
+\options titlepage,openright
 \use_default_options true
 \begin_modules
 customHeadersFooters
@@ -46,10 +49,10 @@ theorems-chap-bytype
 \paperfontsize 11
 \spacing onehalf
 \use_hyperref true
-\pdf_title "Posizionamento Ottimo nel Data Stream Processing"
+\pdf_title "Posizionamento Ottimo per Applicazioni di Data Stream Processing"
 \pdf_author "Giacomo Marciani"
 \pdf_subject "BSc Thesis"
-\pdf_keywords "big-data, data stream processing, operations research, networks"
+\pdf_keywords "big-data, data stream processing, cloud computing, operations research"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen true
@@ -60,7 +63,7 @@ theorems-chap-bytype
 \pdf_backref false
 \pdf_pdfusetitle true
 \papersize a4paper
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -77,14 +80,14 @@ theorems-chap-bytype
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date false
+\suppress_date true
 \justification true
 \use_refstyle 1
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3.5cm
+\leftmargin 4cm
 \topmargin 2.5cm
 \rightmargin 3.5cm
 \bottommargin 4cm
@@ -96,8 +99,8 @@ theorems-chap-bytype
 \defskip medskip
 \quotes_language french
 \papercolumns 1
-\papersides 2
-\paperpagestyle fancy
+\papersides 1
+\paperpagestyle default
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -119,6 +122,22 @@ filename "titlepage/titlepage.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "dedication/dedication.lyx"
@@ -129,9 +148,57 @@ filename "dedication/dedication.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "epigraph/epigraph.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
 
 \end_inset
 
@@ -160,19 +227,24 @@ filename "acknowledgments/acknowledgments.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang english
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark{
+\backslash
+contentsname}{toc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -224,10 +296,9 @@ filename "chapters/chapter3.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "/home/giacomo/Documents/Research/Bibliographies/BSc Thesis"
-options "bibtotoc,plain"
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapters/chapter4.lyx"
 
 \end_inset
 
@@ -235,10 +306,20 @@ options "bibtotoc,plain"
 \end_layout
 
 \begin_layout Standard
-\start_of_appendix
 \begin_inset CommandInset include
 LatexCommand include
-filename "appendices/appendiceA.lyx"
+filename "chapters/chapter5.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/giacomo/Documents/research/bibliographies/bsc-thesis"
+options "bibtotoc,ieeetr"
 
 \end_inset
 

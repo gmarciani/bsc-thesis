@@ -13,9 +13,8 @@
 \master ../thesis.lyx
 \begin_modules
 customHeadersFooters
-theorems-ams
-theorems-ams-extended
-theorems-chap
+theorems-bytype
+theorems-chap-bytype
 \end_modules
 \maintain_unincluded_children false
 \language italian
@@ -39,9 +38,18 @@ theorems-chap
 \index_command default
 \paperfontsize 11
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -68,9 +76,9 @@ theorems-chap
 \leftmargin 3cm
 \topmargin 2.5cm
 \rightmargin 3cm
-\bottommargin 2.5cm
+\bottommargin 4cm
 \headsep 1cm
-\footskip 1cm
+\footskip 1.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
@@ -95,425 +103,124 @@ name "chap:Big-Data"
 
 \end_inset
 
+Data Stream Processing
+\end_layout
+
+\begin_layout Standard
+Il Data Stream Processing è un paradigma computazionale che modella una
+ elaborazione come un processamento modulare e attivo di un flusso continuo
+ di dati.
+ Esso si oppone ai paradigmi tradizionali che considerano l'elaborazione
+ come un processo discreto e passivo.
+\end_layout
+
+\begin_layout Standard
+Per comprendere a fondo un'innovazione è necessario conoscere i presupposti
+ tecnologici e culturali che ne hanno motivato lo sviluppo, che ne motivano
+ l'esistenza e ne consolideranno l'utilizzo.
+ Nel caso del Data Stream Processing, il presupposto principale risiede
+ nel fenomeno 
+\begin_inset Quotes fld
+\end_inset
+
+Big Data
+\begin_inset Quotes frd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In questo capitolo daremo una definizione di big data, spiegando cosa distingua
+ un big dataset da un dataset tradizionale, e per quale motivo il fenomeno
+ abbia messo in crisi i tradizionali sistemi di elaborazione.
+ Daremo poi una definizione di Data Stream Processing, contestualizzando
+ il paradigma all'interno dell'Information Flow Processing, e spiegando
+ ciò che lo distingue dal Complex Event Processing.
+ Infine daremo una prima rappresentazione di applicazione di data stream
+ processing, che ponga le basi per la trattazione del problema di posizionamento
+ degli operatori.
+\end_layout
+
+\begin_layout Section
 Big Data
 \end_layout
 
 \begin_layout Standard
-L'essere umano ha sempre avuto l'attitudine ad acquisire e processare dati
- per trasformarli in informazioni che portino ad un ampliamento della conoscenza.
-\end_layout
+Con il termine 
+\begin_inset Quotes fld
+\end_inset
 
-\begin_layout Standard
+Big Data
+\begin_inset Quotes frd
+\end_inset
+
+ si identifica un fenomeno di generazione distribuita massiccia e rapida
+ di dati digitali eterogenei e dall'elevato potenziale informativo 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Anuradha2015"
 
 \end_inset
 
+.
+ Tale fenomeno sfugge al controllo dei tradizionali sistemi di elaborazione,
+ in quanto impedisce un approccio che preveda una fase di memorizzazione
+ preliminare al processamento.
+ Nel seguito chiameremo 
+\begin_inset Quotes fld
+\end_inset
 
+big dataset
+\begin_inset Quotes frd
+\end_inset
+
+ un dataset conforme alle peculiarità del fenomeno.
 \end_layout
 
-\begin_layout Itemize
-Big data is a collection of massive and complex data sets and data volume
- that include the huge quantities of data, data management capabilities,
- social media analytics and real-time data.
- Big data analytics is the process of examining large amounts of data.
- There exist large amounts of heterogeneous digital data.
- Big data is about data volume and large data set's measured in terms of
- terabytes or petabytes.
- This phenomenon is called Bigdata.
-\end_layout
-
-\begin_layout Standard
-Big data are worthless in a vacuum.
- Its potential value is unlocked only when leveraged to drive decision making.
- To enable such evidence-based decision making, organizations need efficient
- processes to turn high volumes of fast-moving and diverse data into meaningful
- insights.
+\begin_layout Paragraph
+Trend produzione dati
 \end_layout
 
 \begin_layout Standard
-the term Big Data Analytics is defined as the process of analyzing and understan
-ding the characteristics of massive size datasets by extracting useful geometric
- and statistical patterns.
-\end_layout
-
-\begin_layout Standard
-As the interest in big data increases, such difficulties will decrease or
- will be solved in shorter time.
-\end_layout
-
-\begin_layout Standard
-Big data and data mining concepts are usually confused.
- Frawley et.al.
- define data mining as the discovery of the data which wasn’t known before
- and which has the makings of being useful (Frawley et.al., 1992).
- According to Dunham, it is detection of hidden data in the database (Dunham,
- 2006).
- Fayyad et.al.
- describe it as the application of specific algorithms to extract patterns
- from the dataset (Fayyad et.al., 1996).
- As it is understood from the definitions; even though big data and data
- mining have several steps in common, data mining doesn’t cover all properties
- of big data
+Ogni giorno produciamo 2.5 quintilioni di bytes di dati, ed il 90% dei dati
+ presenti nel mondo oggi è stato creato solo negli ultimi due anni 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Ozkose2015"
+key "VCloudBigData"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Section
-Origine dei Big Data
-\end_layout
-
-\begin_layout Standard
-The term coined by Roger Magoulas from O’Reilly media in 2005 (1), refers
- to a wide range of large data sets almost impossible to manage and process
- using traditional data management tools—due to their size, but also their
- complexity.
-\end_layout
-
-\begin_layout Standard
-The extremities of big data go long way back, however it has lately been
- understood that most of those former studies were big data studies.
- For example in 1839 Matthew Fontaine Maury; the head of the Depot of Charts
- and Instruments of the U.S.
- Navy; collected data about the tides, winds and sea flows of the places
- he visited.
- There were numerous navigation books, maps and charts at the depot where
- he was working.
- The log books of the former voyages were also present there.
- There were lots of records about wind, water and air conditions in the
- log books.
- Maury realized that he could achieve a new voyage chart as he combines
- all of the data in hand.
- He generated new routes by utilizing them.
- He developed a standard form for U.S.
- Army battleships to expand his study and he enhanced the accuracy of the
- route information he had.
- Then he included merchant ships into his study and utilized the log book
- data of them.
- As a result he passed on huge savings by cutting the durations across by
- a third.
- Since then he has been commemorated as “Pathfinder of the Seas”
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Ozkose2015"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Big data was first conceptualized as a data set during 2012 US presidential
- elections when the debate between President Barak Obama and Governor Mitt
- Romney generated millions of tweets every hours.
- The analysis or generation of this size was not thought of and the need
- was felt to analyze the trends at a given point of time to study the likings
- of the voter base.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Google Trends - Big Data vs Big Data Industry.svg
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Google Trends: Big Data vs Big Data Industry
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Scopus: Big Data papers
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Big Trends
-\end_layout
-
-\begin_layout Standard
-The number of images and videos captured by humans and uploading to social
- media is stagger-ing.
- Surveys show that images and videos make up about 80 percent of all corporate
- and public unstructured big data [19].
- It has been estimated that about 100 hours of video are uploaded to Youtube
- every minute and average of 350 million photos are uploaded to Facebook
- daily which as a result it is estimated that Facebook currently has more
- than 250 billion photographs in its collection [13].
- Nevertheless, dealing with such gigantic image collections are not restricted
- to social networks.
- Users in other domains such as healthcare, defence and astronomy are exploit-in
-g the opportunities offered by the ability to access and manipulate gigantic
- image and video datasets efficiently.
- Image management at this scale requires highly computationally efficient
- approaches which provide accurate and visually meaningful results to be
- able to search and browse of the files.
- On the other hand, manual tagging for such large datasets is not feasible.
- and is prone to errors due to user’s subjective opinions; therefore, having
- an efficient, fast and accurate retrieval system is essential more than
- ever.
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Angelov2015"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Indirizzi IP Unici
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Indirizzi IP unici.
- Fonte: Akamai 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Akamai"
-
-\end_inset
-
+ Nel 1992 il traffico Internet globale ammontava a 100GB al giorno, nel
+ 2013 si sono raggiunti i 28.875GB al secondo e nel 2018 sono previsti 50.000GB
+ al secondo.
  
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Velocità media delle connessioni
-\end_layout
-
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Velocità media di connessione.
- Fonte: Akamai 
+Solo il 10% dei dati prodotti viene attualmente analizzato.
+ Considerando la bassa densità di valore dei Big Data, stiamo perdendo molto
+ più del 90% del loro valore.
+ Uno studio della IDC stima che nel 2020 il 33% dell'universo digitale conterrà
+ dati ad alto potenziale informativo 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Akamai"
+key "Gantz2012"
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Diffusione Broadband
+.
+ Essendo l'80% dei dati prodotti non strutturati, non sono di facile analisi.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Diffusione Broadband 10Mbps.
- Fonte: Akamai 
+Il traffico dati mobile è cresciuto del 55% nell'ultimo anno, con un aumento
+ del 15% solo dal primo al secondo quarto del 2015
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Akamai"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Produzione dati
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename /home/giacomo/Documents/Projects/bsc-thesis/figures/Scopus - Big Data Papers.svg
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Produzione Worldwide dati in ExaBytes (EB).
- Fonte: Cisco Systems 
-\end_layout
-
-\end_inset
-
-
-\end_layout
+key "AkamaiSOIQ22015"
 
 \end_inset
 
@@ -521,8 +228,9 @@ Produzione Worldwide dati in ExaBytes (EB).
 \end_layout
 
 \begin_layout Standard
-Bisogna resistere alla legittima diffidenza per i dati predittivi: le stime
- elaborate finora sono infatti risultate più basse.
+Bisogna resistere alla impulsiva diffidenza per gli studi prospettici: le
+ stime elaborate sono state sempre smentite da valori molto più elevati
+ di quelli previsti.
  Lo stesso studio pubblicato dalla IDC nel 2007 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -534,127 +242,226 @@ key "Gantz2007"
  I dati attuali mostrano una produzione di 1227 EB, pari al 29.19% in più.
 \end_layout
 
-\begin_layout Itemize
-IDC estimates that by 2020, as much as 33% of the digital universe will
- contain information that might be valuable if analyzed, compared with 25%
- today 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gantz2012"
-
-\end_inset
-
-.
- companies that deliver the most creative and meaningful ways to display
- the results of Big Data analytics will be coveted and sought after.
-\end_layout
-
 \begin_layout Paragraph
-Sicurezza
+Valore dei Big Data
 \end_layout
 
 \begin_layout Standard
-In un mondo sempre più glocal, il potenziale informativo di un dato locale
- assume sempre più un valore globale.
- L'evoluzione delle tecniche crittografiche e la promulgazione di adeguate
- normative governative riguardanti la information security faranno sempre
- più la differenza nel potenziale diffusivo dei Big Data.
- La quantità di dati che necessità di protezione cresce più velocemente
- della produzione di dati stessa.
- Se nel 2010 tale segmento ammontava al 30% del totale dei dati prodotti,
- esso è destinato a raggiungere il 40% nel 2020.
- Tali stime sono da riferirsi a mercati maturi: i mercati emergenti necessiteran
-no di una maggiore protezione 
+Dal 2005 ad oggi l'interesse del mondo accademico ed industriale per i Big
+ Data è cresciuto vertiginosamente.
+ Si conta un aumento del numero di papers pubblicati del 1000%
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Gantz2012"
+key "Scopus"
+
+\end_inset
+
+, ed un aumento delle ricerche su Google
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+trend relativo alle ricerche riguardanti i Big Data nel settore industriale,
+ ovvero hardware, software e servizi.
+\end_layout
+
+\end_inset
+
+ del 4900% 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleTrendsBigData"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Subsection
-Cloud Computing
-\end_layout
-
-\begin_layout Itemize
-the number of servers (virtual and physical) worldwide will grow by a factor
- of 10 and the amount of information managed directly by enterprise datacenters
- will grow by a factor of 14.
- Meanwhile, the number of IT professionals in the world will grow by less
- than a factor of 1.5.
- IDC estimates that by 2020, nearly 40% of the information in the digital
- universe will be "touched" by cloud computing — meaning that a byte will
- be stored or processed in a cloud somewhere in its journey from originator
- to disposal.
- Perhaps as much as 15% will be maintained in a cloud 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gantz2012"
-
-\end_inset
-
-.
- 46.7% intrattenimento; 37.1% sorveglianza.
-\end_layout
-
-\begin_layout Section
-Metriche
+ Il crescente interesse per i Big Data non può imputarsi solo all'evidenza
+ del fenomeno, bensì anche all'immenso valore economico derivante dallo
+ sviluppo di tecnologie capaci di estrarvi valore informativo.
+ Il valore di un dataset è in generale solo potenziale: è la capacità di
+ analizzarlo inferendovi informazione utile a conferirvi valore.
+ Lo spettro del valore informativo è certamente ampliato dall'eterogeneità
+ delle sorgenti dati, ma poichè tale valore ha una scarsa densità, il rischio
+ di perderlo è un problema certamente attuale.
 \end_layout
 
 \begin_layout Standard
-Il termine 
+Lo studio di forecasting 2016-2026 sul mercato Big Data condotto da Wikibon
+ mostra un trend di crescita tipico delle tecnologie disruptive
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+un'innovazione è definita 
 \begin_inset Quotes fld
 \end_inset
 
-Big Data
+disruptive
 \begin_inset Quotes frd
 \end_inset
 
- è spesso utilizzato in riferimento ad un fenomeno di proliferazione diffusa,
- massiccia ed eterogenea di dati, che sfugge al controllo dei tradizionali
- sistemi di elaborazione.
- L'individuazione intuitiva di un fenomeno non deve però prescindere da
- una sua rappresentazione quantitativa.
- In letteratura sono state proposti degli spazi metrici che permettano di
- distinguere un dato qualunque da un Big Data.
- In questa sezione descriviamo gli spazi metrici attualmente accettati nel
- mondo accademico ed industriale.
+ quando è in grado di aprire un nuovo mercato ed influenzare fortemente
+ i mercati preesistenti.
+ Esempi di innovazioni disruptive sono l'invenzione del telefono e del personal
+ computer 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Christensen2013"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kelly2015"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Mercato Big Data
 \end_layout
 
 \begin_layout Standard
-NECESSITA' DI UNA METRICA BIG DATA
+Il numero di compagnie costruite o coadiuvate da un business model data-driven
+ è in continua crescita 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Marr2015,Bange2015"
+
+\end_inset
+
+.
+ Tutti oggigiorno, dalle grandi compagnie alle piccole startup, possono
+ archiviare e trasferire a basso costo grandi quantità di dati.
+ Basti pensare che dal 2005 ad oggi il costo di archiviazione
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+stiamo assumendo qui che il costo di archiviazione possa intendersi in $/GB.
+ Questa è una approssimazione lecita, ma superficiale, considerando l'eterogenei
+tà degli odierni sistemi e sservizi di storage.
+\end_layout
+
+\end_inset
+
+ si è ridotto del 63.81% 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "JCMITDiskPrice"
+
+\end_inset
+
+, mentre il traffico dati mobile è cresciuto del 55% solo nell'ultimo anno
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AkamaiSOIQ22015"
+
+\end_inset
+
+.
+ Le tecnologie abilitanti dunque certamente non mancano.
+ La sfida però non si pone tanto sull'archiviazione o sulla trasmissione
+ dei dati, divenute ormai prerogative, bensì sulla loro analisi e sulla
+ capacità di estrarvi valore.
+ 
 \end_layout
 
 \begin_layout Standard
-how to prove (or show) that the network traffic data satisfy the Big Data
- characteristics for Big Data classification.
- This is the first important task to address in order to make the Big Data
- analytics efficient and cost effective.
- The early detection of the Big Data characteristics can provide a cost
- effective strategy to many organizations to avoid unnecessary deployment
- of Big Data technologies.
- The data analytics on some data may not require Big Data techniques and
- technologies; the current and well established techniques and technologies
- maybe sufficient to handle the data storage and data processing.
- Hence we need an early analysis and understanding of the data characteristics
- for classification.
+Uno studio recente condotto dalla IDC mostra una crescita del mercato Big
+ Data
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+mercato da intendersi come aggregato dei settori hardware, software e servizi.
 \end_layout
 
-\begin_layout Standard
-The form of information determines strategies and connection weights required
- for recognition, memory, and further processing.
+\end_inset
+
+ caratterizzata da un CAGR
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+il Compound Annual Growth Rate (CAGR) è un indice composto di crescita su
+ base annua, utilizzato nelle analisi prospettiche per fotografare l'appetibilit
+à di un investimento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WikiCAGR"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Standard
-some point in time, when the volume, variety and velocity of the data are
- increased, the current techniques and technologies may not be able to handle
- storage and processing of the data.
- At that point the data is defined as Big Data.
+\end_inset
+
+ del 24.6%, raggiungendo un valore di 41.5 miliardi di dollari entro il 2019
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IDCBigDataForecast20152019"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
+Metriche Big Data
+\end_layout
+
+\begin_layout Standard
+Il fenomeno Big Data non deve sfuggire ad una rappresentazione quantitativa.
+ E' necessario definire uno spazio metrico non solo per poter distinguere
+ un big dataset da un dataset tradizionale, ma anche per poter valutare
+ le soluzioni tecnologiche sviluppate per il loro processamento.
+ 
+\end_layout
+
+\begin_layout Standard
+In letteratura sono stati proposti due spazi metrici alternativi, attualmente
+ accettati a livello accademico ed industriale.
+ Questi spazi sono applicabili ad un dataset in generale.
+ Diciamo dunque che un dataset è un big dataset nel momento in cui presenta
+ alti valori in ognuna delle metriche dello spazio.
+ Ne consegue che la definizione di big dataset è relativa alle tecnologie
+ di riferimento: il potenziamento tecnologico innalza il threshold della
+ definizione
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+in uno studio condotto dalla IBM nel 2012, un dataset con una dimensione
+ di un terabyte veniva già considerato big dataset.
+ Oggi, un big dataset è tipicamente misurato in multipli di terabytes e
+ petabytes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schroeck2012"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
 Spazio metrico 
 \begin_inset Formula $V^{5}$
 \end_inset
@@ -662,93 +469,113 @@ Spazio metrico
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
+Lo spazio 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+, o 
+\begin_inset Quotes fld
+\end_inset
+
+spazio delle cinque V
+\begin_inset Quotes frd
+\end_inset
+
+, individua il dataset mediante le seguenti metriche:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Volume dimensione del dataset.
+ Un big dataset è tipicamente misurato in multipli di terabytes e petabytes.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Velocità il datarate delle sorgenti che alimentano il dataset.
+ Un big dataset è alimentato da sorgenti ad altissimo datarate.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Variabilità eterogeneità della natura dei dati che compongono il dataset
+ e variabilità nel datarate delle sorgenti che lo alimentano.
+ Un big dataset raccoglie dati di natura profondamente diversa, e li raccoglie
+ da sorgenti che possono generare un traffico molto piccato.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Veracità inaffidabilità o mancanza di precisione delle sorgenti dati, e
+ dunque inaffidabilità informativa dei dati prodotti.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+Valore valore informativo del dato.
+ I big data hanno un alto potenziale informativo, ma una basse densità di
+ tale valore.
+ Questo vuol dire che il valore effettivo di un big dataset viene estrapolato
+ solo identificando dei pattern su tutto il dataset, e non su una sua porzione
+ ristretta.
+\end_layout
+
+\begin_layout Standard
+Lo spazio metrico 
+\begin_inset Formula $V^{5}$
+\end_inset
+
+ è attualmente il più diffuso in letteratura 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Gandomi2015"
+key "Anuradha2015,Assuncao2014"
 
 \end_inset
 
+.
+ Storicamente esso deriva dallo spazio 
+\begin_inset Formula $V^{3}$
+\end_inset
 
-\end_layout
+, o 
+\begin_inset Quotes fld
+\end_inset
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Volume refers to the magnitude of data.
- Big data sizes are reported in multiple terabytes and petabytes.
- A survey conducted by IBM in mid-2012 revealed that just over half of the
- 1144 respondents considered datasets over one terabyte to be big data (Schroeck
-, Shockley, Smart, Romero-Morales, & Tufano, 2012).
- One terabyte stores as much data as would fit on 1500 CDs or 220 DVDs,
- enough to store around 16 million Facebook photographs.
- Beaver, Kumar, Li, Sobel, and Vajgel (2010) report that Facebook processes
- up to one million photographs per second.
- One petabyte equals 1024 terabytes.
- Earlier estimates suggest that Facebook stored 260 billion photos using
- storage space of over 20 petabytes.
- Definitions of big data volumes are relative and vary by fac- tors, such
- as time and the type of data.
- What may be deemed big data today may not meet the threshold in the future
- because storage capacities will increase, allowing even bigger data sets
- to be captured.
- In addition, the type of data, discussed under variety , defines what is
- meant by ‘big’.
- Two datasets of the same size may require different data management technologie
-s based on their type, e.g., tabular versus video data.
- Thus, definitions of big data also depend upon the industry.
- These considerations there- fore make it impractical to define a specific
- threshold for big data volumes.
- Le compagnie dispongono già di una grande quantità di dati, ma non hanno
- la capacità di processarli.
- La maggior attrattività della big data analytics è proprio la capacità
- di inferire informazioni da una grande quantità di dati.
-\end_layout
+spazio delle tre V
+\begin_inset Quotes frd
+\end_inset
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Velocità Dal 1999 al 2012 Wall Mart è passato da 1000 terabytes a 2.5 petabytes.
-\end_layout
+, a cui è stata successivamente aggiunta la dimensione del valore e della
+ veracità 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Berman2013"
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Variabilità SAS introduced Variability and Com- plexity as two additional
- dimensions of big data.
- Variability refers to the variation in the data flow rates.
- Often, big data velocity is not consistent and has periodic peaks and troughs.
- Complexity refers to the fact that big data are generated through a myriad
- of sources.
- This imposes a critical challenge: the need to con- nect, match, cleanse
- and transform data received from different sources.
- il 90% dei dati oggi è non strutturato.
-\end_layout
+\end_inset
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Veracità IBM coined Veracity as the fourth V, which represents the unreliability
- inherent in some sources of data.
- For example, cus- tomer sentiments in social media are uncertain in nature,
- since they entail human judgment.
- Yet they contain valuable informa- tion.
- Thus the need to deal with imprecise and uncertain data is another facet
- of big data, which is addressed using tools and analytics developed for
- management and mining of uncertain data.
+.
+ La mancanza del valore informativo come metrica big data, esponeva infatti
+ lo spazio 
+\begin_inset Formula $V^{3}$
+\end_inset
+
+ ad un simpatico paradosso che ha motivato la definizione dello spazio metrico
  
+\begin_inset Formula $C^{3}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Suthaharan2013"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Valore Oracle introduced Value as a defining attribute of big data.
- Based on Oracle’s definition, big data are often characterized by relatively
- “low value density”.
- That is, the data received in the original form usually has a low value
- relative to its volume.
- How- ever, a high value can be obtained by analyzing large volumes of such
- data.
- Le infrastrutture di processamento dei big data possono essere molto costose
- e le compagnie vogliono un grande ROI
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Paragraph
 Spazio metrico 
 \begin_inset Formula $C^{3}$
 \end_inset
@@ -757,12 +584,31 @@ Spazio metrico
 \end_layout
 
 \begin_layout Standard
-Sebbene lo spazio metrico 
-\begin_inset Formula $V^{5}$
+Lo spazio metrico 
+\begin_inset Formula $C^{3}$
 \end_inset
 
- sia stato, ed è tuttora, avallato dal mondo della ricerca, questo non è
- esente da criticità.
+, o 
+\begin_inset Quotes fld
+\end_inset
+
+spazio delle tre C
+\begin_inset Quotes frd
+\end_inset
+
+, è stato introdotto per ovviare ad un paradosso a cui era esposto lo spazio
+ 
+\begin_inset Formula $V^{3}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Suthaharan2013"
+
+\end_inset
+
+.
  Se consideriamo infatti un dataset composto da 
 \begin_inset Formula $N$
 \end_inset
@@ -780,59 +626,541 @@ Sebbene lo spazio metrico
 \end_inset
 
 , crescente velocemente all'infinito, lo spazio metrico 
-\begin_inset Formula $V^{5}$
+\begin_inset Formula $V^{3}$
 \end_inset
 
- classificherebbe tale dataset come Big Data, nonostante tale considerazione
+ classificherebbe tale dataset come big dataset, nonostante tale considerazione
  sia intuitivamente falsa.
  Per ovviare a tale paradosso è stato introdotto lo spazio metrico 
 \begin_inset Formula $C^{3}$
 \end_inset
 
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Suthaharan2013"
-
+ , le cui dimensioni sono (i) la Cardinalità, ovvero la dimensione in record
+ del dataset, (ii) la Continuità, ovvero la dimensione utile di ogni record,
+ e (iii) la Complessità, ovvero la domanda computazionale del processamento.
+ L'introduzione della complessità come metrica big data risolve il paradosso
+ dello spazio 
+\begin_inset Formula $V^{3}$
 \end_inset
 
-, le cui dimensioni sono la cardinalità, la continuità e la complessità.
- 
-\end_layout
+.
+ Nonostante ciò, lo spazio 
+\begin_inset Formula $V^{5}$
+\end_inset
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Cardinalità Dimensione del dataset, espressa in numero di record.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Continuità Dimensione di un record e/o dimensione della sua rappresentazione
- utile.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Complessità Domanda computazionale per il processamento del dato.
- Variabilità della sua tipologia e della sua dimensione.
+ è rimasto comunnque il più adottato.
 \end_layout
 
 \begin_layout Section
-Case Studies
+Information Flow Processing
 \end_layout
 
 \begin_layout Standard
-Some companies really leverage big data to drive business performance.
- They range from industry giants like Google, Amazon, Facebook, General
- Electric, and Microsoft, to smaller businesses which have put big data
- at the centre of their business model, like Kaggle and Cornerstone 
+Con il termine 
+\begin_inset Quotes fld
+\end_inset
+
+Information Flow Processing
+\begin_inset Quotes frd
+\end_inset
+
+ (IFP) ci si riferisce ad un dominio applicativo in cui l'utente deve tempestiva
+mente estrarre valore da un massiccio flusso continuo di dati eterogenei
+ prodotti da sorgenti distribuite 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Marr2015"
+key "Cugola2012"
 
 \end_inset
 
 .
+ Questi dati fluiscono dalla periferia del sistema fino al suo centro
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Quotes fld
+\end_inset
+
+periferia
+\begin_inset Quotes frd
+\end_inset
+
+ e 
+\begin_inset Quotes fld
+\end_inset
+
+centro
+\begin_inset Quotes frd
+\end_inset
+
+ del sistema sono intesi in senso logico, non solo geografico, per quanto
+ le due accezioni possano spesso coincidere.
+\end_layout
+
+\end_inset
+
+, essendo processati 
+\begin_inset Quotes fld
+\end_inset
+
+on the fly
+\begin_inset Quotes frd
+\end_inset
+
+ nel momento stesso in cui vi transitano.
+ Tale dominio ha uno spettro di applicabilità oggigiorno molto ampio
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+la sentiment analysis, la finanza, l'high frequency trading, il monitoraggio
+ delle reti, la sicurezza ed il controllo industriale sono solo alcuni classici
+ esempi della sua applicabilità.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Sistemi tradizionali
+\end_layout
+
+\begin_layout Standard
+I DBMS tradizionali prevedono (i) una fase di memorizzazione
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+intesa come memorizzazione persistente.
+\end_layout
+
+\end_inset
+
+ ed indicizzazione dei dati prima di poterli processare, e (ii) che l'elaborazio
+ne dei dati venga esplicitamente richiesta dall'utente.
+ Tali sistemi sono pertanto chiamati Human-Active Database-Passive (HADP),
+ per indicarne l'interazione passiva ed asincrona rispetto all'arrivo dei
+ dati nel sistema.
+ Nei sistemi tradizionali includiamo anche gli Active-DBMS, sviluppati per
+ garantire una certa reattività all'arrivo dei dati.
+ Questi sistemi permettono di definire delle procedure da eseguire al verificars
+i di specifiche condizioni.
+ Ciò realizza, almeno in teoria, un'operatività sincrona all'arrivo dei
+ dati al sistema.
+ Tuttavia, tali sistemi non scalano, nè computazionalmente nè economicamente,
+ quando applicati al dominio IFP.
+ 
+\end_layout
+
+\begin_layout Standard
+I DBMS tradizionali non soddisfano dunque i requisiti previsti dall'IFP,
+ aprendo così le porte allo sviluppo di sistemi basati su paradigmi computaziona
+li totalmente differenti.
+ Negli anni sono emersi, dalla comunità scientifica ed industriale, due
+ modelli principali: il Data Stream Processing ed il Complex Event Processing.
+\end_layout
+
+\begin_layout Paragraph
+Data Stream Processing
+\end_layout
+
+\begin_layout Standard
+Il Data Stream Processing (DSP) è un paradigma computazionale in cui una
+ rete di operatori processa un flusso continuo di tuple.
+ Ogni operatore incapsula la logica di un'azione da eseguire sul flusso
+ in ingresso, producendo così un conseguente flusso in uscita.
+ L'insieme degli operatori è partizionato in (i) sources, ovvero le sorgenti
+ prime del flusso, (ii) sinks, ovvero i destinatari ultimi del flusso, e
+ (iii) pipes
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+questi operatori assumono nomi diversi in letteratura: pipes, cosumers,
+ bolts, e così via.
+\end_layout
+
+\end_inset
+
+, ovvero coloro che attuano trasformazioni o individuazione di patterns
+ sul flusso entrante riportadone il risultato sul flusso in uscita.
+ La natura di queste azioni dipende evidentemente dalla semantica del linguaggio
+ adottato dal sistema.
+\end_layout
+
+\begin_layout Paragraph
+Complex Event Processing
+\end_layout
+
+\begin_layout Standard
+Il Complex Event Processing (CEP) è un paradigma computazionale in cui l'oggetto
+ del processamento è un flusso continuo di eventi
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+per evento si intende il verificarsi di una certa condizione sui dati
+\end_layout
+
+\end_inset
+
+, sui quali è possibile definire complessi patterns relazionali.
+ L'origine di tali sistemi si fa risalire al dominio applicativo Publish-Subscri
+be (PS) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Eugster2003"
+
+\end_inset
+
+.
+ Un sistema PS notifica infatti singoli eventi agli agenti che vi abbiano
+ espresso interesse
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+l'interesse di un agente può essere espresso (i) in base al topic dell'evento,
+ ovvero la sua appartenenza ad una specifica categoria, oppure (ii) in base
+ al suo contenuto.
+ Si parla rispettivamente di sistemi topic-based e sistemi cotnent-base.
+\end_layout
+
+\end_inset
+
+.
+ Ciò che differenzia profondamente i PS dai CEP è il fatto che i primi elaborano
+ e notificano singoli eventi, mentre i secondi estendono l'elaborazione
+ e la notifica a complessi patterns definiti sugli stessi, disponendo dunque
+ di un linguaggio di sottoscrizione molto più espressivo.
+\end_layout
+
+\begin_layout Paragraph
+Framework IFP
+\end_layout
+
+\begin_layout Standard
+Fornire definizioni e metriche stabili per tecnologie innovative.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cugola2012"
+
+\end_inset
+
+ è stato definito un framework di modellazione che permette di identificare
+ dettagliatamente le specifiche di un sistema IFP.
+ Tale framework prende in esame (i) il tipo di processamento, (ii) le modalità
+ della sua dichiarazione, (iii) l'interazione tra gli operatori ed il sistema,
+ (iv) la tipologia di dati, (v) la percezione del tempo, e (vi) la semantica
+ del linguaggio adottato.
+\end_layout
+
+\begin_layout Section
+Applicazioni di Data Stream Processing
+\end_layout
+
+\begin_layout Standard
+Un'applicazione di data stream processing può essere rappresentata come
+ un grafo orientato aciclico, dove i nodi rappresentano gli operatori e
+ gli archi rappresentano i data stream.
+ In Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rappresentazioni-applicazione-dsp"
+
+\end_inset
+
+ ne riportiamo una rappresentazione generale ed una presa da un caso reale.
+ Nel Capitolo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Posizionamento-Ottimo"
+
+\end_inset
+
+ daremo una caratterizzazione dettagliata dei nodi e degli archi del grafo
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rappresentazione-generale-applicazione-dsp"
+
+\end_inset
+
+, al fine di renderlo il principale strumento per la trattazione del problema
+ del posizionameto degli operatori.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/data-stream-processing/application-dsp-general.svg
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rappresentazione-generale-applicazione-dsp"
+
+\end_inset
+
+Rappresentazione generale di un'applicazione di data stream processing.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/data-stream-processing/application-dsp-real.svg
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rappresentazione-reale-applicazione-dsp"
+
+\end_inset
+
+Rappresentazione di un'applicazione reale di data stream processing 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Universitat2015"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un'applicazione di data stream processing è pensata per essere eseguita
+ da una architettura distribuita, sia essa un Cluster, una Cloud, una Grid,
+ una Fog o una soluzione ibrida.
+ 
+\end_layout
+
+\begin_layout Standard
+Il problema di determinare il deploy ottimale dell'applicazione sui nodi
+ dell'architettura è comunemente chiamato Operator Placement Problem (OPP)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+anche detto Operator Deployment Problem (ODP).
+\end_layout
+
+\end_inset
+
+ e verrà largamente affrontato a partire dal prossimo capitolo.
+ La scelta del tipo di infrastruttura è strettamente legata al problema
+ di posizionamento, ma esula lo scopo di questa tesi.
+ Nei capitoli seguenti descriveremo dunque l'architettura distribuita nella
+ sua accezione più generale, ovvero come un grafo orientato pesato e completo.
+\end_layout
+
+\begin_layout Paragraph
+Ottimizzazioni
+\end_layout
+
+\begin_layout Standard
+Una applicazione DSP può essere ottimizzata apportando modifiche strategiche
+ alla sua topologia o al posizionamento degli operatori 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schneider2013"
+
+\end_inset
+
+.
+ Tali modifiche possono intendersi sia come soluzioni progettuali, che come
+ ottimizzazioni adattative da eseguire a runtime.
+ Le principali sono (i) il riordinamento degli operatori, (ii) l'eliminazione
+ della ridondanza, (iii) la fusione degli operatori, (iv) la fissione degli
+ operatori, (iv) la condivisione dello stato fra operatori, (v) la selezione
+ degli operatori, e (vi) il load shedding.
+ Alcune di esse apportano modifiche locali al numero dei nodi dell'applicazione,
+ è dunque necessario nella progettazione di algoritmi di ottimizzazione
+ tenere conto di questa variabilità.
+ Nell'analisi sperimentale condotta nel capitolo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:analisi-sperimentale"
+
+\end_inset
+
+, terremo conto di questa variabilità considerando in fase di test un numero
+ di nodi operazionali maggiore di quelli tipicamente previsti nella fase
+ progettuale dell'applicazione 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Universitat2015"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Esempi di applicazioni
+\end_layout
+
+\begin_layout Standard
+Spesso quado si parla di Big Data e di Data Stream Processing, sia associa
+ il fenomeno e le tecnologie annesse all'esplosione dei social media.
+ Questo perchè l'analisi dei comportamenti digitali dell'utente-cosumatore
+ ha una grande importanza strategica ed economica nei processi di business
+ intelligence.
+ Risulta dunque abbastanza intuitivo pensare ad applicazioni come Google
+ Hot Searches 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GoogleTrendsHotSearches"
+
+\end_inset
+
+, o a strumenti di sviluppo come Twitter Streaming API 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TwitterStreamingAPI"
+
+\end_inset
+
+.
+ Il fenomeno Big Data però non è da confinarsi ai social media.
+ La sua applicabilità si estende al monitoraggio delle reti, all'analisi
+ del consumo energetico, al monitoraggio dei mercati finanziari, all'high
+ frequency trading ed altro ancora.
+\end_layout
+
+\begin_layout Standard
+Un esempio lampante di applicazione data stream processing nel mondo della
+ ricerca scientifica è la selezione dei dati generati dal Large Hadron Collider
+ (LHC) del CERN di Ginevra 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CERNLHC"
+
+\end_inset
+
+.
+ Ogni esperimento condotto sul LHC implica l'osservazione di 600 milioni
+ di collissioni atomiche al secondo, di cui tipicamente solo lo 1% ha una
+ rilevanza scientifica.
+ Queste collisisoni producono un dataset ad un rate medio di 1PBps, il quale
+ viene filtrato in realtime dal datacenter per selezionarne la sola porzione
+ interessante su cui poi condurre analisi nei centri specializzati distribuiti
+ in tutto il pianeta 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CERNDSP,CERNWLCG"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Benchmarks
+\end_layout
+
+\begin_layout Standard
+Lo studio di soluzioni basate su nuovi paradigmi computazionali necessita
+ la defiizione di un benchmark che ne orienti lo sviluppo.
+ Nel caso del data stream processing, ciò è stato realizzato dalla Association
+ of Computing Machinery (ACM) attraverso la conferenza Distributed Event
+ Based Systems (DEBS).
+\end_layout
+
+\begin_layout Standard
+La Distributed Event Based Systems (DEBS) Grand Challenge è una competizione
+ internazionale affermatasi, a partire dal 2012, come benchmark della applicabil
+ità di soluzioni IFP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jerzak2012,Mutschler2013,JerzakZiekow2014,JerzakZiekow2015"
+
+\end_inset
+
+.
+ Ogni anno il DEBS Grand Challenge propone un nuovo problema considerato
+ rilevante per il mondo della ricerca e dell'industria.
+ Di tale problema fornisce una descrizione dettagliata, un dataset realistico
+ e un insieme di metriche volte a quantificare la scalabilità delle soluzioni
+ proposte
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ad esempio: query throughput e query latency in funzione del workload e
+ del numero di nodi computazionali.
+\end_layout
+
+\end_inset
+
+.
+ I partecipanti al concorso sottomettono dunque al giudizio della commissione
+ soluzioni innovative e fortemente performanti.
+ Queste soluzioni permettono di tracciare annualmente lo stato dell'arte
+ del data stream processing.
 \end_layout
 
 \end_body

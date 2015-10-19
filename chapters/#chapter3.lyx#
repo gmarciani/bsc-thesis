@@ -106,17 +106,17 @@ Implementazione
 \begin_layout Standard
 In questo capitolo descriviamo brevemente l’implementazione software dei
  modelli proposti per il problema di posizionamento.
- Nel seguito, parleremo dunque di “modello” in riferimento all'implementazione
- software della corrispondente formulazione matematica.
+ Nel seguito, parleremo dunque di “modello” in riferimento alla implementazione
+ software di una corrispondente formulazione matematica.
 \end_layout
 
 \begin_layout Standard
 I modelli sono stati realizzati dapprima in Optimization Programming Language
  (OPL) all’interno dell’ambiente di sviluppo integrato IBM ILOG CPLEX Optimizati
 on Studio.
- Abbiamo adottato questa soluzione preliminare in quanto era necessaria
- una rapida prototipazione dei modelli, volta a valutarne le prestazioni
- su piccole istanze ad hoc.
+ Abbiamo adottato questa soluzione preliminare perché necessitavamo di una
+ rapida prototipazione dei modelli volta a valutarne le prestazioni su piccole
+ istanze ad hoc.
  
 \end_layout
 
@@ -215,14 +215,7 @@ key "Serafini2009"
 \end_inset
 
 , ma sono anche quelli che più diffusamente trovano applicazione nei processi
- di business intelligence e di controllo industriale 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "IBMCPLEXUserManual"
-
-\end_inset
-
-.
+ di business intelligence e nel settore industriale.
 \end_layout
 
 \begin_layout Paragraph
@@ -244,8 +237,8 @@ key "IBMOPL2015,IBMMPvsCP"
 \end_inset
 
 .
- Oltre alla definizione dei modelli, il linguaggio permette di definire
- il dataset e stabilire semplici procedure di pre/post-processamento
+ Oltre alla definizione dei modelli, il linguaggio permette anche di definire
+ un dataset e definirvi procedure di pre/post-processamento
 \begin_inset Foot
 status collapsed
 
@@ -261,6 +254,10 @@ per il pre/post-processamento OPL fornisce un liguaggio simile al Javascript,
 \end_layout
 
 \begin_layout Standard
+Per i nostri scopi OPL 
+\end_layout
+
+\begin_layout Standard
 OPL permette di minimizzare il codice necessario, massimizzandone l'espressività
  e rendendo l’applicazione facilmente manutenibile.
  Di contro, questo risulta poco flessibile in termini di strutture dati,
@@ -272,9 +269,9 @@ Struttura di un progetto CPLEX
 \end_layout
 
 \begin_layout Standard
-Un progetto CPLEX prevede almeno (i) un file (.mod) in OPL per la descrizione
- del modello, (ii) un file (.dat) in OPL per la definizione del dataset e
- (iii) un file (.ops) in XML per l'impostazione dei parametri di risoluzione.
+Un progetto CPLEX prevede tre tipologie di file: i file (.mod) in OPL per
+ la descrizione del modello, i file (.dat) in OPL per la definizione del
+ dataset, i file (.ops) in XML per l'impostazione dei parametri di risoluzione.
  L'associazione di un file .mod, un file .dat ed un file .ops costituisce una
  configurazione di esecuzione.
  Un progetto presenta, tipicamente, più configurazioni di esecuzione alternative
@@ -293,7 +290,7 @@ key "IBMCPLEXManualIDE,IBMCPLEXUserManual,IBMOPLUserManual,IBMOPLReferenceManual
 \end_layout
 
 \begin_layout Standard
-L'implementazione dei modelli all'interno di IBM ILOG CPLEX Optimization
+L'implementazione dei modelli all'interno dell'IBM ILOG CPLEX Optimization
  Studio ci ha garantito un rapido processo di prototipazione, consentendoci
  così di avere subito una prima valutazione delle performance.
  Nondimeno ci ha permesso di acquisire familiarità con le potenzialità di
@@ -321,15 +318,6 @@ OPMap (OPerator Mapping) è l'applicazione sviluppata appositamente per condurre
  l'analisi sperimentale sui modelli proposti per il problema di posizionamento.
  L'applicazione è scritta in Java8 ed utilizza le APIs esposte da IBM Java
  Concert Technology per interfacciarsi con il core del motore CPLEX.
- In Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:architettura-opmap"
-
-\end_inset
-
- mostriamo una semplice rappresentazione dell'architettura OPMap, che descrivere
-mo nel seguito adottando un approccio bottom-up.
 \end_layout
 
 \begin_layout Standard
@@ -344,8 +332,7 @@ status open
 \begin_inset Graphics
 	filename /home/giacomo/Documents/projects/bsc-thesis/figures/implementation/opmap-architecture.svg
 	lyxscale 60
-	width 12cm
-	groupId implementation
+	width 10cm
 
 \end_inset
 
@@ -356,12 +343,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:architettura-opmap"
-
-\end_inset
-
 Architettura OPMap
 \end_layout
 
@@ -380,15 +361,16 @@ Architettura OPMap
 \end_layout
 
 \begin_layout Standard
+Per la descrizione dell'architettura adotteremo un approccio bottom-up.
+\end_layout
+
+\begin_layout Standard
 
 \shape slanted
 CPLEX Core
 \shape default
-, o 
-\shape slanted
-CPLEX Callable Library
-\shape default
-, è la libreria C che realizza tutte le funzionalità del motore CPLEX.
+, o CPLEX Callable Library, è la libreria C che realizza tutte le funzionalità
+ del motore CPLEX.
  
 \end_layout
 
@@ -427,7 +409,7 @@ key "OracleJNI"
 \end_inset
 
 .
- Nella nostra architettura, la JNI viene utilizzata internamente da Java
+ Nella nostra architettura, la JNI viene utilizzata internamente dal Java
  Concert Technology per invocare i metodi della libreria CPLEX.
 \end_layout
 
@@ -438,18 +420,18 @@ Java Concert Technology
 \shape default
  è il framework Java, sviluppato da IBM, che espone le APIs necessarie alla
  creazione, risoluzione ed analisi dei modelli di ottimizzazione.
- Queste APIs forniscono un totale accesso alle funzionalità del motore CPLEX,
- attraverso (i) 
+ 
 \shape slanted
 IloModeler
 \shape default
-, ovvero la factory che permette di creare le componenti del modello nella
- forma di oggetti Java, e (ii) 
+ è la factory tramite la quale è possibile creare ogni componente del modello
+ come oggetto Java.
+ 
 \shape slanted
 IloCplex
 \shape default
-, ovvero la classe tramite la quale è possibile risolvere ed analizzare
- un modello compilato.
+ è la classe tramite la quale è possibile eseguire tutte le funzionalità
+ previste dal motore CPLEX su un modello compilato.
  Nella nostra architettura, 
 \shape slanted
 IloModeler
@@ -476,7 +458,7 @@ key "JUnit"
 \end_inset
 
  è un framework Java open source per la creazione di test.
- Nella nostra architettura, lo abbiamo utilizzato per testare la compilazione
+ Nella nostra architettura, abbiamo utilizzato JUnit per testare la compilazione
  e la risoluzione dei modelli.
  Ogni esperimento previsto dall'analisi sperimentale è stato implementato
  nella forma di un 
@@ -492,21 +474,26 @@ JUnit TestCase
 OPPModel
 \shape default
  è l'interfaccia implementata da un qualsivoglia modello OPP.
- Il costruttore del modello riceve in input (i) una 
+ Il costruttore del modello riceve in input una 
 \shape slanted
 Architecture
 \shape default
- , ovvero l'oggetto che incapsula i dettagli dell'architettura distribuita,
- e (ii) una 
+ ed una 
 \shape slanted
 Application
 \shape default
-, ovvero l'oggetto che incapsula i dettagli dell'applicazione DSP.
+, le quali implementano rispettivamente l'architettura distribuita e l'applicazi
+one DSP.
  Il costruttore del modello invoca i metodi di 
 \shape slanted
 IloModeler
 \shape default
  per istanziarsi come modello CPLEX.
+ Il risolutore del modello invoca invece i metodi di 
+\shape slanted
+IloCplex
+\shape default
+ per risolvere il modello compilato.
 \end_layout
 
 \begin_layout Standard
@@ -516,10 +503,10 @@ RandomGenerator
 \shape default
  è una factory adibita alla generazione casuale di architetture distribuite
  ed applicazioni DSP.
- Questo generatore garantisce il pieno controllo statistico e deterministico
- delle istanze del problema, ed è pertanto impiegato in ogni esperimento
- per generare le istanze secondo i parametri statistici e deterministici
- previsti dall'esperimento.
+ Questo generatore garantisce il pieno controllo statistico delle istanze
+ del problema, ed è pertanto impiegato in ogni esperimento per generare
+ le istanze secondo i parametri statistici e deterministici previsti dall'esperi
+mento.
 \end_layout
 
 \begin_layout Standard
@@ -542,13 +529,24 @@ In futuro, speriamo che il progetto OPMap possa diventare un utile strumento
  per la prototipazione rapida in Java di modelli OPP, e che possa fornire
  strumenti di benchmark a supporto dello sviluppo di soluzioni euristiche
  al problema.
- Nell'ottica di questo obiettivo, la prossima release di OPMap fornirà (i)
- una CLI per la definizione dello scopo e dei parametri degli esperimenti,
- (ii) la possibilità di inserire a run-time una propria implementazione
- di modello OPP, (iii) una suite di esperimenti volti a valutare il consumo
- di memoria in fase di compilazione e risoluzione, (iv) risoluzione mediante
- IBM Network Optimizer, e (v) risultati degli esperimenti nella forma prevista
- dall'analisi boxplot.
+ Nell'ottica di questo obiettivo, la prossima release di OPMap fornirà:
+\end_layout
+
+\begin_layout Itemize
+CLI per la definizione dello scopo e dei parametri degli esperimenti;
+\end_layout
+
+\begin_layout Itemize
+inserimento a run-time di una propria implementazione di modello OPP;
+\end_layout
+
+\begin_layout Itemize
+esperimenti per la valutazione della gestione della memoria in fase di compilazi
+one e risoluzione;
+\end_layout
+
+\begin_layout Itemize
+i risultati degli esperimenti anche nella forma prevista dall'analisi boxplot.
 \end_layout
 
 \end_body

@@ -88,6 +88,16 @@ customHeadersFooters
 
 \begin_body
 
+\begin_layout Chapter*
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:abstract"
+
+\end_inset
+
+Abstract
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -96,14 +106,7 @@ status open
 
 
 \backslash
-pagenumbering{roman}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-pagestyle{plain}
+addcontentsline{toc}{chapter}{Abstract}
 \end_layout
 
 \end_inset
@@ -111,66 +114,63 @@ pagestyle{plain}
 
 \end_layout
 
-\begin_layout Chapter*
-Abstract
-\end_layout
-
 \begin_layout Standard
-Da sempre l’essere umano acquisisce dati dal mondo esterno per inferirne
- informazioni utili ad un ampliamento della conoscenza o ad un processo
- decisionale.
+Da sempre l’essere umano acquisisce dati dal mondo esterno per estrarvi
+ informazioni utili ad un processo decisionale o per un generale ampliamento
+ della conoscenza.
 \end_layout
 
 \begin_layout Standard
 Negli ultimi anni si assiste ad una proliferazione di dati mai vista prima
  d’ora.
- Il tasso di produzione è così elevato che ad oggi siamo in grado di generare
- più dati di quanto non sia possibile analizzarne.
- Ognuno di noi è al contempo fruitore e produttore, talvolta incosapevole,
- di grandi masse di dati eterogenei ad alto potenziale informativo.
+ I volumi, il tasso di produzione e l'eterogeneità sono così elevati che
+ ad oggi siamo in grado di generare più dati di quanto non sia possibile
+ analizzarne.
  Tali tendenze sono destinate a crescere e diffondersi sempre più rapidamente.
- Ciò è dovuto alla naturale sinergia tra l'evoluzione di tecnologie abilitanti,
- la propensione all'interazione digitale, e l'affermazione sul mercato di
- compagnie, beni e servizi dal core business sempre più data-oriented.
- Questa sinergia ha così distribuito, potenziato e reso accessibile la capacità
- di produzione ed acquisizione di dati, al punto da mettere in ginocchio
- le soluzioni adottate dai tradizionali sistemi di processamento.
- Ciò ha reso necessario lo sviluppo di tecnologie di processamento basate
- su paradigmi computazionali nuovi, totalmente orientati al all'elaborazione
- tempestiva delle informazioni da ingenti flussi di dati.
+ Ciò è dovuto alla naturale sinergia tra l'evoluzione delle tecnologie abilitant
+i, la propensione all'interazione digitale, e l'affermazione sul mercato
+ di compagnie, beni e servizi dal core business data-oriented.
+ Questa sinergia ha distribuito e potenziato la capacità di produzione e
+ acquisizione di dati, al punto di mettere in ginocchio i tradizionali sistemi
+ di processamento.
  
 \end_layout
 
 \begin_layout Standard
-All'aumentare della frequenza di produzione dei dati, diminuisce la finestra
+Questo fenomeno prende il nome di 
+\begin_inset Quotes fld
+\end_inset
+
+Big Data
+\begin_inset Quotes frd
+\end_inset
+
+ e, come vedremo, rende necessario lo sviluppo di tecnologie basate su paradigmi
+ computazionali nuovi, orientati all'elaborazione tempestiva di flussi continui
+ di dati.
+ All'aumentare della frequenza di produzione dei dati, diminuisce la finestra
  temporale entro la quale uno specifico dato può assumere valore informativo.
  Un numero crescente di applicazioni richiede dunque un processamento sempre
- più tempestivo di flussi continui di dati prodotti da sorgenti distribuite
+ più sincrono di flussi continui di dati prodotti da sorgenti distribuite
  ed eterogenee, diretti al centro logico del sistema, ovvero laddove l'informazi
 one viene resa fruibile.
- Tali sorgenti sono distribuite geograficamente su vasta scala con densità
- e miniaturizzazioni crescenti.
- La loro eterogeneità riguarda la natura dei dati prodotti e la frequenza
- di produzione.
  
 \end_layout
 
 \begin_layout Standard
-In un tale scenario, l'ottimizzazione dei processi di acquisizione, distribuzion
-e ed elaborazione dei dati non è solo un affascinante esercizio accademico,
- bensì una vera e propria scelta di business, finanche una prerogativa al
- successo.
+Di fronte ad uno scenario così complesso, l'ottimizzazione dei processi
+ di estrazione del valore informativo dei dati non è solo un affascinante
+ esercizio accademico, bensì una vera e propria scelta di business, finanche
+ una prerogativa al successo.
 \end_layout
 
 \begin_layout Standard
-In questo lavoro di tesi forniamo una formulazione in programmazione lineare
- binaria del problema del posizionamento degli operatori in una applicazione
- di Data Stream Processing.
- Siamo infatti convinti della crescente importanza dello studio e sviluppo
- di modelli di ottimizzazione per i nuovi paradigmi di processamento dati.
- Il nostro obiettivo è dunque la ricerca di una formulazione quanto più
- possibile efficiente, di modo che possa risultare un utile bechmark per
- lo sviluppo di soluzioni euristiche al problema.
+In questo lavoro di tesi affrontiamo un problema di ottimizzazione assai
+ rilevante nel campo del Data Stream Processing, ovvero il posizionamento
+ di un'applicazione sui nodi di un'architettura distribuita.
+ Il nostro obiettivo è la ricerca di una formulazione del modello di ottimizzazi
+one quanto più possibile efficiente, di modo che possa risultare un utile
+ bechmark per lo sviluppo di soluzioni euristiche al problema.
 \end_layout
 
 \begin_layout Standard
@@ -178,46 +178,41 @@ Forniamo dapprima una panoramica sui Big Data, spiegando come tale fenomeno
  renda necessario lo sviluppo di nuovi paradigmi computazionali per il processam
 ento dei dati, e mostrando come tali paradigmi si allontanino dalle soluzioni
  tradizionali.
- Introduciamo dunque il concetto di sistema di Information Flow Processing
- (IFP), spiegando come in esso possano essere riconosciuti i sistemi di
- Complex Event Processing (CEP) e di Data Stream Processing (DSP).
+ Introduciamo dunque il concetto di sistema di Information Flow Processing,
+ spiegando come in esso possano essere riconosciuti i sistemi di Data Stream
+ Processing e di Complex Event Processing.
  Tale panoramica ci armerà degli strumenti necessari a comprendere la natura
  del problema in esame.
 \end_layout
 
 \begin_layout Standard
-Il problema del posizionamento degli operatori nel Data Stream Processing
- consiste nell'assegnare l'esecuzione delle unità procedurali di una applicazion
-e DSP ai nodi computazionali di una architettura distribuita.
- Una applicazione DSP è rappresentata da un grafo diretto aciclico che incapsula
- le relazioni fra gli operatori e i dettagli relativi alla loro domanda
- computazionale.
- Una architettura distribuita è rappresentata da un grafo diretto completamente
- connesso che incapsula le potenzialità operative e la connettività delle
- risorse computazionali.
+Il problema del posizionamento per applicazioni di Data Stream Processing
+ consiste nell'assegnare l'esecuzione delle unità procedurali di un'applicazione
+ DSP ai nodi computazionali di un'architettura distribuita.
  Quando il processamento di un flusso continuo di dati è distribuito su
  risorse computazionali e trasmissive distinte, determinare una soluzione
  di posizionamento quanto più possibile prossima all'ottimalità è di fondamental
-e importanza per garantire l'efficienza e l'affidabilità della applicazione.
+e importanza per garantire l'efficienza e l'affidabilità dell'applicazione.
 \end_layout
 
 \begin_layout Standard
-Proponiamo tre formulazioni in programmazione lineare binaria del problema
- di posizionamento degli operatori.
- Partendo da una prima formulazione di base, abbiamo potuto infatti ricavare
- le due seguenti apportando opportue modifiche al dominio delle variabili
- decisionali e a due vincoli di ammissibilità.
+Proponiamo tre formulazioni in programmazione lineare binaria per il problema
+ di posizionamento.
+ Partendo da una prima formulazione di base, abbiamo potuto ricavare le
+ seguenti apportando opportune modifiche al dominio delle variabili decisionali
+ e ad uno specifico vincolo di ammissibilità.
 \end_layout
 
 \begin_layout Standard
 I modelli di ottimizzazione proposti sono stati dapprima implementati in
- OPL all'interno dell'ambiente di sviluppo integrato IBM CPlex Optimization
+ OPL, all'interno dell'ambiente di sviluppo integrato IBM CPlex Optimization
  Studio.
  Tale approccio ci ha garantito una prototipazione rapida dei modelli, al
  fine di verificarne quanto prima consistenza ed efficienza su piccole istanze
  ad hoc.
- Questi modelli sono stati poi implementati in Java, facendo uso della libreria
- IBM CPlex Concert Technology per la loro compilazione e risoluzione.
+ Questi modelli sono stati poi implementati in Java, costituendo così il
+ progetto OPMap, il quale utilizza la libreria IBM CPlex Concert Technology
+ per la loro compilazione e risoluzione.
  L'implementazione in Java ci ha permesso il totale controllo delle istanze
  del problema, così da poter verificare l'efficienza dei modelli quando
  applicati a scenari più complessi e realistici.
@@ -225,11 +220,10 @@ I modelli di ottimizzazione proposti sono stati dapprima implementati in
 \end_layout
 
 \begin_layout Standard
-I modelli sono stati successivamente sottoposti ad una analisi sperimentale,
- volta a compararne le prestazioni in funzione della dimensione e distribuzione
- dell'istanza.
- Le metriche utilizzate per quantificare la prestazioni sono state il tempo
- di creazione ed il tempo di risoluzione.
+I modelli sono stati successivamente sottoposti ad un'analisi sperimentale
+ quanto più possibile estensiva, volta a compararne le prestazioni in funzione
+ della dimensione e distribuzione dell'istanza.
+ 
 \end_layout
 
 \begin_layout Standard

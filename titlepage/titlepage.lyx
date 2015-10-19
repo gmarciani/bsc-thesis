@@ -84,7 +84,14 @@ status open
 
 
 \backslash
-thispagestyle{empty}
+newgeometry{hmarginratio=1:1} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
 \end_layout
 
 \end_inset
@@ -117,7 +124,7 @@ Tor Vergata
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/torvergata-logo-bw.svg
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/logo/torvergata-logo-bw.svg
 	lyxscale 25
 	scale 30
 
@@ -158,8 +165,12 @@ Laurea Triennale in Ingegneria Informatica
 \align center
 
 \series bold
-\size large
-Posizionamento Ottimo nel Data Stream Processing
+\size larger
+Posizionamento Ottimo per Applicazioni
+\begin_inset Newline newline
+\end_inset
+
+di Data Stream Processing
 \end_layout
 
 \begin_layout Standard
@@ -201,6 +212,29 @@ Giacomo Marciani
 \begin_layout Standard
 \align center
 Anno Accademico 2014/2015
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+restoregeometry
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
