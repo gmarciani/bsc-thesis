@@ -107,11 +107,12 @@ Data Stream Processing
 \end_layout
 
 \begin_layout Standard
-Il Data Stream Processing è un paradigma computazionale che modella una
- elaborazione come un processamento modulare e attivo di un flusso continuo
- di dati.
- Esso si oppone ai paradigmi tradizionali che considerano l'elaborazione
- come un processo discreto e passivo.
+Il Data Stream Processing è un paradigma computazionale che modella l'elaborazio
+ne come una rete di operatori che processano attivamente un flusso continuo
+ di dati volatili, in modo sincrono al loro arrivo nel sistema.
+ Esso si oppone ai paradigmi tradizionali, in cui l'elaborazione è un processo
+ discreto su dati persistenti, attivato esternamente e dunque asincrono
+ all'arrivo dei dati nel sistema.
 \end_layout
 
 \begin_layout Standard
@@ -184,8 +185,43 @@ Trend produzione dati
 \end_layout
 
 \begin_layout Standard
-Ogni giorno produciamo 2.5 quintilioni di bytes di dati, ed il 90% dei dati
- presenti nel mondo oggi è stato creato solo negli ultimi due anni 
+Negli ultimi vent'anni la produzione di dati ha sperimentato una crescita
+ vertiginosa.
+ Questo trend è destinato ad aumentare.
+ Nel 2019 è previsto un traffico Internet globale 66 volte maggiore di quello
+ misurato nel 2005.
+ Il traffico di busy-hour avrà nei prossimi anni un tasso di crescita maggiore
+ del traffico medio, raggiungendo 1Pbps nel 2019.
+ Nel 1992 il traffico Internet globale ammontava a 100GB al giorno, nel
+ 2014 si sono raggiunti i 18.144TB al secondo e nel 2019 sono previsti 51.784TB
+ al secondo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cisco2015:Zetta"
+
+\end_inset
+
+.
+ Il traffico dati mobile è cresciuto del 55% nell'ultimo anno, con un aumento
+ del 15% solo dal primo al secondo quarto del 2015 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AkamaiSOIQ22015"
+
+\end_inset
+
+.
+ Nel 2016 il traffico generato da dispositivi mobili supererà quello generato
+ da dispositivi fissi, ammontando al 67% del traffico totale nel 2019 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cisco2015:VNI:Mobile"
+
+\end_inset
+
+.
+ Ad oggi, produciamo 2.5EB al giorno, ed il 90% dei dati attualmente presenti
+ nel mondo è stato creato solo negli ultimi due anni 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "VCloudBigData"
@@ -193,18 +229,42 @@ key "VCloudBigData"
 \end_inset
 
 .
- Nel 1992 il traffico Internet globale ammontava a 100GB al giorno, nel
- 2013 si sono raggiunti i 28.875GB al secondo e nel 2018 sono previsti 50.000GB
- al secondo.
- 
 \end_layout
 
 \begin_layout Standard
-Solo il 10% dei dati prodotti viene attualmente analizzato.
- Considerando la bassa densità di valore dei Big Data, stiamo perdendo molto
- più del 90% del loro valore.
- Uno studio della IDC stima che nel 2020 il 33% dell'universo digitale conterrà
- dati ad alto potenziale informativo 
+Alla fine del 2016 entreremo nella cosiddetta 
+\begin_inset Quotes fld
+\end_inset
+
+Zettabyte Era
+\begin_inset Quotes frd
+\end_inset
+
+: il traffico IP globale supererà 1ZB annuo, raggiungendo 2ZB nel 2019 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cisco2015:Zetta"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Bisogna resistere alla impulsiva diffidenza per gli studi prospettici: le
+ stime elaborate sono state sempre smentite da valori molto più elevati
+ di quelli previsti.
+ Uno studio pubblicato dalla IDC nel 2007 , prevedeva una produzione nel
+ 2010 di 988 EB 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2007"
+
+\end_inset
+
+.
+ I dati attuali mostrano una produzione di 1227 EB, pari al 29.19% in più
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gantz2012"
@@ -212,34 +272,6 @@ key "Gantz2012"
 \end_inset
 
 .
- Essendo l'80% dei dati prodotti non strutturati, non sono di facile analisi.
-\end_layout
-
-\begin_layout Standard
-Il traffico dati mobile è cresciuto del 55% nell'ultimo anno, con un aumento
- del 15% solo dal primo al secondo quarto del 2015
-\begin_inset CommandInset citation
-LatexCommand cite
-key "AkamaiSOIQ22015"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Bisogna resistere alla impulsiva diffidenza per gli studi prospettici: le
- stime elaborate sono state sempre smentite da valori molto più elevati
- di quelli previsti.
- Lo stesso studio pubblicato dalla IDC nel 2007 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gantz2007"
-
-\end_inset
-
-, prevedeva una produzione nel 2010 di 988 EB.
- I dati attuali mostrano una produzione di 1227 EB, pari al 29.19% in più.
 \end_layout
 
 \begin_layout Paragraph
@@ -248,8 +280,8 @@ Valore dei Big Data
 
 \begin_layout Standard
 Dal 2005 ad oggi l'interesse del mondo accademico ed industriale per i Big
- Data è cresciuto vertiginosamente.
- Si conta un aumento del numero di papers pubblicati del 1000%
+ Data è cresciuto molto.
+ Si conta un aumento del numero di papers pubblicati del 1000% 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Scopus"
@@ -283,6 +315,24 @@ key "GoogleTrendsBigData"
  Lo spettro del valore informativo è certamente ampliato dall'eterogeneità
  delle sorgenti dati, ma poichè tale valore ha una scarsa densità, il rischio
  di perderlo è un problema certamente attuale.
+ 
+\end_layout
+
+\begin_layout Standard
+Solo il 10% dei dati prodotti viene attualmente analizzato.
+ Considerando la bassa densità di valore dei Big Data, stiamo perdendo molto
+ più del 90% del loro valore.
+ Uno studio della IDC stima che nel 2020 il 33% dell'universo digitale conterrà
+ dati ad alto potenziale informativo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gantz2012"
+
+\end_inset
+
+.
+ Essendo l'80% dei dati prodotti non strutturati, questi non sono di facile
+ analisi.
 \end_layout
 
 \begin_layout Standard
@@ -440,16 +490,23 @@ In letteratura sono stati proposti due spazi metrici alternativi, attualmente
  di riferimento: il potenziamento tecnologico innalza il threshold della
  definizione
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 in uno studio condotto dalla IBM nel 2012, un dataset con una dimensione
- di un terabyte veniva già considerato big dataset.
- Oggi, un big dataset è tipicamente misurato in multipli di terabytes e
- petabytes 
+ di un terabyte veniva già considerato big dataset 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schroeck2012"
+
+\end_inset
+
+.
+ Già a partire dal 2013, un big dataset è tipicamente misurato in petabytes
+ o exabytes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kaisler2013"
 
 \end_inset
 
@@ -529,7 +586,7 @@ Lo spazio metrico
  è attualmente il più diffuso in letteratura 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Anuradha2015,Assuncao2014"
+key "Gandomi2015,Anuradha2015,Ozkose2015,Assuncao2014"
 
 \end_inset
 
@@ -550,7 +607,7 @@ spazio delle tre V
  veracità 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Berman2013"
+key "Berman2013,Schroeck2012"
 
 \end_inset
 
@@ -769,17 +826,24 @@ Data Stream Processing
 
 \begin_layout Standard
 Il Data Stream Processing (DSP) è un paradigma computazionale in cui una
- rete di operatori processa un flusso continuo di tuple.
+ rete di operatori processa un flusso continuo di tuple 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cugola2012,Babcock2002"
+
+\end_inset
+
+.
  Ogni operatore incapsula la logica di un'azione da eseguire sul flusso
  in ingresso, producendo così un conseguente flusso in uscita.
  L'insieme degli operatori è partizionato in (i) sources, ovvero le sorgenti
  prime del flusso, (ii) sinks, ovvero i destinatari ultimi del flusso, e
- (iii) pipes
+ (iii) processing elements
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-questi operatori assumono nomi diversi in letteratura: pipes, cosumers,
+questi operatori assumono nomi diversi in letteratura: operators, processors,
  bolts, e così via.
 \end_layout
 
@@ -900,7 +964,7 @@ reference "chap:Posizionamento-Ottimo"
 \end_inset
 
  daremo una caratterizzazione dettagliata dei nodi e degli archi del grafo
- in 
+ in Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:rappresentazione-generale-applicazione-dsp"
@@ -941,6 +1005,10 @@ name "fig:rappresentazione-generale-applicazione-dsp"
 \end_inset
 
 Rappresentazione generale di un'applicazione di data stream processing.
+ I nodi del grafo rappresentano gli operatori dell'applicazione, partizionati
+ in sources, sinks e processing elements.
+ Gli archi del grafo rappresentano i data stream che fluiscono tra gli operatori
+ dell'applicazione.
 \end_layout
 
 \end_inset
@@ -959,6 +1027,7 @@ Rappresentazione generale di un'applicazione di data stream processing.
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -986,22 +1055,28 @@ name "fig:rappresentazione-reale-applicazione-dsp"
 
 \end_inset
 
-Rappresentazione di un'applicazione reale di data stream processing 
+Rappresentazione di un'applicazione reale di data stream processing.
+ Il grafo rappresenta l'applicazione presentata in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Universitat2015"
 
 \end_inset
 
+ come soluzione al problema proposto dalla conferenza DEBS 2015 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "JerzakZiekow2015"
+
+\end_inset
+
 .
+ Collezionando dati dai taxy di New York, l'applicazione restituisce in
+ real-time le tratte più effettuate e le zone più profittevoli della città.
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1016,7 +1091,7 @@ Architettura e posizionamento
 
 \begin_layout Standard
 Un'applicazione di data stream processing è pensata per essere eseguita
- da una architettura distribuita, sia essa un Cluster, una Cloud, una Grid,
+ da un'architettura distribuita, sia essa un Cluster, una Cloud, una Grid,
  una Fog o una soluzione ibrida.
  
 \end_layout
@@ -1045,7 +1120,7 @@ Ottimizzazioni
 \end_layout
 
 \begin_layout Standard
-Una applicazione DSP può essere ottimizzata apportando modifiche strategiche
+Un'applicazione DSP può essere ottimizzata apportando modifiche strategiche
  alla sua topologia o al posizionamento degli operatori 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1055,11 +1130,11 @@ key "Schneider2013"
 
 .
  Tali modifiche possono intendersi sia come soluzioni progettuali, che come
- ottimizzazioni adattative da eseguire a runtime.
+ ottimizzazioni adattative da eseguire a runtime .
  Le principali sono (i) il riordinamento degli operatori, (ii) l'eliminazione
  della ridondanza, (iii) la fusione degli operatori, (iv) la fissione degli
- operatori, (iv) la condivisione dello stato fra operatori, (v) la selezione
- degli operatori, e (vi) il load shedding.
+ operatori, (v) la condivisione dello stato fra operatori, (vi) la selezione
+ degli operatori, e (vii) il load shedding.
  Alcune di esse apportano modifiche locali al numero dei nodi dell'applicazione.
  E' dunque necessario considerare questa variabilità, nel design di modelli
  ed algoritmi di ottimizzazione.
@@ -1088,7 +1163,14 @@ Esempi di applicazioni
 
 \begin_layout Standard
 Spesso si associa il fenomeno Big Data (e tecnologie annesse) all'esplosione
- dei social media.
+ dei social media 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MITPathPersuasion2015"
+
+\end_inset
+
+.
  Questo perchè l'analisi dei comportamenti digitali dell'utente-cosumatore
  ha una grande importanza strategica ed economica nei processi di business
  intelligence.
@@ -1111,13 +1193,20 @@ key "TwitterStreamingAPI"
  Il fenomeno Big Data però non è da confinarsi ai social media.
  La sua applicabilità si estende al monitoraggio delle reti, all'analisi
  del consumo energetico, al monitoraggio dei mercati finanziari, all'high
- frequency trading ed altro ancora.
+ frequency trading ed altro ancora 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chen2014,PhilipChen2014"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Un esempio lampante di applicazione data stream processing nel mondo della
- ricerca scientifica è la selezione dei dati generati dal Large Hadron Collider
- (LHC) del CERN di Ginevra 
+Un esempio lampante di applicazione DSP nel mondo della ricerca scientifica
+ è la selezione dei dati generati dal Large Hadron Collider (LHC) del CERN
+ di Ginevra 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CERNLHC"

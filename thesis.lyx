@@ -9,15 +9,11 @@
 \usepackage{emptypage}
 \usepackage{epigraph}
 \usepackage[pass]{geometry} 
+\usepackage{hyperref}
+\usepackage{url}
 
 % Formulas
 \numberwithin{equation}{chapter}
-
-% References
-\newrefformat{app}{Appendix \ref{#1}}
-
-%\addtocontents{toc}{\protect{\pdfbookmark[0]{\contentsname}{toc}}}
-%\pdfbookmark{\contentsname}{toc}
 \end_preamble
 \options titlepage,openright
 \use_default_options true
@@ -318,7 +314,7 @@ filename "chapters/chapter5.lyx"
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "/home/giacomo/Documents/research/bibliographies/bsc-thesis"
+bibfiles "references/bsc-thesis"
 options "bibtotoc,ieeetr"
 
 \end_inset

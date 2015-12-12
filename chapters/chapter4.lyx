@@ -175,8 +175,8 @@ reference "eq:modello-conservative"
 
 \end_inset
 
-), ci si rende presto conto di come queste consistano ella modifica di quantific
-atori o, al più, di uno specifico vincolo.
+), ci si rende presto conto di come queste consistano nella modifica di
+ quantificatori o, al più, nel modo di esprimere uno specifico vicnolo.
  Vedremo come tali semplici differenze possano avere una forte incidenza
  in termini di performance, sia dal punto di vista della compilazione del
  modello che della sua risoluzione.
@@ -220,19 +220,10 @@ La distribuzione dell'input determina l'eterogeneità delle soluzioni ammissibil
  Ciò è vero in generale in quanto una maggiore eterogeneità permette sempre
  una maggiore efficienza nel discriminare la bontà delle soluzioni ammissibili.
  Questo principio è particolarmente vero nel nostro caso, in quanto adottiamo
- l'ottimizzatore IBM
-\begin_inset script superscript
-
-\begin_layout Plain Layout
-®
-\end_layout
-
-\end_inset
-
- MIP Optimizer con risolutore Simplex Solver 
+ l'ottimizzatore IBM MIP Optimizer con risolutore Simplex Solver 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "IBMCplex2013:2"
+key "IBMCPLEXUserManual,IBMCPLEXPerformance"
 
 \end_inset
 
@@ -358,7 +349,28 @@ Esperimenti e Risultati
 
 \begin_layout Standard
 Mostriamo e commentiamo ora i risultati ottenuti dagli esperimenti.
- Nel progetto OPMap e nel seguito adottiamo la seguente nomenclatura per
+ In ogni esperimento viene preso in esame uno specifico parametro dell'input.
+ I restanti parametri sono opportunamente fissati, considerando valori uniformem
+ente distribuiti su range realistici.
+ In particolare, per la latenza e la disponibilità della rete abbiamo preso
+ come riferimento le misure registrate da InternetPulse 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "InternetPulse,Spring2004,Mahajan2002"
+
+\end_inset
+
+.
+ Precisiamo infine che i risultati degli esperimenti sono mostrati in scala
+ logaritmica per garantire una maggiore espressività delle curve.
+\end_layout
+
+\begin_layout Paragraph
+Nomenclatura
+\end_layout
+
+\begin_layout Standard
+Nel progetto OPMap e nel seguito adottiamo la seguente nomenclatura per
  gli esperimenti eseguiti: 
 \end_layout
 
@@ -373,7 +385,7 @@ Mostriamo e commentiamo ora i risultati ottenuti dagli esperimenti.
 \begin_layout Standard
 dove lo scopo può essere la compilazione (C) o la risoluzione (R) del modello;
  mentre il parametro può essere il numero di nodi computazionali (EXNode),
- il umero di nodi operazionali (OPNode), il fattore di pinnabilità (PINFactor)
+ il numero di nodi operazionali (OPNode), il fattore di pinnabilità (PINFactor)
  o il fattore di eterogeneità (DIVFactor) sia dell'architettura che dell'applica
 zione.
  Ad esempio, l'esperimento [R-OPNode] ha lo scopo di valutare le performance
@@ -416,7 +428,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/c-exnode.png
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/c-exnode-log.png
 	lyxscale 30
 	width 12cm
 	groupId experimentC
@@ -460,7 +472,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/c-opnode.png
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/c-opnode-log.png
 	lyxscale 30
 	width 12cm
 	groupId experimentC
@@ -480,7 +492,7 @@ name "fig:COPNode"
 
 \end_inset
 
-Risultati esperimento [C-OPNode]
+Risultati esperimento [C-OPNode].
 \end_layout
 
 \end_inset
@@ -543,7 +555,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/c-pinfactor-log.png
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/c-pinfactor.png
 	lyxscale 30
 	width 12cm
 	groupId experimentC
@@ -563,7 +575,7 @@ name "fig:CPINFactor"
 
 \end_inset
 
-Risultati esperimento [C-PINFactor]
+Risultati esperimento [C-PINFactor].
 \end_layout
 
 \end_inset
@@ -663,7 +675,7 @@ name "fig:REXNode"
 
 \end_inset
 
-Risultati esperimento [R-EXNode]
+Risultati esperimento [R-EXNode].
 \end_layout
 
 \end_inset
@@ -706,7 +718,7 @@ name "fig:ROPNode"
 
 \end_inset
 
-Risultati esperimento [R-OPNode]
+Risultati esperimento [R-OPNode].
 \end_layout
 
 \end_inset
@@ -786,7 +798,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/r-pinfactor-log.png
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/r-pinfactor.png
 	lyxscale 30
 	width 12cm
 	groupId experimentR
@@ -806,7 +818,7 @@ name "fig:RPINFactor"
 
 \end_inset
 
-Risultati esperimento [R-PINFactor]
+Risultati esperimento [R-PINFactor].
 \end_layout
 
 \end_inset
@@ -828,12 +840,19 @@ reference "fig:RPINFactor"
 \end_inset
 
 , notiamo un comportamento profondamente diverso rispetto a quello riscontrato
- in C-PINFactor.
+ nel corrispondente C-PINFactor in Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:CPINFactor"
+
+\end_inset
+
+.
  Il modello OPPStandard non risulta più insesibile all'aumento del fattore
  di pin.
  Il modello OPPRestricted assume presto l'andamento di OPPStandard.
  Il modello OPPCoservative si mostra sempre più robusto degli altri due,
- ma meno di quanto risconntrato in fase di compilazione.
+ ma meno di quanto riscontrato in fase di compilazione.
 \end_layout
 
 \begin_layout Paragraph
@@ -856,7 +875,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/r-divfactor-log.png
+	filename /home/giacomo/Documents/projects/bsc-thesis/figures/experimental-analysis/r-divfactor.png
 	lyxscale 30
 	width 12cm
 	groupId experimentR
@@ -876,7 +895,7 @@ name "fig:RDIVFactor"
 
 \end_inset
 
-Risultati esperimento [R-DIVFactor]
+Risultati esperimento [R-DIVFactor].
 \end_layout
 
 \end_inset
@@ -897,9 +916,9 @@ reference "fig:RDIVFactor"
 
 \end_inset
 
-, notiamo una generale robustezza dei modelli al fattore di eterogeneità.
- Nei modelli OPPStandard ed OPPRestricted si può notare inoltre la predispozione
- a fluttuazioni dovute alla gestione della memoria
+, notiamo la robustezza del modello OPPConservative al fattore di eterogeneità.
+ Nei modelli OPPStandard ed OPPRestricted si nota invece la predispozione
+ a fluttuazioni dovute (i) alla gestione della memoria
 \begin_inset Foot
 status collapsed
 
@@ -918,9 +937,9 @@ reference "fig:RDIVFactor"
 
 \end_inset
 
-.
- Possiamo concludere che, escluse tali fluttuazioni, il fattori di eterogeneità
- ha poca influenza sulla performance in fase di risoluzione.
+ e (ii) alla strategia di branch and bound adottata dal risolutore.
+ Possiamo dunque concludere che il fattore di eterogeneità ha poca influenza
+ sulle performance in fase di risoluzione.
 \end_layout
 
 \end_body

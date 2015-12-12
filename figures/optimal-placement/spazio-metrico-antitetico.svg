@@ -148,7 +148,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.28"
-     inkscape:cx="68.858836"
+     inkscape:cx="-59.266164"
      inkscape:cy="18.731534"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -177,7 +177,8 @@
      id="layer1"
      transform="translate(0,-875.19677)">
     <g
-       id="g4275">
+       id="g4275"
+       transform="matrix(0.80727204,0,0,0.83668231,17.059878,156.94742)">
       <g
          id="g4251">
         <path

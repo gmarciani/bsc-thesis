@@ -325,16 +325,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="166.33205"
-     inkscape:cy="173.71164"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="142.9566"
+     inkscape:cy="114.30048"
      inkscape:document-units="px"
-     inkscape:current-layer="g4643"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="970"
+     inkscape:window-width="1366"
+     inkscape:window-height="747"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="21"
      inkscape:window-maximized="1"
      units="cm" />
   <metadata
@@ -363,8 +363,10 @@
      id="layer1"
      transform="translate(0,-627.16523)">
     <g
-       id="g4643">
+       id="g3638"
+       transform="translate(0.0625002,0)">
       <g
+         transform="translate(0,1.9013302e-5)"
          id="g4442">
         <circle
            r="12.499998"
@@ -504,7 +506,7 @@
              x="139.25223"
              y="824.12042">19</tspan></text>
         <rect
-           style="opacity:1;fill:none;fill-opacity:1;stroke:#c8c8c8;stroke-width:1.24999985;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.24999985,4.9999994;stroke-dashoffset:0;stroke-opacity:1"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#c8c8c8;stroke-width:1.24999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.24999985, 4.9999994;stroke-dashoffset:0;stroke-opacity:1"
            id="rect4565"
            width="288.67871"
            height="288.67871"
@@ -718,22 +720,23 @@
              y="774.03918">6</tspan></text>
       </g>
       <g
-         id="g4707"
-         transform="translate(-2.9372763e-5,1.9966977e-5)">
+         transform="translate(-12.107159,9.4898091e-6)"
+         id="g3612">
         <g
-           id="g4686">
+           id="g3499"
+           transform="translate(0,1.5131284e-5)">
           <rect
              ry="1.6666666"
              rx="2.5"
              y="790.72205"
-             x="331.69131"
+             x="331.69128"
              height="19.999998"
              width="9.999999"
              id="rect3481"
              style="fill:#d35f5f;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.2168714;stroke-opacity:1" />
           <flowRoot
-             transform="translate(2031.8609,990.86242)"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             transform="translate(2031.8609,991.67825)"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              id="flowRoot3512"
              xml:space="preserve"><flowRegion
                id="flowRegion3514"><rect
@@ -742,23 +745,24 @@
                  height="153.54318"
                  width="767.71594"
                  id="rect3516"
-                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
                id="flowPara3518">Pin as Source</flowPara></flowRoot>        </g>
         <g
-           id="g4693">
+           id="g3506"
+           transform="translate(0,-0.06865252)">
           <rect
              ry="2"
              rx="2.5000002"
              y="816.81842"
-             x="331.69131"
+             x="331.69128"
              height="19.999998"
              width="9.999999"
              id="rect3481-9"
              style="fill:#87de87;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.2168714;stroke-opacity:1" />
           <flowRoot
-             transform="translate(2031.8609,1016.9588)"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             transform="translate(2031.8609,1017.7746)"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              id="flowRoot3512-7"
              xml:space="preserve"><flowRegion
                id="flowRegion3514-6"><rect
@@ -767,23 +771,24 @@
                  height="153.54318"
                  width="767.71594"
                  id="rect3516-2"
-                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
                id="flowPara3518-4">Pin as Sink</flowPara></flowRoot>        </g>
         <g
-           id="g4700">
+           id="g3513"
+           transform="translate(0,-0.2062899)">
           <rect
              ry="2"
              rx="2.5000002"
              y="842.98376"
-             x="331.69131"
+             x="331.69128"
              height="19.999998"
              width="9.999999"
              id="rect3481-4"
              style="fill:#d1eefc;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.2168714;stroke-opacity:1" />
           <flowRoot
-             transform="translate(2031.8609,1041.9116)"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             transform="translate(2031.8609,1042.7812)"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
              id="flowRoot3512-2"
              xml:space="preserve"><flowRegion
                id="flowRegion3514-67"><rect
@@ -792,32 +797,36 @@
                  height="153.54318"
                  width="767.71594"
                  id="rect3516-4"
-                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
-               id="flowPara3518-6">Pin as Pipe</flowPara></flowRoot>        </g>
-        <rect
-           style="fill:#ececec;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.2168714;stroke-opacity:1"
-           id="rect3481-4-1"
-           width="9.999999"
-           height="19.999998"
-           x="331.69131"
-           y="868.80518"
-           rx="2.5000002"
-           ry="2" />
-        <flowRoot
-           xml:space="preserve"
-           id="flowRoot3512-2-3"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           transform="translate(2031.8859,1067.8018)"><flowRegion
-             id="flowRegion3514-67-0"><rect
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
-               id="rect3516-4-8"
-               width="767.71594"
-               height="153.54318"
-               x="-1680.8938"
-               y="-198.2979" /></flowRegion><flowPara
-             id="flowPara3518-6-1"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.49999809px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">Unpinnable</flowPara></flowRoot>      </g>
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+               id="flowPara3518-6">Pin as Processing</flowPara></flowRoot>        </g>
+        <g
+           id="g3605"
+           transform="translate(0,5.823051e-6)">
+          <rect
+             ry="2"
+             rx="2.5000002"
+             y="868.80518"
+             x="331.69128"
+             height="19.999998"
+             width="9.999999"
+             id="rect3481-4-1"
+             style="fill:#ececec;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.2168714;stroke-opacity:1" />
+          <flowRoot
+             transform="translate(2031.8834,1068.732)"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             id="flowRoot3512-2-3"
+             xml:space="preserve"><flowRegion
+               id="flowRegion3514-67-0"><rect
+                 y="-198.2979"
+                 x="-1680.8938"
+                 height="153.54318"
+                 width="767.71594"
+                 id="rect3516-4-8"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.24999905px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
+               id="flowPara3518-6-1">Unpinnable</flowPara></flowRoot>        </g>
+      </g>
     </g>
   </g>
 </svg>

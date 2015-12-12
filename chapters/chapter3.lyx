@@ -139,9 +139,15 @@ IBM ILOG
 status collapsed
 
 \begin_layout Plain Layout
-ILOG è una multinazionale fracese leader nel settore dei Business Process
- Management Systems (BPMS), acquisita da IBM nel Gennaio 2009 per 340M$
- 
+ILOG è una multinazionale fracese leader nel settore dei Business Rule Managemen
+t Systems (BRMS) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IBMILOGOverview"
+
+\end_inset
+
+, acquisita da IBM nel Gennaio 2009 per 340M$ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "IBMILOGAcquisition"
@@ -182,7 +188,7 @@ key "Dantzig1955"
  risoluzione ed analisi di modelli di ottimizzazione 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "IBMCPLEXOptStudio"
+key "IBMCPLEXOptStudioOverview"
 
 \end_inset
 
@@ -190,18 +196,52 @@ key "IBMCPLEXOptStudio"
  Commercializzato, nella sua attuale struttura, a partire dal 2010, è divenuto
  presto un prodotto di punta nel settore dei Business Process Management
  Systems (BPMSs).
+ Attualmente è impiegato sia in ambito accademico che in quello industriale,
+ vantando una diffusa adozione tra le compagnie Fortune 500
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+la 
+\begin_inset Quotes fld
+\end_inset
+
+Fortune 500
+\begin_inset Quotes frd
+\end_inset
+
+ è una classifica annuale, pubblicata dalla rivista Fortune, che riporta
+ le 500 compagnie statunitensi misurate in base al loro fatturato.
+\end_layout
+
+\end_inset
+
  
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhao2015"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Questo IDE unisce lo stile modulare dell’ambiente di sviluppo open source
  Eclipse, la forte espressività del linguaggio OPL e la comprovata efficienza
- degli algoritmi di risoluzione ILOG CPLEX Optimizer e IBM CP Optimizer.
+ degli algoritmi di risoluzione ILOG CPLEX Optimizer e IBM CP Optimizer
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IBMCPLEXOpt,IBMCPLEXCPOpt,IBMMPvsCP"
+
+\end_inset
+
+.
  Di anno in anno questo prodotto migliora le proprie performance nella risoluzio
 ne di modelli Mixed Integer Problems (MIPs) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "IBMCPLEXPerformance"
+key "IBMCPLEXOptPerformance"
 
 \end_inset
 
@@ -232,14 +272,21 @@ OPL
 \begin_layout Standard
 L’Optimization Programming Language (OPL) è un linguaggio di programmazione
  dichiarativo sviluppato da IBM appositamente per essere utilizzato all'interno
- dei prodotti della famiglia CPLEX.
- Questo linguaggio è caratterizzato da una sintassi totalmente orientatata
+ dei prodotti della famiglia CPLEX 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IBMOPLUserManual,IBMOPLReferenceManual,Zhao2015"
+
+\end_inset
+
+.
+ Questo linguaggio è caratterizzato da una sintassi totalmente orientata
  alla descrizione matematica di modelli di ottimizzazione, pertanto affine
  ai principi della Mathematical Programming (MP) e della Constraint Programming
  (CP) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "IBMOPL2015,IBMMPvsCP"
+key "IBMMPvsCP"
 
 \end_inset
 
@@ -261,8 +308,8 @@ per il pre/post-processamento OPL fornisce un liguaggio simile al Javascript,
 \end_layout
 
 \begin_layout Standard
-OPL permette di minimizzare il codice necessario, massimizzandone l'espressività
- e rendendo l’applicazione facilmente manutenibile.
+OPL garantisce la minimizzazione del codice necessario, massimizzandone
+ l'espressività e rendendo l’applicazione facilmente manutenibile.
  Di contro, questo risulta poco flessibile in termini di strutture dati,
  rendendo inagevole il controllo dinamico delle istanze.
 \end_layout
@@ -319,7 +366,7 @@ OPMap
 \begin_layout Standard
 OPMap (OPerator Mapping) è l'applicazione sviluppata appositamente per condurre
  l'analisi sperimentale sui modelli proposti per il problema di posizionamento.
- L'applicazione è scritta in Java8 ed utilizza le APIs esposte da IBM Java
+ L'applicazione è scritta in Java 8 ed utilizza le APIs esposte da IBM Java
  Concert Technology per interfacciarsi con il core del motore CPLEX.
  In Figura 
 \begin_inset CommandInset ref
@@ -362,7 +409,7 @@ name "fig:architettura-opmap"
 
 \end_inset
 
-Architettura OPMap
+Architettura OPMap.
 \end_layout
 
 \end_inset
@@ -471,7 +518,7 @@ JUnit
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "JUnit"
+key "JUnitHome"
 
 \end_inset
 
@@ -512,7 +559,7 @@ IloModeler
 \begin_layout Standard
 
 \shape slanted
-RandomGenerator
+Random Generator
 \shape default
  è una factory adibita alla generazione casuale di architetture distribuite
  ed applicazioni DSP.
@@ -530,7 +577,7 @@ key "OPMapGit"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Paragraph

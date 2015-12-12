@@ -38,17 +38,6 @@ Figura6: distribuzione geografica del'interesse per i Big Data},
   Urldate                  = {2015-10-20}
 }
 
-@TechReport{AkamaiSOIQ22015,
-  Title                    = {{State of the Internet}},
-  Author                   = {Akamai},
-  Institution              = {Akamai},
-  Year                     = {2015},
-
-  Abstract                 = {akamai; internet},
-  File                     = {:home/giacomo/Documents/research/mendeley library/State of the Internet. 2015. Unknown.pdf:pdf},
-  Url                      = {http://bit.ly/Akamai-State-Internet-Q2-2015}
-}
-
 @InProceedings{Aniello2013,
   Title                    = {{Adaptive online scheduling in storm}},
   Author                   = {Aniello, Leonardo and Baldoni, Roberto and Querzoni, Leonardo},
@@ -1151,5 +1140,15 @@ queries: running performance, ball possesion, heat map, shot on goal},
   Abstract                 = {In this paper, Optimization problem is introduced. Some computer tool-kits used to solve optimization problems are outlined with their respective strength and weakness. A state of the art optimization programming language-IBM ILOG OPL is presented. This high level OPL facilitates modeling and solving optimal problem in all application fields significantly. An IBM ILOG OPL model of the shortest-path problem is implemented. Then, with IBM ILOG OPL model of Shortest-path problem as building block, an algorithm of center of graph is illustrated through calling this building block but with different data in consecutive way.This algorithm can be implemented with IBM ILOG Script language.This approach enable engineers in all kinds of field to solve optimal problems since no underlying mechanism of optimization need to be grasped.},
   File                     = {:home/giacomo/Documents/research/mendeley library/Optimal Algorithm Design Of Center of Graph Based on IBM ILOG OPL Model. 2015. Zhao, Hu.pdf:pdf},
   Keywords                 = {Center of Graph,OPL,Shortest-path Problem}
+}
+
+@TechReport{AkamaiSOIQ22015,
+  Title                    = {{State of the Internet}},
+  Institution              = {Akamai},
+  Year                     = {2015},
+
+  Abstract                 = {akamai; internet},
+  File                     = {:home/giacomo/Documents/research/mendeley library/State of the Internet. 2015. Unknown.pdf:pdf},
+  Url                      = {http://bit.ly/Akamai-State-Internet-Q2-2015}
 }
 

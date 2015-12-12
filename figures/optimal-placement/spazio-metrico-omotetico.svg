@@ -103,7 +103,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="-42.577581"
+     inkscape:cx="-133.08725"
      inkscape:cy="24.493655"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -132,7 +132,8 @@
      id="layer1"
      transform="translate(0,-875.19677)">
     <g
-       id="g4229">
+       id="g4229"
+       transform="matrix(0.8,0,0,0.8,17.716522,192.75589)">
       <text
          sodipodi:linespacing="125%"
          id="text4387"
@@ -145,7 +146,7 @@
            id="tspan4391"
            sodipodi:role="line">m<tspan
    id="tspan3385"
-   style="font-size:65%;baseline-shift:sub">1</tspan></tspan></text>
+   style="font-size:64.99999762%;baseline-shift:sub">1</tspan></tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4387-9"
@@ -158,7 +159,7 @@
            x="75.222595"
            y="902.25348">m<tspan
    id="tspan3381"
-   style="font-size:65%;baseline-shift:sub">2</tspan></tspan></text>
+   style="font-size:64.99999762%;baseline-shift:sub">2</tspan></tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4387-2"
@@ -171,7 +172,7 @@
            x="23.482533"
            y="1042.2534">m<tspan
    id="tspan3383"
-   style="font-size:65%;baseline-shift:sub">3</tspan></tspan></text>
+   style="font-size:64.99999762%;baseline-shift:sub">3</tspan></tspan></text>
       <g
          id="g4221">
         <path

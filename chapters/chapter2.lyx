@@ -105,8 +105,8 @@ Posizionamento degli operatori
 
 \begin_layout Standard
 Il problema del posizionamento degli operatori consiste nell'assegnare l'esecuzi
-one degli operatori di una applicazione DSP ai nodi computazionali di una
- architettura distribuita.
+one degli operatori di un'applicazione DSP ai nodi computazionali di un'architet
+tura distribuita.
  Quando il processamento di una standing query è distribuito su risorse
  computazionali e trasmissive distinte, determinare una soluzione di posizioname
 nto quanto più possibile prossima all'ottimalità è di fondamentale importanza
@@ -115,7 +115,7 @@ nto quanto più possibile prossima all'ottimalità è di fondamentale importanza
  ottimizzazione per un'applicazione di data stream processing 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Schneider2013"
+key "Schneider2013,Aniello2013,Pietzuch2006"
 
 \end_inset
 
@@ -123,20 +123,20 @@ key "Schneider2013"
 \end_layout
 
 \begin_layout Standard
-Una applicazione DSP è rappresentata da una topologia che incapsula le relazioni
+Un'applicazione DSP è rappresentata da una topologia che incapsula le relazioni
  fra gli operatori e i dettagli relativi alla loro domanda computazionale.
- Una architettura distribuita, sia essa una Cloud o una Grid, è rappresentata
+ Un'architettura distribuita, sia essa una Cloud o una Grid, è rappresentata
  da una topologia che incapsula le potenzialità operative e la connettività
  delle risorse computazionali.
  Il problema del posizionamento degli operatori consiste dunque nel mappare
- la topologia operazionale della applicazione sulla topologia logica e fisica
- delle risorse computazionali offerte dalla architettura distribuita.
+ la topologia operazionale dell'applicazione sulla topologia logica e fisica
+ delle risorse computazionali offerte dall'architettura distribuita.
  Il posizionamento degli operatori è un problema di ottimizzazione combinatoria
  riducibile al Binary Knapsack Problem ed al Bin Packing Problem: pertanto
  esso appartiene alla classe di complessità computazionale NP-hard 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Cook1983,Fortnow2002,Krentel1988"
+key "Pettorossi2014,Trevisan2002,Krentel1988"
 
 \end_inset
 
@@ -156,17 +156,10 @@ key "Kellerer2004,Martello1990,Martello1987a"
 
 \end_inset
 
-, il Bin Packing Problem 
+ ed il Bin Packing Problem 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Serafini2009,Martello1987"
-
-\end_inset
-
- ed il Metric Labeling Problem 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kleinberg1999,Chuzhoy2004"
 
 \end_inset
 
@@ -178,7 +171,7 @@ reference "sec:Grafo-DSP"
 
 \end_inset
 
- descriviamo il grafo che permette di rappresentare una applicazione DSP.
+ descriviamo il grafo che permette di rappresentare un'applicazione DSP.
  Nella Sezione 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -186,7 +179,7 @@ reference "sec:Grafo-RES"
 
 \end_inset
 
- descriviamo il grafo che permette di rappresentare una architettura distribuita.
+ descriviamo il grafo che permette di rappresentare un'architettura distribuita.
  Nella Sezione 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -205,7 +198,7 @@ reference "sec:Metriche"
 \end_inset
 
  descriviamo lo spazio metrico adottato nel nostro modello, formulando il
- tempo di risposta della applicazione e la disponibilità della architettura.
+ tempo di risposta dell'applicazione e la disponibilità dell'architettura.
  Introduciamo inoltre le utili definizioni di metrica antitetica e metrica
  disomogenea.
  Nella Sezione 
@@ -225,9 +218,11 @@ reference "sec:Formulazione"
 
 \end_inset
 
- diamo infine la formulazione in programmazione lineare binaria del problema:
- di essa forniamo una versione basica ed una sua variante derivata dal vincolo
- di conservazione del flusso del Metric Labeling Problem.
+ diamo infine tre formulazioni del problema di posizionamento in programmazione
+ lineare binaria.
+ Partendo da una prima formulazione basica, ricaviamo le seguenti modificando
+ il dominio delle variabili decisionali ed esprimendo uno specifico vincolo
+ come conservazione di flusso.
 \end_layout
 
 \begin_layout Section
@@ -241,7 +236,7 @@ Grafo DSP
 \end_layout
 
 \begin_layout Standard
-Una applicazione DSP è rappresentata da un grafo diretto aciclico 
+Un'applicazione DSP è rappresentata da un grafo diretto aciclico 
 \begin_inset Formula $G_{dsp}=(V_{dsp},E_{dsp})$
 \end_inset
 
@@ -437,12 +432,12 @@ Sink
 \begin_inset Quotes fld
 \end_inset
 
-Operator
+Processing
 \begin_inset Quotes frd
 \end_inset
 
  sono i nodi 
-\begin_inset Formula $i\in V_{dsp}\setminus So\cap Si$
+\begin_inset Formula $i\in V_{dsp}\setminus(So\cap Si)$
 \end_inset
 
 .
@@ -1031,7 +1026,7 @@ Grafo RES
 \end_layout
 
 \begin_layout Standard
-Una architettura distribuita è rappresentata da un grafo diretto completamente
+Un'architettura distribuita è rappresentata da un grafo diretto completamente
  connesso 
 \begin_inset Formula $G_{res}=(V_{res},E_{res})$
 \end_inset
@@ -1201,12 +1196,12 @@ Pin As Sink
 \begin_inset Quotes fld
 \end_inset
 
-Pin As Operator
+Pin As Processing
 \begin_inset Quotes frd
 \end_inset
 
  sono quei nodi 
-\begin_inset Formula $u\in V_{res}:\exists i\in V_{dsp}\setminus So\cap Si.u\in V_{res}^{i}$
+\begin_inset Formula $u\in V_{res}:\exists i\in V_{dsp}\setminus(So\cap Si).u\in V_{res}^{i}$
 \end_inset
 
 .
@@ -1298,7 +1293,7 @@ Una velocità
 \end_inset
 
  permetterà di processare il doppio delle tuple, una velocità 
-\begin_inset Formula $S_{u}=0,5$
+\begin_inset Formula $S_{u}=0.5$
 \end_inset
 
  permetterà di processare la metà delle tuple, e così via.
@@ -1530,7 +1525,15 @@ key "Martello1987"
 
 \end_inset
 
-: esso appartiene pertanto alla classe di complessità computazionale NP-hard.
+: esso appartiene pertanto alla classe di complessità computazionale NP-hard
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pettorossi2014,Trevisan2002,Krentel1988"
+
+\end_inset
+
+.
  Risulta dunque corretto, oltre che intuitivo, esprimerlo mediante un modello
  di 
 \shape slanted
@@ -1864,7 +1867,7 @@ Volendo esprimere tale vincolo in forma algebrica, otteniamo:
 Quanto appena asserito equivale a restringere la dimensione del posizionamento
  degli operatori.
  Diamo dunque una definizione di posizionamento degli operatori, alternativa
- alla 
+ a Equazione 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:posizionamento-operatori"
@@ -1880,24 +1883,24 @@ reference "eq:posizionamento-operatori"
 \end_inset
 
 Risulta dunque equivalente considerare il posizionamento nella forma standard
- indicata in 
+ indicata in Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:posizionamento-operatori"
 
 \end_inset
 
- vincolata da 
+ vincolata da Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:vincolo-eligibilità-x-algebrico"
 
 \end_inset
 
 , oppure considerare il posizionamento nella forma ristretta indicata in
- 
+ Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:posizionamento-x-ristretto"
 
 \end_inset
@@ -1910,14 +1913,14 @@ Vincolo di eligibilità dei data stream
 \end_layout
 
 \begin_layout Standard
-Dal vincolo di eligibilità degli operatori 
+Dal vincolo di eligibilità degli operatori (Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:vincolo-eligibilità-x-logico"
 
 \end_inset
 
- segue che ad ogni data stream 
+) segue che ad ogni data stream 
 \begin_inset Formula $(i,j)\in E_{dsp}$
 \end_inset
 
@@ -1951,7 +1954,7 @@ u\notin V_{res}^{i}\lor v\notin V_{res}^{j}\Rightarrow y_{(i,j)(u,v)}=0\qquad\fo
 
 Notiamo che quanto appena asserito equivale a restringere la dimensione
  del posizionamento dei data stream.
- Diamo dunque una definizione alternativa alla 
+ Diamo dunque una definizione alternativa a Equazione 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:posizionamento-data-stream"
@@ -1967,24 +1970,24 @@ reference "eq:posizionamento-data-stream"
 \end_inset
 
 Risulta dunque equivalente considerare il posizionamento nella forma standard
- indicata in 
+ indicata in Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:posizionamento-data-stream"
 
 \end_inset
 
- vincolata da 
+ vincolata da Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:vincolo-eligibilità-y-logico"
 
 \end_inset
 
 , oppure considerare il posizionamento nella forma ristretta indicata in
- 
+ Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:posizionamento-x-ristretto"
 
 \end_inset
@@ -2085,33 +2088,22 @@ x_{i,u}+x_{j,v}\geq2y_{(i,j)(u,v)} & \forall(i,j)\in E_{res},(u,v)\in E_{dsp}
 
 \end_inset
 
-In alternativa alla 
+In alternativa a Equazione 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:vincolo-connettività-algebrico"
 
 \end_inset
 
-, il vincolo di connettività 
+, il vincolo di connettività (Equazione 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:vincolo-connettività-logico"
 
 \end_inset
 
- può essere espresso algebricamente nella forma suggerita dal vincolo di
- conservazione del flusso presente nella formulazione del 
-\shape slanted
-Metric Labeling Problem (MLP)
-\shape default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Martello1987"
-
-\end_inset
-
-.
+) può essere espresso algebricamente nella forma di una conservazione di
+ flusso.
  Tale formulazione alternativa è preferibile alla precedente, in quanto
  sperimentalmente più efficiente.
 \begin_inset Formula 
@@ -2147,9 +2139,9 @@ x_{j,v}=\sum_{u\in V_{res}^{i}}y_{(i,j)(u,v)} & \forall(i,j)\in E_{dsp},v\in V_{
 \end_layout
 
 \begin_layout Standard
-Notiamo che da quanto asserito in 
+Notiamo che da quanto asserito in Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:vincolo-connettività-algebrico-alternativo-semplificato"
 
 \end_inset
@@ -2225,9 +2217,9 @@ vincolo di capacità
 
 \end_inset
 
-Sebbene possa risultare evidente, precisiamo che in 
+Sebbene possa risultare evidente, precisiamo che in Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:vincolo-capacità"
 
 \end_inset
@@ -2246,8 +2238,8 @@ name "exa:posizionamento"
 
 \end_inset
 
-Consideriamo la applicazione DSP e la architettura distribuita indicate
- in Figura 
+Consideriamo l'applicazione DSP e l'architettura distribuita indicate in
+ Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:esempio-posizionamento"
@@ -2615,7 +2607,7 @@ has_inner_box 1
 inner_pos "c"
 use_parbox 1
 use_makebox 0
-width "40col%"
+width "35col%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -2671,7 +2663,7 @@ has_inner_box 1
 inner_pos "c"
 use_parbox 1
 use_makebox 0
-width "40col%"
+width "35col%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -2817,7 +2809,7 @@ has_inner_box 1
 inner_pos "c"
 use_parbox 1
 use_makebox 0
-width "40col%"
+width "35col%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -2873,7 +2865,7 @@ has_inner_box 1
 inner_pos "c"
 use_parbox 1
 use_makebox 0
-width "40col%"
+width "35col%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -3021,19 +3013,16 @@ reference "def:metriche-disomogenee"
 
 \end_inset
 
-), le cui dimensioni sono il tempo di risposta della applicazione DSP e
- la disponibilità della architettura distribuita.
- Il tempo di risposta della applicazione è di fondamentale importanza, in
- quanto è il fattore che contribuisce immediatamente alla qualità percepita
- dall'utente finale.
- Esso assume un valore particolarmente importante quando si consideri una
- architettura Grid.
- Una tale architettura introduce infatti necessariamente delle latenze di
- comunicazione crescenti con il suo grado di distribuzione.
- La disponibilità delle risorse computazionali e trasmissive della architettura
- è di fondamentale importanza per la minimizzazione delle procedure di load
- shedding, le quali introducono latenze di processamento sia in una architettura
- Cloud che in una architettura Grid.
+), le cui dimensioni sono il tempo di risposta dell'applicazione DSP e la
+ disponibilità dell'architettura distribuita.
+ Il tempo di risposta e la disponibilità dell'applicazione sono indici di
+ servizio particolarmente importanti, in quanto sono i primi a contribuire
+ alla qualità percepita dall'utente finale.
+ Posizionando l'applicazione sui nodi di un'architettura distribuita, le
+ componenti di latenza e disponibilità relative alle risorse trasmissive
+ sono assai rilevati.
+ Queste infatti crescono in modo proporzionale al grado di distribuzione
+ dell'architettura.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3045,7 +3034,7 @@ Il tempo di risposta
 \begin_inset Formula $R$
 \end_inset
 
- di una applicazione DSP è il tempo worst case necessario affinchè il data
+ di un'applicazione DSP è il tempo worst case necessario affinchè il data
  stream prodotto da un nodo source possa essere consumato da un nodo sink.
  Esaminiamo nel dettaglio le componenti di questa metrica.
 \end_layout
@@ -3163,7 +3152,7 @@ Dato un posizionamento degli operatori
 \begin_inset Formula $R(\mathbf{x})$
 \end_inset
 
- di una applicazione DSP è il tempo worst case necessario affinchè il data
+ di un'applicazione DSP è il tempo worst case necessario affinchè il data
  stream prodotto da un nodo source possa essere consumato da un nodo sink.
 \begin_inset Formula 
 \begin{equation}
@@ -3184,19 +3173,19 @@ La disponibilità
 \begin_inset Formula $A$
 \end_inset
 
- di una architettura distribuita è la probabilità di eseguire il processo
+ di un'architettura distribuita è la probabilità di eseguire il processo
  di trasformazione del data stream assegnandone l'esecuzione a nodi computaziona
 li up-and-running.
  Esaminiamo nel dettaglio le componenti di questa metrica.
 \end_layout
 
 \begin_layout Standard
-Dato un posizionamento dei data stream 
-\begin_inset Formula $\mathbf{y}$
+Dato un posizionamento degli operatori 
+\begin_inset Formula $\mathbf{x}$
 \end_inset
 
 , il generico posizionamento 
-\begin_inset Formula $y_{(i,j)(u.v)}$
+\begin_inset Formula $x_{i,u}$
 \end_inset
 
  induce una 
@@ -3205,6 +3194,7 @@ disponibilità di esecuzione
 \shape default
  dovuta alla esecuzione degli operatori nei nodi computazionali in cui sono
  posizionati.
+ La disponibilità di esecuzione dell'applicazione risulta dunque essere:
 \begin_inset Formula 
 \begin{equation}
 A_{ex}(\mathbf{x})\coloneqq\prod_{i\in V_{dsp}}\left(\sum_{u\in V_{res}^{i}}x_{i,u}A_{u}\right)\label{eq:availability-ex}
@@ -3225,6 +3215,7 @@ Dato un posizionamento dei data stream
 disponibilità di trasferimento
 \shape default
  dovuta alla trasmissione dei data stream sui link logici.
+ La disponibilità di trasferimento dell'applicazione risulta dunque essere:
 \begin_inset Formula 
 \begin{equation}
 A_{tx}(\mathbf{y})\coloneqq\prod_{(i,j)\in E_{res}}\left(\sum_{(u,v)\in V_{res}^{i}\times V_{res}^{j}}y_{(i,j)(u,v)}A_{(u,v)}\right)\label{eq:availability-tx}
@@ -3250,7 +3241,7 @@ Dato un posizionamento degli operatori
 \begin_inset Formula $A(\mathbf{x})$
 \end_inset
 
- di una architettura distribuita è la probabilità di eseguire il processo
+ di un'architettura distribuita è la probabilità di eseguire il processo
  di trasformazione del data stream assegnandone l'esecuzione a nodi computaziona
 li up-and-running.
 \begin_inset Formula 
@@ -3275,28 +3266,29 @@ In quanto appena definito abbiamo assunto per semplicità, l'indipendenza
 \end_layout
 
 \begin_layout Standard
-Onde evitare il dispendio computazionale dovuto alle produttorie in 
+Onde evitare il dispendio computazionale dovuto alle produttorie in Equazione
+ 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:availability-ex"
 
 \end_inset
 
- e 
+ e in Equazione 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:availability-tx"
 
 \end_inset
 
-, diamo una formulazione alternativa della 
+, diamo una formulazione alternativa alla Equazione 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:availability-applicazione"
 
 \end_inset
 
-, risultante dalla applicazione delle proprietà dei logaritmi
+, risultante dall'applicazione delle proprietà dei logaritmi
 \begin_inset Foot
 status collapsed
 
@@ -3600,9 +3592,9 @@ reference "eq:approccio-chebishev"
 \end_layout
 
 \begin_layout Standard
-Esprimiamo la 
+Esprimiamo la Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:approccio-chebishev"
 
 \end_inset
@@ -3703,9 +3695,9 @@ F(x)=\sum_{m\in M_{1}}w_{m}\frac{f_{m}^{max}-f_{m}(x)}{f_{m}^{max}-f_{m}^{min}}+
 \end_layout
 
 \begin_layout Standard
-Ci serviamo della 
+Ci serviamo della Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:funzione-obiettivo-generale"
 
 \end_inset
@@ -3753,9 +3745,9 @@ Funzione obiettivo semplificata
 \end_layout
 
 \begin_layout Standard
-La funzione obiettivo espressa in 
+La funzione obiettivo espressa in Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:funzione-obiettivo"
 
 \end_inset
@@ -3844,28 +3836,29 @@ Modello OPPRestricted
 \end_layout
 
 \begin_layout Standard
-Forniamo inoltre una formulazione alternativa alla 
+Forniamo inoltre una formulazione alternativa alla Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:modello-standard"
 
 \end_inset
 
-, la quale considera il posizionamento ristretto degli operatori 
+, la quale considera il posizionamento ristretto degli operatori (Equazione
+ 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:posizionamento-x-ristretto"
 
 \end_inset
 
- e dei data stream 
+) e dei data stream (Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:posizionamento-y-ristretto"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Standard
@@ -3893,36 +3886,37 @@ Modello OPPConservative
 \end_layout
 
 \begin_layout Standard
-Forniamo inoltre una formulazione alternativa alla 
+Forniamo inoltre una formulazione alternativa alla Equazione 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:modello-standard"
 
 \end_inset
 
-, la quale considera il posizionamento ristretto degli operatori 
+, la quale considera il posizionamento ristretto degli operatori (Equazione
+ 
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand ref
 reference "eq:posizionamento-x-ristretto"
 
 \end_inset
 
- e dei data stream 
+) e dei data stream (Equazione 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:posizionamento-y-ristretto"
 
 \end_inset
 
-, nonchè il vincolo di connettività espresso secondo la conservazione del
- flusso del Metric Labeling Problem 
+), nonchè il vincolo di connettività espresso come conservazione del flusso
+ (Equazione 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:vincolo-connettività-algebrico-alternativo"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Standard

@@ -133,11 +133,7 @@ i, la propensione all'interazione digitale, e l'affermazione sul mercato
  Questa sinergia ha distribuito e potenziato la capacità di produzione e
  acquisizione di dati, al punto di mettere in ginocchio i tradizionali sistemi
  di processamento.
- 
-\end_layout
-
-\begin_layout Standard
-Questo fenomeno prende il nome di 
+ Tale fenomeno prende il nome di 
 \begin_inset Quotes fld
 \end_inset
 
@@ -147,11 +143,14 @@ Big Data
 
  e, come vedremo, rende necessario lo sviluppo di tecnologie basate su paradigmi
  computazionali nuovi, orientati all'elaborazione tempestiva di flussi continui
- di dati.
- All'aumentare della frequenza di produzione dei dati, diminuisce la finestra
+ di dati
+\end_layout
+
+\begin_layout Standard
+All'aumentare della frequenza di produzione dei dati, diminuisce la finestra
  temporale entro la quale uno specifico dato può assumere valore informativo.
  Un numero crescente di applicazioni richiede dunque un processamento sempre
- più sincrono di flussi continui di dati prodotti da sorgenti distribuite
+ più tempestivo di flussi continui di dati prodotti da sorgenti distribuite
  ed eterogenee, diretti al centro logico del sistema, ovvero laddove l'informazi
 one viene resa fruibile.
  
@@ -199,13 +198,13 @@ e importanza per garantire l'efficienza e l'affidabilità dell'applicazione.
 Proponiamo tre formulazioni in programmazione lineare binaria per il problema
  di posizionamento.
  Partendo da una prima formulazione di base, abbiamo potuto ricavare le
- seguenti apportando opportune modifiche al dominio delle variabili decisionali
- e ad uno specifico vincolo di ammissibilità.
+ due seguenti apportando opportune modifiche al dominio delle variabili
+ decisionali e ad uni specifico vincolo di ammissibilità.
 \end_layout
 
 \begin_layout Standard
 I modelli di ottimizzazione proposti sono stati dapprima implementati in
- OPL, all'interno dell'ambiente di sviluppo integrato IBM CPlex Optimization
+ OPL all'interno dell'ambiente di sviluppo integrato IBM CPlex Optimization
  Studio.
  Tale approccio ci ha garantito una prototipazione rapida dei modelli, al
  fine di verificarne quanto prima consistenza ed efficienza su piccole istanze
@@ -223,11 +222,7 @@ I modelli di ottimizzazione proposti sono stati dapprima implementati in
 I modelli sono stati successivamente sottoposti ad un'analisi sperimentale
  quanto più possibile estensiva, volta a compararne le prestazioni in funzione
  della dimensione e distribuzione dell'istanza.
- 
-\end_layout
-
-\begin_layout Standard
-I risultati ottenuti sono molto positivi, in quanto dimostrano il netto
+ I risultati ottenuti sono molto positivi, in quanto dimostrano il netto
  miglioramento prestazionale della formulazione finale rispetto a quella
  di partenza.
 \end_layout
